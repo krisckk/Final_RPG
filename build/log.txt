@@ -1,0 +1,9 @@
+[INFO] Game Initializing...
+[INFO] Loaded Resource<image>: Resource/images/icon.png
+[INFO] Loaded window icon from: icon.png
+[INFO] There are total 3 supported mouse buttons
+[INFO] Allegro5 initialized
+[INFO] Game begin
+[INFO] Game initialized
+[INFO] Game start event loop
+[INFO] Game Terminating...

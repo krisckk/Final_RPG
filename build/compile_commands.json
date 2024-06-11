@@ -1,0 +1,134 @@
+[
+{
+  "directory": "/Users/krischou/Final_RPG/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ -I/Users/krischou/Final_RPG/. -I/Users/krischou/Final_RPG/Resource -I/Users/krischou/Final_RPG/Engine -I/Users/krischou/Final_RPG/lib -I/usr/local/include -g -std=gnu++14 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -mmacosx-version-min=14.3 -o CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Engine/IScene.cpp.o -c /Users/krischou/Final_RPG/Engine/IScene.cpp",
+  "file": "/Users/krischou/Final_RPG/Engine/IScene.cpp",
+  "output": "CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Engine/IScene.cpp.o"
+},
+{
+  "directory": "/Users/krischou/Final_RPG/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ -I/Users/krischou/Final_RPG/. -I/Users/krischou/Final_RPG/Resource -I/Users/krischou/Final_RPG/Engine -I/Users/krischou/Final_RPG/lib -I/usr/local/include -g -std=gnu++14 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -mmacosx-version-min=14.3 -o CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Engine/Allegro5Exception.cpp.o -c /Users/krischou/Final_RPG/Engine/Allegro5Exception.cpp",
+  "file": "/Users/krischou/Final_RPG/Engine/Allegro5Exception.cpp",
+  "output": "CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Engine/Allegro5Exception.cpp.o"
+},
+{
+  "directory": "/Users/krischou/Final_RPG/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ -I/Users/krischou/Final_RPG/. -I/Users/krischou/Final_RPG/Resource -I/Users/krischou/Final_RPG/Engine -I/Users/krischou/Final_RPG/lib -I/usr/local/include -g -std=gnu++14 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -mmacosx-version-min=14.3 -o CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Engine/AudioHelper.cpp.o -c /Users/krischou/Final_RPG/Engine/AudioHelper.cpp",
+  "file": "/Users/krischou/Final_RPG/Engine/AudioHelper.cpp",
+  "output": "CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Engine/AudioHelper.cpp.o"
+},
+{
+  "directory": "/Users/krischou/Final_RPG/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ -I/Users/krischou/Final_RPG/. -I/Users/krischou/Final_RPG/Resource -I/Users/krischou/Final_RPG/Engine -I/Users/krischou/Final_RPG/lib -I/usr/local/include -g -std=gnu++14 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -mmacosx-version-min=14.3 -o CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Engine/Collider.cpp.o -c /Users/krischou/Final_RPG/Engine/Collider.cpp",
+  "file": "/Users/krischou/Final_RPG/Engine/Collider.cpp",
+  "output": "CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Engine/Collider.cpp.o"
+},
+{
+  "directory": "/Users/krischou/Final_RPG/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ -I/Users/krischou/Final_RPG/. -I/Users/krischou/Final_RPG/Resource -I/Users/krischou/Final_RPG/Engine -I/Users/krischou/Final_RPG/lib -I/usr/local/include -g -std=gnu++14 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -mmacosx-version-min=14.3 -o CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Engine/GameEngine.cpp.o -c /Users/krischou/Final_RPG/Engine/GameEngine.cpp",
+  "file": "/Users/krischou/Final_RPG/Engine/GameEngine.cpp",
+  "output": "CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Engine/GameEngine.cpp.o"
+},
+{
+  "directory": "/Users/krischou/Final_RPG/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ -I/Users/krischou/Final_RPG/. -I/Users/krischou/Final_RPG/Resource -I/Users/krischou/Final_RPG/Engine -I/Users/krischou/Final_RPG/lib -I/usr/local/include -g -std=gnu++14 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -mmacosx-version-min=14.3 -o CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Engine/Group.cpp.o -c /Users/krischou/Final_RPG/Engine/Group.cpp",
+  "file": "/Users/krischou/Final_RPG/Engine/Group.cpp",
+  "output": "CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Engine/Group.cpp.o"
+},
+{
+  "directory": "/Users/krischou/Final_RPG/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ -I/Users/krischou/Final_RPG/. -I/Users/krischou/Final_RPG/Resource -I/Users/krischou/Final_RPG/Engine -I/Users/krischou/Final_RPG/lib -I/usr/local/include -g -std=gnu++14 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -mmacosx-version-min=14.3 -o CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Engine/IControl.cpp.o -c /Users/krischou/Final_RPG/Engine/IControl.cpp",
+  "file": "/Users/krischou/Final_RPG/Engine/IControl.cpp",
+  "output": "CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Engine/IControl.cpp.o"
+},
+{
+  "directory": "/Users/krischou/Final_RPG/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ -I/Users/krischou/Final_RPG/. -I/Users/krischou/Final_RPG/Resource -I/Users/krischou/Final_RPG/Engine -I/Users/krischou/Final_RPG/lib -I/usr/local/include -g -std=gnu++14 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -mmacosx-version-min=14.3 -o CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Engine/IObject.cpp.o -c /Users/krischou/Final_RPG/Engine/IObject.cpp",
+  "file": "/Users/krischou/Final_RPG/Engine/IObject.cpp",
+  "output": "CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Engine/IObject.cpp.o"
+},
+{
+  "directory": "/Users/krischou/Final_RPG/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ -I/Users/krischou/Final_RPG/. -I/Users/krischou/Final_RPG/Resource -I/Users/krischou/Final_RPG/Engine -I/Users/krischou/Final_RPG/lib -I/usr/local/include -g -std=gnu++14 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -mmacosx-version-min=14.3 -o CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Engine/LOG.cpp.o -c /Users/krischou/Final_RPG/Engine/LOG.cpp",
+  "file": "/Users/krischou/Final_RPG/Engine/LOG.cpp",
+  "output": "CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Engine/LOG.cpp.o"
+},
+{
+  "directory": "/Users/krischou/Final_RPG/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ -I/Users/krischou/Final_RPG/. -I/Users/krischou/Final_RPG/Resource -I/Users/krischou/Final_RPG/Engine -I/Users/krischou/Final_RPG/lib -I/usr/local/include -g -std=gnu++14 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -mmacosx-version-min=14.3 -o CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Engine/Point.cpp.o -c /Users/krischou/Final_RPG/Engine/Point.cpp",
+  "file": "/Users/krischou/Final_RPG/Engine/Point.cpp",
+  "output": "CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Engine/Point.cpp.o"
+},
+{
+  "directory": "/Users/krischou/Final_RPG/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ -I/Users/krischou/Final_RPG/. -I/Users/krischou/Final_RPG/Resource -I/Users/krischou/Final_RPG/Engine -I/Users/krischou/Final_RPG/lib -I/usr/local/include -g -std=gnu++14 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -mmacosx-version-min=14.3 -o CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Engine/Resources.cpp.o -c /Users/krischou/Final_RPG/Engine/Resources.cpp",
+  "file": "/Users/krischou/Final_RPG/Engine/Resources.cpp",
+  "output": "CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Engine/Resources.cpp.o"
+},
+{
+  "directory": "/Users/krischou/Final_RPG/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ -I/Users/krischou/Final_RPG/. -I/Users/krischou/Final_RPG/Resource -I/Users/krischou/Final_RPG/Engine -I/Users/krischou/Final_RPG/lib -I/usr/local/include -g -std=gnu++14 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -mmacosx-version-min=14.3 -o CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Engine/Sprite.cpp.o -c /Users/krischou/Final_RPG/Engine/Sprite.cpp",
+  "file": "/Users/krischou/Final_RPG/Engine/Sprite.cpp",
+  "output": "CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Engine/Sprite.cpp.o"
+},
+{
+  "directory": "/Users/krischou/Final_RPG/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ -I/Users/krischou/Final_RPG/. -I/Users/krischou/Final_RPG/Resource -I/Users/krischou/Final_RPG/Engine -I/Users/krischou/Final_RPG/lib -I/usr/local/include -g -std=gnu++14 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -mmacosx-version-min=14.3 -o CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/UI/Animation/DirtyEffect.cpp.o -c /Users/krischou/Final_RPG/UI/Animation/DirtyEffect.cpp",
+  "file": "/Users/krischou/Final_RPG/UI/Animation/DirtyEffect.cpp",
+  "output": "CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/UI/Animation/DirtyEffect.cpp.o"
+},
+{
+  "directory": "/Users/krischou/Final_RPG/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ -I/Users/krischou/Final_RPG/. -I/Users/krischou/Final_RPG/Resource -I/Users/krischou/Final_RPG/Engine -I/Users/krischou/Final_RPG/lib -I/usr/local/include -g -std=gnu++14 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -mmacosx-version-min=14.3 -o CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/UI/Animation/ExplosionEffect.cpp.o -c /Users/krischou/Final_RPG/UI/Animation/ExplosionEffect.cpp",
+  "file": "/Users/krischou/Final_RPG/UI/Animation/ExplosionEffect.cpp",
+  "output": "CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/UI/Animation/ExplosionEffect.cpp.o"
+},
+{
+  "directory": "/Users/krischou/Final_RPG/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ -I/Users/krischou/Final_RPG/. -I/Users/krischou/Final_RPG/Resource -I/Users/krischou/Final_RPG/Engine -I/Users/krischou/Final_RPG/lib -I/usr/local/include -g -std=gnu++14 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -mmacosx-version-min=14.3 -o CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/UI/Component/Image.cpp.o -c /Users/krischou/Final_RPG/UI/Component/Image.cpp",
+  "file": "/Users/krischou/Final_RPG/UI/Component/Image.cpp",
+  "output": "CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/UI/Component/Image.cpp.o"
+},
+{
+  "directory": "/Users/krischou/Final_RPG/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ -I/Users/krischou/Final_RPG/. -I/Users/krischou/Final_RPG/Resource -I/Users/krischou/Final_RPG/Engine -I/Users/krischou/Final_RPG/lib -I/usr/local/include -g -std=gnu++14 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -mmacosx-version-min=14.3 -o CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/UI/Component/ImageButton.cpp.o -c /Users/krischou/Final_RPG/UI/Component/ImageButton.cpp",
+  "file": "/Users/krischou/Final_RPG/UI/Component/ImageButton.cpp",
+  "output": "CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/UI/Component/ImageButton.cpp.o"
+},
+{
+  "directory": "/Users/krischou/Final_RPG/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ -I/Users/krischou/Final_RPG/. -I/Users/krischou/Final_RPG/Resource -I/Users/krischou/Final_RPG/Engine -I/Users/krischou/Final_RPG/lib -I/usr/local/include -g -std=gnu++14 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -mmacosx-version-min=14.3 -o CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/UI/Component/Label.cpp.o -c /Users/krischou/Final_RPG/UI/Component/Label.cpp",
+  "file": "/Users/krischou/Final_RPG/UI/Component/Label.cpp",
+  "output": "CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/UI/Component/Label.cpp.o"
+},
+{
+  "directory": "/Users/krischou/Final_RPG/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ -I/Users/krischou/Final_RPG/. -I/Users/krischou/Final_RPG/Resource -I/Users/krischou/Final_RPG/Engine -I/Users/krischou/Final_RPG/lib -I/usr/local/include -g -std=gnu++14 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -mmacosx-version-min=14.3 -o CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/UI/Animation/Plane.cpp.o -c /Users/krischou/Final_RPG/UI/Animation/Plane.cpp",
+  "file": "/Users/krischou/Final_RPG/UI/Animation/Plane.cpp",
+  "output": "CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/UI/Animation/Plane.cpp.o"
+},
+{
+  "directory": "/Users/krischou/Final_RPG/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ -I/Users/krischou/Final_RPG/. -I/Users/krischou/Final_RPG/Resource -I/Users/krischou/Final_RPG/Engine -I/Users/krischou/Final_RPG/lib -I/usr/local/include -g -std=gnu++14 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -mmacosx-version-min=14.3 -o CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/UI/Component/Slider.cpp.o -c /Users/krischou/Final_RPG/UI/Component/Slider.cpp",
+  "file": "/Users/krischou/Final_RPG/UI/Component/Slider.cpp",
+  "output": "CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/UI/Component/Slider.cpp.o"
+},
+{
+  "directory": "/Users/krischou/Final_RPG/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ -I/Users/krischou/Final_RPG/. -I/Users/krischou/Final_RPG/Resource -I/Users/krischou/Final_RPG/Engine -I/Users/krischou/Final_RPG/lib -I/usr/local/include -g -std=gnu++14 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -mmacosx-version-min=14.3 -o CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/StartScene.cpp.o -c /Users/krischou/Final_RPG/Scene/StartScene.cpp",
+  "file": "/Users/krischou/Final_RPG/Scene/StartScene.cpp",
+  "output": "CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/StartScene.cpp.o"
+},
+{
+  "directory": "/Users/krischou/Final_RPG/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ -I/Users/krischou/Final_RPG/. -I/Users/krischou/Final_RPG/Resource -I/Users/krischou/Final_RPG/Engine -I/Users/krischou/Final_RPG/lib -I/usr/local/include -g -std=gnu++14 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -mmacosx-version-min=14.3 -o CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/PlayScene.cpp.o -c /Users/krischou/Final_RPG/Scene/PlayScene.cpp",
+  "file": "/Users/krischou/Final_RPG/Scene/PlayScene.cpp",
+  "output": "CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/PlayScene.cpp.o"
+},
+{
+  "directory": "/Users/krischou/Final_RPG/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ -I/Users/krischou/Final_RPG/. -I/Users/krischou/Final_RPG/Resource -I/Users/krischou/Final_RPG/Engine -I/Users/krischou/Final_RPG/lib -I/usr/local/include -g -std=gnu++14 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -mmacosx-version-min=14.3 -o CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/main.cpp.o -c /Users/krischou/Final_RPG/main.cpp",
+  "file": "/Users/krischou/Final_RPG/main.cpp",
+  "output": "CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/main.cpp.o"
+}
+]
