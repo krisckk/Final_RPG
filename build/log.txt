@@ -4,6 +4,30 @@
 [INFO] There are total 3 supported mouse buttons
 [INFO] Allegro5 initialized
 [INFO] Game begin
+[INFO] Loaded Resource<image>: Resource/images/menu_background.jpg
+[INFO] Loaded Resource<font>: Resource/fonts/pirulen.ttf with size 48
+[INFO] Loaded Resource<image>: Resource/images/lose/newgame_unhover.png scaled to 290x30
+[INFO] Loaded Resource<image>: Resource/images/lose/newgame_unhover.png
+[INFO] Loaded Resource<image>: Resource/images/lose/newgame_hovered.png
+[INFO] Loaded Resource<image>: Resource/images/lose/continue_unhover.png scaled to 290x30
+[INFO] Loaded Resource<image>: Resource/images/lose/continue_unhover.png
+[INFO] Loaded Resource<image>: Resource/images/lose/continue_hovered.png
+[INFO] Loaded Resource<image>: Resource/images/lose/scoreboard_unhover.png scaled to 290x30
+[INFO] Loaded Resource<image>: Resource/images/lose/scoreboard_unhover.png
+[INFO] Loaded Resource<image>: Resource/images/lose/scoreboard_hovered.png
+[INFO] Loaded Resource<image>: Resource/images/lose/settings_unhover.png scaled to 290x30
+[INFO] Loaded Resource<image>: Resource/images/lose/settings_unhover.png
+[INFO] Loaded Resource<image>: Resource/images/lose/settings_hovered.png
+[INFO] Loaded Resource<audio>: Resource/audios/joannaliaoThemeSong.ogg
+[INFO] Created<sample_instance>: Resource/audios/joannaliaoThemeSong.ogg
 [INFO] Game initialized
 [INFO] Game start event loop
 [INFO] Game Terminating...
+[INFO] stopped audio (sample)
+[INFO] Game terminated
+[INFO] Game end
+[INFO] Game Initializing...
+[INFO] Loaded window icon from: icon.png
+[INFO] There are total 3 supported mouse buttons
+[INFO] Allegro5 initialized
+[INFO] Game begin

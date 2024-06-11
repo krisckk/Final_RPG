@@ -16,7 +16,7 @@ class StartScene final : public Engine::IScene {
         explicit StartScene() = default;
         void Initialize() override;
         void Terminate() override;
-        void OnKeyDown(int keyCode) override;
+        void SettingsOnClick(int stage);
 };
 
 
