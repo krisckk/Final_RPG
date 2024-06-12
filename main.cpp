@@ -5,6 +5,7 @@
 #include "Engine/LOG.hpp"
 #include "Scene/StartScene.hpp"
 #include "Scene/MenuSettings.hpp"
+#include "Scene/UndergroundShelter/B4/LabScene.hpp"
 
 
 int main(int argc, char **argv) {
@@ -14,8 +15,10 @@ int main(int argc, char **argv) {
     // TODO: [HACKATHON-1-SCENE] (3/4): Register Scenes here
 	game.AddNewScene("start", new StartScene());
 	game.AddNewScene("menuSettings", new MenuSettings());
+	game.AddNewScene("Lab", new LabScene());
     // TODO: [HACKATHON-1-SCENE] (4/4): Change the start scene
 	game.Start("start", 120, 1600, 900);
 	game.Start("menuSettings", 120, 1600, 900);
+	game.Start("Lab", 120, 1600, 900);
 	return 0;
 }

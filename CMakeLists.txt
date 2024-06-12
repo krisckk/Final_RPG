@@ -59,6 +59,12 @@ add_executable(2024_I2P2_TowerDefense_with_answer
         Scene/PlayScene.cpp
         Scene/MenuSettings.hpp
         Scene/MenuSettings.cpp
+        Scene/UndergroundShelter/B4/LabScene.hpp
+        Scene/UndergroundShelter/B4/LabScene.cpp
+        Maincharacter/Animation.hpp
+        Maincharacter/Animation.cpp
+        Maincharacter/MainCharacter.hpp
+        Maincharacter/MainCharacter.cpp
         main.cpp
 )
 

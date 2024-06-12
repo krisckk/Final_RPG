@@ -1,6 +1,7 @@
-# 2024 I2P Mini Project 2 - Tower Defense
+# 2024 I2P Final Project - RPG
 
-## Grading
+## Member : 周伯穎，李岱淩，陳柏蓉
+![preview](Resource/images/previewstart.jpg)
 
 | **Hackathon Tasks**              | **Score** | **Check** |
 | :------------------------------- | :-------: | :-------: |

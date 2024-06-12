@@ -17,6 +17,7 @@ class StartScene final : public Engine::IScene {
         void Initialize() override;
         void Terminate() override;
         void SettingsOnClick(int stage);
+        void NewgameOnClick(int stage);
 };
 
 

@@ -11,6 +11,7 @@
 #include "Engine/Resources.hpp"
 #include "UI/Component/Slider.hpp"
 #include "Scene/StartScene.hpp"
+#include "Scene/UndergroundShelter/B4/LabScene.hpp"
 void StartScene::Initialize() {
     int w = Engine::GameEngine::GetInstance().GetScreenSize().x;
     int h = Engine::GameEngine::GetInstance().GetScreenSize().y;
@@ -20,7 +21,7 @@ void StartScene::Initialize() {
     AddNewObject(new Engine::Label("THE LOST", "pirulen.ttf", 48, halfW / 2 - 260, halfH / 2 + 20 , 255, 255, 255, 255, 0, 0.5));
     Engine::ImageButton* btn;
     btn = new Engine::ImageButton("lose/newgame_unhover.png", "lose/newgame_hovered.png", halfW / 2 - 250, halfH / 2 + 130, 290, 30, 0, 0);
-    btn->SetOnClickCallback(std::bind(&StartScene::SettingsOnClick, this, 1));
+    btn->SetOnClickCallback(std::bind(&StartScene::NewgameOnClick, this, 1));
     AddNewControlObject(btn);
 
     btn = new Engine::ImageButton("lose/continue_unhover.png", "lose/continue_hovered.png", halfW / 2 - 250, halfH / 2 + 170, 290, 30, 0, 0);
@@ -44,4 +45,7 @@ void StartScene::Terminate() {
 }
 void StartScene::SettingsOnClick(int stage){
     Engine::GameEngine::GetInstance().ChangeScene("menuSettings");
+}
+void StartScene::NewgameOnClick(int stage){
+    Engine::GameEngine::GetInstance().ChangeScene("Lab");
 }
