@@ -1,5 +1,5 @@
-#ifndef LIBRARYSCENE_HPP
-#define LIBRARYSCENE_HPP
+#ifndef STORAGEROOM_HPP
+#define STORAGEROOM_HPP
 
 #include <allegro5/allegro_audio.h>
 #include <allegro5/allegro_font.h>
@@ -11,6 +11,7 @@
 #include "Engine/IScene.hpp"
 #include "Engine/Point.hpp"
 #include "Maincharacter/Maincharacter.hpp"
+
 namespace Engine {
 	class Group;
 	class Image;
@@ -18,14 +19,13 @@ namespace Engine {
 	class Sprite;
 }
 extern Maincharacter* MC;
-class LibraryScene final : public  Engine::IScene {
+class StorageRoom final : public  Engine::IScene {
     private:
         std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE> bgmInstance;
         ALLEGRO_FONT* PoetFont;
         ALLEGRO_FONT* BIGFont;
-        ALLEGRO_BITMAP* Passwordnote;
     public:
-        explicit LibraryScene() = default;
+        explicit StorageRoom() = default;
         void Draw() const override;
         void Update(float deltaTime) override;
         void Initialize() override;

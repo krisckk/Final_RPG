@@ -14,9 +14,9 @@ class Maincharacter : public Engine::Sprite {
 protected:
     float speed;
     float jumpSpeed;
-    int Lives;
-    int Hunger;
-    int Thirst;
+    int Lives = 3;
+    int Hunger = 100;
+    int Thirst = 100;
     Animation idleAnimation;
     Animation LeftwalkAnimation;
     Animation RightwalkAnimation;

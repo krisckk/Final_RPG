@@ -7,6 +7,8 @@
 #include "Scene/MenuSettings.hpp"
 #include "Scene/UndergroundShelter/B4/LabScene.hpp"
 #include "Scene/UndergroundShelter/B4/LibraryScene.hpp"
+#include "Scene/UndergroundShelter/B4/Computer.hpp"
+#include "Scene/UndergroundShelter/B4/StorageRoom.hpp"
 #include "Maincharacter/Backpack.hpp"
 
 
@@ -20,11 +22,15 @@ int main(int argc, char **argv) {
 	game.AddNewScene("Lab", new LabScene());
 	game.AddNewScene("Library", new LibraryScene());
 	game.AddNewScene("Backpack", new Backpack());
+	game.AddNewScene("Computer", new Computer());
+	game.AddNewScene("StorageRoom", new StorageRoom());
     // TODO: [HACKATHON-1-SCENE] (4/4): Change the start scene
 	game.Start("start", 120, 1600, 900);
 	game.Start("menuSettings", 120, 1600, 900);
 	game.Start("Lab", 120, 1600, 900);
 	game.Start("Library", 120, 1600, 900);
 	game.Start("Backpack", 120, 1600, 900);
+	game.Start("Computer", 120, 1600, 900);
+	game.Start("StorageRoom", 120, 1600, 900);
 	return 0;
 }

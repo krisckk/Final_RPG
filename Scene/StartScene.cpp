@@ -4,11 +4,11 @@
 #include <string>
 #include "Engine/AudioHelper.hpp"
 #include "Engine/GameEngine.hpp"
+#include "Engine/Point.hpp"
+#include "Engine/Resources.hpp"
 #include "UI/Component/Image.hpp"
 #include "UI/Component/ImageButton.hpp"
 #include "UI/Component/Label.hpp"
-#include "Engine/Point.hpp"
-#include "Engine/Resources.hpp"
 #include "UI/Component/Slider.hpp"
 #include "Scene/StartScene.hpp"
 #include "Scene/UndergroundShelter/B4/LabScene.hpp"

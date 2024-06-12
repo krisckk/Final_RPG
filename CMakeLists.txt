@@ -63,6 +63,10 @@ add_executable(2024_I2P2_TowerDefense_with_answer
         Scene/UndergroundShelter/B4/LabScene.cpp
         Scene/UndergroundShelter/B4/LibraryScene.hpp
         Scene/UndergroundShelter/B4/LibraryScene.cpp
+        Scene/UndergroundShelter/B4/Computer.cpp
+        Scene/UndergroundShelter/B4/Computer.hpp
+        Scene/UndergroundShelter/B4/StorageRoom.hpp
+        Scene/UndergroundShelter/B4/StorageRoom.cpp
         Maincharacter/Animation.hpp
         Maincharacter/Animation.cpp
         Maincharacter/MainCharacter.hpp

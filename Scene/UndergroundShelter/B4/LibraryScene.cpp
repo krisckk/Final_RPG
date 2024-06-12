@@ -27,6 +27,7 @@
 #include "Maincharacter/Maincharacter.hpp"
 #include "LibraryScene.hpp"
 #include "LabScene.hpp"
+bool stickynotes_opened = false;
 bool enter_password = false;
 bool door_open = false;
 char password[5];
@@ -39,19 +40,21 @@ void LibraryScene::Initialize(){
     Engine::LOG(Engine::INFO) << "Library scene create";
     PoetFont = al_load_font("Resource/fonts/PoetsenOne.ttf", 30, 0);
     BIGFont = al_load_font("Resource/fonts/PoetsenOne.ttf", 150, 0);
+    Passwordnote = al_load_bitmap("Resource/images/UndergroundShelter/B4/Library/Passwordnote.png");
     AddNewObject(new Engine::Image("UndergroundShelter/LabGeneralBackground.png", 0, 0, w, h, 0, 0));
     AddNewObject(new Engine::Image("UndergroundShelter/LabGeneralBackgroundPlatform.png", 0, h - 520, w, 60, 0, 0));
     AddNewObject(new Engine::Image("UndergroundShelter/B4/Library/ladder.png", 300, h - 540, 160, 460, 0, 0));
     AddNewObject(new Engine::Image("UndergroundShelter/B4/Library/bookshelf.png", 500, 80, 400, 300, 0, 0));
     AddNewObject(new Engine::Image("UndergroundShelter/B4/Library/bookshelf.png", 900, 80, 400, 300, 0, 0));
     AddNewObject(new Engine::Image("UndergroundShelter/B4/Library/bookshelf.png", 1300, 80, 300, 300, 0, 0));
+    AddNewObject(new Engine::Image("UndergroundShelter/B4/Library/stickynotes.png", 1000, 180, 50, 50));
     AddNewObject(new Engine::Image("UndergroundShelter/B4/Library/WaterFountain.png", 100, 95, 180, 300, 0, 0));
     bgmInstance = AudioHelper::PlaySample("joannaliaoThemeSong.ogg", true, AudioHelper::BGMVolume);
     AddNewObject(new Engine::Image("2Ddooropened.png", 0, h - 460, 200, 360, 0.5, 0));
     AddNewObject(new Engine::Image("UndergroundShelter/B4/Library/Computer.png", 650, h - 300, 100, 100, 0, 0));
     AddNewObject(new Engine::Image("UndergroundShelter/B4/Library/ComputerDesk.png", 600, h - 200, 200, 100, 0, 0));
     AddNewObject(new Engine::Image("UndergroundShelter/B4/Library/bookshelf.png", 900, h - 400, 300, 300, 0 , 0));
-    AddNewObject(new Engine::Image("2Ddoorclosed.jpg", 1400, h - 460, 200, 360, 0, 0));
+    AddNewObject(new Engine::Image("2Ddoorclosed.png", 1300, h - 460, 300, 360, 0, 0));
     MC = new Maincharacter("MCRightStop.png", 80, 680, 32, 100, 3, 100, 100);
     if (!MC) {
         Engine::LOG(Engine::ERROR) << "Failed to create Maincharacter object";
@@ -71,25 +74,33 @@ void LibraryScene::Terminate() {
 void LibraryScene::OnKeyDown(int keyCode){
     switch (keyCode) {
         case ALLEGRO_KEY_A:
-            if (!enter_password) MC->MoveLeft(1.0f / 60.0f); // Assuming 60 FPS
+            if (!stickynotes_opened && !enter_password) MC->MoveLeft(1.0f / 60.0f); // Assuming 60 FPS
             break;
         case ALLEGRO_KEY_D:
-            if (!enter_password) MC->MoveRight(1.0f / 60.0f);
+            if (!stickynotes_opened && !enter_password) MC->MoveRight(1.0f / 60.0f);
             break;
         case ALLEGRO_KEY_W:
-            if(!enter_password && MC -> Position.x >= 280 && MC -> Position.x <= 460 && MC -> Position.y >= 250){
+            if(!stickynotes_opened && !enter_password && MC -> Position.x >= 280 && MC -> Position.x <= 400 && MC -> Position.y >= 250){
                 MC->ClimbUp(1.0f / 60.0f);
             }
             break;
         case ALLEGRO_KEY_S:
-            if(!enter_password && MC -> Position.x >= 280 && MC -> Position.x <= 460 && MC -> Position.y <= 570){
+            if(!stickynotes_opened && !enter_password && MC -> Position.x >= 280 && MC -> Position.x <= 400 && MC -> Position.y <= 570){
                 MC->ClimbDown(1.0f / 60.0f);
             }
             break;
         case ALLEGRO_KEY_E:
             if (MC -> Position.x >= 1350 && MC -> Position.x <= 1600){
-               enter_password = !enter_password;
-               i = 0;
+                enter_password = !enter_password;
+                i = 0;
+            }
+            break;
+        case ALLEGRO_KEY_I:
+            if (MC -> Position.x >= 900 && MC -> Position.x <= 1050 && MC -> Position.y < 450){
+                stickynotes_opened = !stickynotes_opened;
+            }
+            if (MC -> Position.x >= 600 && MC -> Position.x <= 750 && MC -> Position.y > 450){
+                Engine::GameEngine::GetInstance().ChangeScene("Computer");
             }
             break;
         case ALLEGRO_KEY_1:
@@ -151,6 +162,20 @@ void LibraryScene::Draw() const{
         al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x - 310, 710, 0, "Press E to Enter");
         if (!door_open) al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x - 310, 750, 0, "Password");
     }
+    if (MC -> Position.x >= 900 && MC -> Position.x <= 1050 && MC -> Position.y < 450 && !stickynotes_opened){
+        al_draw_filled_triangle(MC -> Position.x - 55, MC -> Position.y , MC -> Position.x - 55, MC -> Position.y + 40, MC -> Position.x - 10, MC -> Position.y + 20, al_map_rgb(255, 255, 255));
+        al_draw_filled_rounded_rectangle(MC -> Position.x - 350, MC -> Position.y - 20, MC -> Position.x - 50, MC -> Position.y + 100, 10, 10, al_map_rgb(255, 255, 255));
+        al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x - 310, MC -> Position.y + 10, 0, "Press I to Interact");
+    }
+    if (MC -> Position.x >= 600 && MC -> Position.x <= 750 && MC -> Position.y > 450){
+        al_draw_filled_triangle(MC -> Position.x - 55, MC -> Position.y , MC -> Position.x - 55, MC -> Position.y + 40, MC -> Position.x - 10, MC -> Position.y + 20, al_map_rgb(255, 255, 255));
+        al_draw_filled_rounded_rectangle(MC -> Position.x - 350, MC -> Position.y - 20, MC -> Position.x - 50, MC -> Position.y + 100, 10, 10, al_map_rgb(255, 255, 255));
+        al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x - 310, MC -> Position.y + 10, 0, "Press I to Interact");
+    }
+    if (stickynotes_opened){
+        al_draw_filled_rounded_rectangle(400, 200, 1200, 700, 10, 10, al_map_rgb(255, 255, 102));
+        al_draw_scaled_bitmap(Passwordnote, 0, 0, 563, 228, 600, 350, 400, 200, 0);
+    }
     if (enter_password && !door_open){
         al_draw_filled_rounded_rectangle(390, 350, 580, 550, 10, 10, al_map_rgb(255, 255, 255));
         al_draw_filled_rounded_rectangle(600, 350, 790, 550, 10, 10, al_map_rgb(255, 255, 255));
@@ -168,7 +193,7 @@ void LibraryScene::Update(float deltaTime){
         door_open = true;
         enter_password = false;
         Engine::LOG(Engine::INFO) << "The door is open";
-        Engine::GameEngine::GetInstance().ChangeScene("Lab");
+        Engine::GameEngine::GetInstance().ChangeScene("StorageRoom");
     }
 }
 
