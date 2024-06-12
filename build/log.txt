@@ -33,3 +33,10 @@
 [INFO] Changed to Lab scene
 [INFO] Game Terminating...
 [INFO] stopped audio (sample)
+[INFO] Game terminated
+[INFO] Game end
+[INFO] Game Initializing...
+[INFO] Loaded window icon from: icon.png
+[INFO] There are total 3 supported mouse buttons
+[INFO] Allegro5 initialized
+[INFO] Game begin
