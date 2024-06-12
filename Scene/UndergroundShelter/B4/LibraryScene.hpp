@@ -21,6 +21,8 @@ extern Maincharacter* MC;
 class LibraryScene final : public  Engine::IScene {
     private:
         std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE> bgmInstance;
+        ALLEGRO_FONT* PoetFont;
+        ALLEGRO_FONT* BIGFont;
     public:
         explicit LibraryScene() = default;
         void Draw() const override;

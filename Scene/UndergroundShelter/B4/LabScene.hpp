@@ -26,6 +26,7 @@ private:
     float textBoxTimer = 0.0f; // Timer to track the elapsed time
 	ALLEGRO_FONT* pirulenFont;
 	ALLEGRO_FONT* PoetFont;
+	ALLEGRO_FONT* ParasiteFont;
 	//std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE> deathBGMInstance;
 
 public:

@@ -28,15 +28,10 @@
 [INFO] Created<sample_instance>: Resource/audios/joannaliaoThemeSong.ogg
 [INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/B4/LabScene/tankwithPeople.png scaled to 200x360
 [INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/B4/LabScene/tankwithoutPeople.png scaled to 200x360
-[INFO] Loaded Resource<image>: Resource/images/2Ddooropened.jpg scaled to 200x360
+[INFO] Loaded Resource<image>: Resource/images/2Ddooropened.png scaled to 200x360
 [INFO] Loaded Resource<image>: Resource/images/MCRightStop.png
 [INFO] Changed to Lab scene
-[INFO] Game Terminating...
 [INFO] stopped audio (sample)
-[INFO] Game terminated
-[INFO] Game end
-[INFO] Game Initializing...
-[INFO] Loaded window icon from: icon.png
-[INFO] There are total 3 supported mouse buttons
-[INFO] Allegro5 initialized
-[INFO] Game begin
+[INFO] Backpack scene create
+[INFO] Changed to Backpack scene
+[INFO] Game Terminating...

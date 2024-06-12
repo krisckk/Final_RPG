@@ -67,6 +67,8 @@ add_executable(2024_I2P2_TowerDefense_with_answer
         Maincharacter/Animation.cpp
         Maincharacter/MainCharacter.hpp
         Maincharacter/MainCharacter.cpp
+        Maincharacter/Backpack.cpp
+        Maincharacter/Backpack.hpp
         main.cpp
 )
 
