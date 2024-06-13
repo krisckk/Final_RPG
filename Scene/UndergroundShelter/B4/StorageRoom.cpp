@@ -31,6 +31,7 @@
 #include "LibraryScene.hpp"
 #include "LabScene.hpp"
 #include "StorageRoom.hpp"
+#include "Stats/Shared.hpp"
 
 
 void StorageRoom::Initialize(){
@@ -41,7 +42,9 @@ void StorageRoom::Initialize(){
     Engine::LOG(Engine::INFO) << "StorageRoom scene create";
     PoetFont = al_load_font("Resource/fonts/PoetsenOne.ttf", 30, 0);
     BIGFont = al_load_font("Resource/fonts/PoetsenOne.ttf", 150, 0);
-
+    Red_potion = false;
+    Blue_potion = false;
+    Yellow_potion = false;
     AddNewObject(new Engine::Image("UndergroundShelter/LabGeneralBackground.png", 0, 0, w, h, 0, 0));
     AddNewObject(new Engine::Image("UndergroundShelter/LabGeneralBackgroundPlatform.png", 0, h - 520, w, 60, 0, 0));
     AddNewObject(new Engine::Image("UndergroundShelter/B4/Library/ladder.png", 490, h - 540, 160, 460, 0, 0));
@@ -92,28 +95,38 @@ void StorageRoom::Draw() const{
         al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x + 250, 700, 0, "Press E to");
         al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x + 250, 740, 0, "Go Back");
     }
-
     if (MC -> Position.x >= 150 && MC -> Position.x <= 340){
         al_draw_filled_triangle(MC -> Position.x + 200, 700, MC -> Position.x + 200, 740, MC -> Position.x + 170, 720, al_map_rgb(255, 255, 255));
         al_draw_filled_rounded_rectangle(MC -> Position.x + 200, 680, MC -> Position.x + 500, 800, 10, 10, al_map_rgb(255, 255, 255));
         al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x + 250, 700, 0, "Press E to Get");
         al_draw_text(PoetFont, al_map_rgb(200, 0, 0), MC -> Position.x + 250, 740, 0, "Red Potion");
+        Red_potion = true;
+        Blue_potion = false;
+        Yellow_potion = false;
     }
-
-    if (MC -> Position.x >= 640 && MC -> Position.x <= 830){
+    else if (MC -> Position.x >= 640 && MC -> Position.x <= 830){
         al_draw_filled_triangle(MC -> Position.x - 55, 700, MC -> Position.x - 55, 740, MC -> Position.x - 10, 720, al_map_rgb(255, 255, 255));
         al_draw_filled_rounded_rectangle(MC -> Position.x - 350, 680, MC -> Position.x - 50, 800, 10, 10, al_map_rgb(255, 255, 255));
         al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x - 310, 700, 0, "Press E to Get");
         al_draw_text(PoetFont, al_map_rgb(0, 0, 200), MC -> Position.x - 310, 740, 0, "Blue Potion");
+        Red_potion = false;
+        Blue_potion = true;
+        Yellow_potion = false;
     }
-
-    if (MC -> Position.x >= 960 && MC -> Position.x <= 1150){
+    else if (MC -> Position.x >= 960 && MC -> Position.x <= 1150){
         al_draw_filled_triangle(MC -> Position.x - 55, 700, MC -> Position.x - 55, 740, MC -> Position.x - 10, 720, al_map_rgb(255, 255, 255));
         al_draw_filled_rounded_rectangle(MC -> Position.x - 350, 680, MC -> Position.x - 50, 800, 10, 10, al_map_rgb(255, 255, 255));
         al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x - 310, 700, 0, "Press E to Get");
         al_draw_text(PoetFont, al_map_rgb(200, 200, 0), MC -> Position.x - 310, 740, 0, "Yellow Potion");
+        Red_potion = false;
+        Blue_potion = false;
+        Yellow_potion = true;
     }
-
+    else {
+        Red_potion = false;
+        Blue_potion = false;
+        Yellow_potion = false;
+    }
     if (MC -> Position.x >= 1280 && MC -> Position.x <= 1500){
         al_draw_filled_triangle(MC -> Position.x - 55, 700, MC -> Position.x - 55, 740, MC -> Position.x - 10, 720, al_map_rgb(255, 255, 255));
         al_draw_filled_rounded_rectangle(MC -> Position.x - 350, 680, MC -> Position.x - 50, 800, 10, 10, al_map_rgb(255, 255, 255));
@@ -132,7 +145,13 @@ void StorageRoom::OnKeyDown(int keyCode){
             break;
         case ALLEGRO_KEY_E:
             if (MC -> Position.x <= 5) Engine::GameEngine::GetInstance().ChangeScene("Library");
+            if(Red_potion) Shared::redPotion = true;
+            if(Blue_potion) Shared::bluePotion = true;
+            if(Yellow_potion) Shared::yellowPotion = true;
             break;
+        case ALLEGRO_KEY_B:
+                Engine::GameEngine::GetInstance().ChangeScene("Backpack");
+                break;
         default:
             break;
     }

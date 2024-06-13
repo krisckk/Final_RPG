@@ -49,14 +49,6 @@ void Backpack::Draw() const{
     al_draw_rectangle(1100, 330, 1400, 370, al_map_rgb(255, 255, 255), 2);
     al_draw_rectangle(1100, 420, 1400, 460, al_map_rgb(255, 255, 255), 2);
     al_draw_rectangle(1100, 520, 1400, 560, al_map_rgb(255, 255, 255), 2);
-
-    /*al_draw_text(ParasiteFont, al_map_rgb(54, 100, 139), 150, 470, ALLEGRO_ALIGN_CENTER, "Seeds 000");
-    al_draw_text(ParasiteFont, al_map_rgb(54, 100, 139), 400, 470, ALLEGRO_ALIGN_CENTER, "Seeds 001");
-    al_draw_text(ParasiteFont, al_map_rgb(54, 100, 139), 650, 470, ALLEGRO_ALIGN_CENTER, "Seeds 002");
-    al_draw_text(ParasiteFont, al_map_rgb(54, 100, 139), 950, 470, ALLEGRO_ALIGN_CENTER, "Seeds 003");
-    al_draw_text(ParasiteFont, al_map_rgb(54, 100, 139), 1200, 470, ALLEGRO_ALIGN_CENTER, "Seeds 004");*/
-    //al_draw_text(PoetFont, al_map_rgb(255, 255, 255),250 , 850, ALLEGRO_ALIGN_CENTER, "Press B to open the backpack");
-    
 }
 
 void Backpack::Terminate() {

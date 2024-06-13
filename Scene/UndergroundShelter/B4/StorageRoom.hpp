@@ -24,6 +24,9 @@ class StorageRoom final : public  Engine::IScene {
         std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE> bgmInstance;
         ALLEGRO_FONT* PoetFont;
         ALLEGRO_FONT* BIGFont;
+        static bool Red_potion;
+        static bool Blue_potion;
+        static bool Yellow_potion;
     public:
         explicit StorageRoom() = default;
         void Draw() const override;

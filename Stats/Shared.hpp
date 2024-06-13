@@ -6,6 +6,9 @@ public:
     static int lives;
     static int hunger;
     static int thirst;
+    static bool redPotion;
+    static bool bluePotion;
+    static bool yellowPotion;
     static std::string previosStage;
     static std::string currentStage;
     static void SetLives(int value);
