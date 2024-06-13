@@ -68,10 +68,18 @@
 [INFO] Created<sample_instance>: Resource/audios/joannaliaoThemeSong.ogg
 [INFO] Changed to ElevatorB3 scene
 [INFO] stopped audio (sample)
+[INFO] ElevatorB3 scene create
+[INFO] Created<sample_instance>: Resource/audios/joannaliaoThemeSong.ogg
+[INFO] Changed to ElevatorB2 scene
+[INFO] stopped audio (sample)
+[INFO] ElevatorB3 scene create
+[INFO] Created<sample_instance>: Resource/audios/joannaliaoThemeSong.ogg
+[INFO] Changed to ElevatorB3 scene
+[INFO] stopped audio (sample)
 [INFO] StorageRoom scene create
-[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/B3/RestRoom/Blackboard.jpg scaled to 800x700
-[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/B3/RestRoom/Sofa.jpg scaled to 1200x800
-[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/B3/RestRoom/TV.jpg scaled to 150x100
+[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/B3/RestRoom/Blackboard.png scaled to 400x200
+[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/B3/RestRoom/Sofa.png scaled to 300x200
+[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/B3/RestRoom/TV.jpg scaled to 150x200
 [INFO] Created<sample_instance>: Resource/audios/joannaliaoThemeSong.ogg
 [INFO] Changed to RestRoom scene
 [INFO] Game Terminating...

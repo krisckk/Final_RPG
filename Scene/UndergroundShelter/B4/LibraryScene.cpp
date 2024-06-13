@@ -56,7 +56,7 @@ void LibraryScene::Initialize(){
     AddNewObject(new Engine::Image("UndergroundShelter/B4/Library/ComputerDesk.png", 600, h - 200, 200, 100, 0, 0));
     AddNewObject(new Engine::Image("UndergroundShelter/B4/Library/bookshelf.png", 900, h - 400, 300, 300, 0 , 0));
     AddNewObject(new Engine::Image("2Ddoorclosed.png", 1300, h - 460, 300, 360, 0, 0));
-    MC = new Maincharacter("MCRightStop.png", 80, 680, 32, 100);
+    MC = new Maincharacter("MCRightStop.png", 80, 680, 32, 200);
     if (!MC) {
         Engine::LOG(Engine::ERROR) << "Failed to create Maincharacter object";
         return;

@@ -12,10 +12,10 @@
 #include "UI/Animation/Plane.hpp"
 #include "Maincharacter/Maincharacter.hpp"
 #include "Maincharacter/Backpack.hpp" 
-
 #include "Stats/Shared.hpp"
 #include "ElevatorB3.hpp"
 #include "Scene/UndergroundShelter/B4/ElevatorB4.hpp"
+#include "Scene/UndergroundShelter/B2/ElevatorB2.hpp"
 #include "RestRoom.hpp"
 
 void ElevatorB3::Initialize(){
@@ -31,7 +31,7 @@ void ElevatorB3::Initialize(){
     AddNewObject(new Engine::Image("elevator.png", halfW + 30, halfH + 30, 330, 330, 0, 0));
 
     bgmInstance = AudioHelper::PlaySample("joannaliaoThemeSong.ogg", true, AudioHelper::BGMVolume);
-    MC = new Maincharacter("MCRightStop.png", halfW + 30, 680, 32, 100);
+    MC = new Maincharacter("MCRightStop.png", halfW + 30, 680, 32, 200);
     if (!MC) {
         Engine::LOG(Engine::ERROR) << "Failed to create Maincharacter object";
         return;
@@ -56,9 +56,13 @@ void ElevatorB3::OnKeyDown(int keyCode){
             MC->MoveRight(1.0f / 60.0f);
             break;
         case ALLEGRO_KEY_W:
+            if (MC -> Position.x >= 850 && MC -> Position.x <= 1000)
+                Engine::GameEngine::GetInstance().ChangeScene("ElevatorB2");
             //MC->ClimbUp(1.0f / 60.0f);
             break;
         case ALLEGRO_KEY_S:
+            if (MC -> Position.x >= 850 && MC -> Position.x <= 1000)
+                Engine::GameEngine::GetInstance().ChangeScene("ElevatorB4");
             //MC->ClimbDown(1.0f / 60.0f);
             break;
         case ALLEGRO_KEY_E:
@@ -101,15 +105,15 @@ void ElevatorB3::Draw() const{
     if (MC -> Position.x <= 5){
         al_draw_filled_triangle(MC -> Position.x + 200, 700, MC -> Position.x + 200, 740, MC -> Position.x + 170, 720, al_map_rgb(255, 255, 255));
         al_draw_filled_rounded_rectangle(MC -> Position.x + 200, 680, MC -> Position.x + 400, 800, 10, 10, al_map_rgb(255, 255, 255));
-        al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x + 230, 700, 0, "Press E to");
-        al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x + 230, 740, 0, "Go Back");
+        al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x + 230, 700, 0, "Press E to ");
+        al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x + 230, 740, 0, "Enter");
     }
 
     if (MC -> Position.x >= 850 && MC -> Position.x <= 1000){
         al_draw_filled_triangle(MC -> Position.x + 200, 700, MC -> Position.x + 200, 740, MC -> Position.x + 170, 720, al_map_rgb(255, 255, 255));
-        al_draw_filled_rounded_rectangle(MC -> Position.x + 200, 680, MC -> Position.x + 400, 800, 10, 10, al_map_rgb(255, 255, 255));
-        al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x + 230, 700, 0, "Press W to");
-        al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x + 230, 740, 0, "Go To B3");
+        al_draw_filled_rounded_rectangle(MC -> Position.x + 200, 680, MC -> Position.x + 550, 800, 10, 10, al_map_rgb(255, 255, 255));
+        al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x + 230, 700, 0, "Press W to Go To B2");
+        al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x + 230, 740, 0, "Press S to Go To B4");
     }
 
 

@@ -6,6 +6,7 @@ public:
     static int lives;
     static int hunger;
     static int thirst;
+    static float PositionX; 
     static bool redPotion;
     static bool bluePotion;
     static bool yellowPotion;

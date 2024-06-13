@@ -1,5 +1,5 @@
-#ifndef RESTROOM_HPP
-#define RESTROOM_HPP
+#ifndef ELEVATORB2_HPP
+#define ELEVATORB2_HPP
 
 #include <allegro5/allegro_audio.h>
 #include <allegro5/allegro_font.h>
@@ -19,20 +19,20 @@ namespace Engine {
 	class Sprite;
 }
 extern Maincharacter* MC;
-class RestRoom final : public  Engine::IScene {
+class ElevatorB2 final : public  Engine::IScene {
     private:
         std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE> bgmInstance;
         ALLEGRO_FONT* PoetFont;
-        ALLEGRO_FONT* BIGFont;
+        ALLEGRO_FONT* FloorFont;
     public:
-        explicit RestRoom() = default;
-        //void Draw() const override;
-        //void Update(float deltaTime) override;
+        explicit ElevatorB2() = default;
+        void Draw() const override;
+        void Update(float deltaTime) override;
         void Initialize() override;
         void Terminate() override;
         void OnKeyDown(int keyCode) override;
         void OnKeyUp(int keyCode) override;
-        std::string GetName() const override { return "RestRoom"; }
+        std::string GetName() const override { return "ElevatorB2"; }
 };
 
 
