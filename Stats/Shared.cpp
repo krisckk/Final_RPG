@@ -3,9 +3,9 @@
 int Shared::lives = 3;
 int Shared::hunger = 100;
 int Shared::thirst = 100;
-bool Shared::bluePotion = false;
-bool Shared::redPotion = false;
-bool Shared::yellowPotion = false;
+bool Shared::bluePotion;
+bool Shared::redPotion;
+bool Shared::yellowPotion;
 std::string Shared::previosStage = "";
 std::string Shared::currentStage = "";
 void Shared::SetLives(int value) {

@@ -21,9 +21,15 @@ void Backpack::Initialize(){
     pirulenFont = al_load_font("Resource/fonts/pirulen.ttf", 36, 0);
     ObjectFont=al_load_font("Resource/fonts/PoetsenOne.ttf", 17, 0);
     AddNewObject(new Engine::Image("MCidleStop.png", 600, 300, w / 5, h / 3, 0, 0));
-    AddNewObject(new Engine::Image("Li'sfavorite.png", 913, 390, w / 10, h / 10, 0, 0));
-    AddNewObject(new Engine::Image("heart.png", 920, 300, w / 17, h / 12, 0, 0));
-    AddNewObject(new Engine::Image("water.png", 920, 510, w / 20, h / 12, 0, 0));
+    AddNewObject(new Engine::Image("Li'sfavorite.png", 933, 390, w / 10, h / 10, 0, 0));
+    AddNewObject(new Engine::Image("heart.png", 940, 300, w / 17, h / 12, 0, 0));
+    AddNewObject(new Engine::Image("water.png", 940, 510, w / 20, h / 12, 0, 0));
+    if(Shared::redPotion)
+        AddNewObject(new Engine::Image("UndergroundShelter/B4/StorageRoom/red_water.png", 80, 330, 80, 80, 0, 0));
+    if(Shared::bluePotion)
+        AddNewObject(new Engine::Image("UndergroundShelter/B4/StorageRoom/blue_water.png", 190, 330, 80, 80, 0, 0));
+    if(Shared::yellowPotion)
+        AddNewObject(new Engine::Image("UndergroundShelter/B4/StorageRoom/yellow_water.png", 300, 330, 80, 80, 0, 0));
     bgmInstance = AudioHelper::PlaySample("joannaliaoThemeSong.ogg", true, AudioHelper::BGMVolume); 
     
 }
@@ -46,47 +52,28 @@ void Backpack::Draw() const{
     al_draw_text(ObjectFont, al_map_rgb(255, 255, 255), 340, 605, ALLEGRO_ALIGN_CENTER, "Fe");
     al_draw_rectangle(290, 640, 390, 740, al_map_rgb(255, 255, 255), 2);
     al_draw_text(pirulenFont, al_map_rgb(255, 255, 255), 750, 200, ALLEGRO_ALIGN_CENTER, "Character");
-    al_draw_rectangle(1100, 330, 1400, 370, al_map_rgb(255, 255, 255), 2);
-    al_draw_rectangle(1100, 420, 1400, 460, al_map_rgb(255, 255, 255), 2);
-    al_draw_rectangle(1100, 520, 1400, 560, al_map_rgb(255, 255, 255), 2);
+    al_draw_rounded_rectangle(1100, 330, 1400, 370, 10, 10, al_map_rgb(255, 255, 255), 2);
+    al_draw_filled_rounded_rectangle(1100, 330, 1100 + Shared::lives * 100, 370, 10, 10, al_map_rgb(255, 255, 255));
+    al_draw_rounded_rectangle(1100, 420, 1400, 460, 10, 10, al_map_rgb(255, 255, 255), 2);
+    al_draw_filled_rounded_rectangle(1100, 420, 1100 + Shared::hunger * 3, 460, 10, 10, al_map_rgb(255, 255, 255));
+    al_draw_rounded_rectangle(1100, 520, 1400, 560, 10, 10, al_map_rgb(255, 255, 255), 2);
+    al_draw_filled_rounded_rectangle(1100, 520, 1100 + Shared::thirst * 3, 560, 10, 10, al_map_rgb(255, 255, 255));
 }
 
 void Backpack::Terminate() {
     AudioHelper::StopSample(bgmInstance);
     bgmInstance = std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE>();
-    //delete MC; // Delete the dynamically allocated Maincharacter object
-    /*MC = nullptr; 
-    al_destroy_font(pirulenFont);*/
     al_destroy_font(pirulenFont);
     al_destroy_font(ObjectFont);
     IScene::Terminate();
 }
 
 void Backpack::OnKeyDown(int keyCode){
-    //if(!showTextBox){
     const std::string StageName = Shared::previosStage;
         switch (keyCode) {
             case ALLEGRO_KEY_ESCAPE:
                 Engine::GameEngine::GetInstance().ChangeScene(StageName);
                 break;
-            case ALLEGRO_KEY_A:
-                //MC->MoveLeft(1.0f / 60.0f); // Assuming 60 FPS
-                break;
-            case ALLEGRO_KEY_D:
-               // MC->MoveRight(1.0f / 60.0f);
-                break;
-            case ALLEGRO_KEY_W:
-                //MC->ClimbUp(1.0f / 60.0f);
-                break;
-            case ALLEGRO_KEY_S:
-                //MC->ClimbDown(1.0f / 60.0f);
-                break;
-            case ALLEGRO_KEY_E:
-                break;
-                //if (MC -> Position.x >= 1400 && MC -> Position.x <= 1600)   Engine::GameEngine::GetInstance().ChangeScene("Library");
-            case ALLEGRO_KEY_B:
-                break;
-                //Engine::GameEngine::GetInstance().ChangeScene("Backpack");
             default:
                 break;
         }

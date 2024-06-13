@@ -23,6 +23,20 @@
 [INFO] Game initialized
 [INFO] Game start event loop
 [INFO] stopped audio (sample)
+[INFO] Loaded Resource<font>: Resource/fonts/PoetsenOne.ttf with size 56
+[INFO] Loaded Resource<image>: Resource/images/stage-select/slider.png
+[INFO] Loaded Resource<image>: Resource/images/stage-select/slider-blue.png
+[INFO] Loaded Resource<image>: Resource/images/stage-select/bar.png scaled to 190x4
+[INFO] Loaded Resource<image>: Resource/images/stage-select/end.png
+[INFO] Loaded Resource<font>: Resource/fonts/PoetsenOne.ttf with size 28
+[INFO] Loaded Resource<image>: Resource/images/Blankbackground.png scaled to 130x60
+[INFO] Loaded Resource<image>: Resource/images/Blankbackground.png
+[INFO] Created<sample_instance>: Resource/audios/joannaliaoThemeSong.ogg
+[INFO] Changed to menuSettings scene
+[INFO] stopped audio (sample)
+[INFO] Created<sample_instance>: Resource/audios/joannaliaoThemeSong.ogg
+[INFO] Changed to start scene
+[INFO] stopped audio (sample)
 [INFO] Lab scene create
 [INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/LabGeneralBackground.png scaled to 1600x900
 [INFO] Created<sample_instance>: Resource/audios/joannaliaoThemeSong.ogg
@@ -33,4 +47,18 @@
 [INFO] Changed to Lab scene
 [INFO] stopped audio (sample)
 [INFO] Backpack scene create
+[INFO] Loaded Resource<image>: Resource/images/MCidleStop.png scaled to 320x300
+[INFO] Loaded Resource<image>: Resource/images/Li'sfavorite.png scaled to 160x90
+[INFO] Loaded Resource<image>: Resource/images/heart.png scaled to 94x75
+[INFO] Loaded Resource<image>: Resource/images/water.png scaled to 80x75
+[INFO] Created<sample_instance>: Resource/audios/joannaliaoThemeSong.ogg
 [INFO] Changed to Backpack scene
+[INFO] Game Terminating...
+[INFO] stopped audio (sample)
+[INFO] Game terminated
+[INFO] Game end
+[INFO] Game Initializing...
+[INFO] Loaded window icon from: icon.png
+[INFO] There are total 3 supported mouse buttons
+[INFO] Allegro5 initialized
+[INFO] Game begin

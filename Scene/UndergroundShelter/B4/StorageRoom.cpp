@@ -32,7 +32,9 @@
 #include "LabScene.hpp"
 #include "StorageRoom.hpp"
 #include "Stats/Shared.hpp"
-
+bool StorageRoom::Red_potion = false;
+bool StorageRoom::Blue_potion = false;
+bool StorageRoom::Yellow_potion = false;
 
 void StorageRoom::Initialize(){
     int w = Engine::GameEngine::GetInstance().GetScreenSize().x;
@@ -42,9 +44,6 @@ void StorageRoom::Initialize(){
     Engine::LOG(Engine::INFO) << "StorageRoom scene create";
     PoetFont = al_load_font("Resource/fonts/PoetsenOne.ttf", 30, 0);
     BIGFont = al_load_font("Resource/fonts/PoetsenOne.ttf", 150, 0);
-    Red_potion = false;
-    Blue_potion = false;
-    Yellow_potion = false;
     AddNewObject(new Engine::Image("UndergroundShelter/LabGeneralBackground.png", 0, 0, w, h, 0, 0));
     AddNewObject(new Engine::Image("UndergroundShelter/LabGeneralBackgroundPlatform.png", 0, h - 520, w, 60, 0, 0));
     AddNewObject(new Engine::Image("UndergroundShelter/B4/Library/ladder.png", 490, h - 540, 160, 460, 0, 0));
