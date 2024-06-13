@@ -20,10 +20,10 @@ void Backpack::Initialize(){
     Engine::LOG(Engine::INFO) << "Backpack scene create";
     pirulenFont = al_load_font("Resource/fonts/pirulen.ttf", 36, 0);
     ObjectFont=al_load_font("Resource/fonts/PoetsenOne.ttf", 17, 0);
-    //AddNewObject(new Engine::Image("UndergroundShelter/LabGeneralBackground.png", 0, 0, w, h, 0, 0));
-    //AddNewObject(new Engine::Image("UndergroundShelter/LabGeneralBackgroundPlatform.png", 0, h - 520, w, 60, 0, 0));
-    //bgmInstance = AudioHelper::PlaySample("joannaliaoThemeSong.ogg", true, AudioHelper::BGMVolume);
-    //AddNewObject(new Engine::Image("2Ddooropened.jpg", 0, h - 450, 200, 360, 0.5, 0));
+    AddNewObject(new Engine::Image("MCidleStop.png", 600, 300, w / 5, h / 3, 0, 0));
+    AddNewObject(new Engine::Image("Li'sfavorite.png", 913, 390, w / 10, h / 10, 0, 0));
+    AddNewObject(new Engine::Image("heart.png", 920, 300, w / 17, h / 12, 0, 0));
+    AddNewObject(new Engine::Image("water.png", 920, 510, w / 20, h / 12, 0, 0));
     bgmInstance = AudioHelper::PlaySample("joannaliaoThemeSong.ogg", true, AudioHelper::BGMVolume); 
     
 }
