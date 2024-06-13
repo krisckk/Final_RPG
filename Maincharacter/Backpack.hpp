@@ -13,7 +13,6 @@
 
 class Backpack final : public  Engine::IScene {
     private:
-        std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE> bgmInstance;
         ALLEGRO_FONT* pirulenFont;
         ALLEGRO_FONT* ObjectFont;
     public:

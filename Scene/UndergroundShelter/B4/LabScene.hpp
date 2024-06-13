@@ -21,14 +21,11 @@ namespace Engine {
 } 
 class LabScene final : public Engine::IScene {
 private:
-	std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE> bgmInstance;
 	bool showTextBox = true; // Flag to control the visibility of the text box
     float textBoxTimer = 0.0f; // Timer to track the elapsed time
 	ALLEGRO_FONT* pirulenFont;
 	ALLEGRO_FONT* PoetFont;
 	ALLEGRO_FONT* ParasiteFont;
-	//std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE> deathBGMInstance;
-
 public:
 	explicit LabScene() = default;
 	void Draw() const override;

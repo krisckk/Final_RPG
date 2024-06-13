@@ -45,7 +45,6 @@ void LabScene::Initialize(){
     Engine::LOG(Engine::INFO) << "Lab scene create";
     //al_draw_text(PoetFont2, al_map_rgb(255, 255, 255), 700, 100, ALLEGRO_ALIGN_CENTER, "Seeds 001");
     AddNewObject(new Engine::Image("UndergroundShelter/LabGeneralBackground.png", 0, 0, w, h, 0, 0));
-    bgmInstance = AudioHelper::PlaySample("joannaliaoThemeSong.ogg", true, AudioHelper::BGMVolume);
     AddNewObject(new Engine::Image("UndergroundShelter/B4/LabScene/tankwithPeople.png", 50, h - 450, 200, 360, 0, 0));
     AddNewObject(new Engine::Image("UndergroundShelter/B4/LabScene/tankwithoutPeople.png", 300, h - 450, 200, 360, 0, 0));
     AddNewObject(new Engine::Image("UndergroundShelter/B4/LabScene/tankwithPeople.png", 550, h - 450, 200, 360, 0, 0));
@@ -84,9 +83,6 @@ void LabScene::Draw() const{
     }
 }
 void LabScene::Terminate() {
-    AudioHelper::StopSample(bgmInstance);
-    bgmInstance = std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE>();
-    //delete MC; // Delete the dynamically allocated Maincharacter object
     MC = nullptr; 
     al_destroy_font(pirulenFont);
     IScene::Terminate();

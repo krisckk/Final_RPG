@@ -35,7 +35,7 @@ void StartScene::Initialize() {
     btn = new Engine::ImageButton("lose/settings_unhover.png", "lose/settings_hovered.png", halfW / 2 - 250, halfH / 2 + 250, 290, 30, 0, 0);
     btn->SetOnClickCallback(std::bind(&StartScene::SettingsOnClick, this, 1));
     AddNewControlObject(btn);
-    bgmInstance = AudioHelper::PlaySample("joannaliaoThemeSong.ogg", true, AudioHelper::BGMVolume);
+    bgmInstance = AudioHelper::PlaySample("Time.ogg", true, AudioHelper::BGMVolume);
 }
 
 void StartScene::Terminate() {

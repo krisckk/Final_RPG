@@ -36,7 +36,7 @@ void MenuSettings::Initialize() {
     btn = new Engine::ImageButton("Blankbackground.png", "Blankbackground.png", halfW - 65, 635, 130, 60);
     btn->SetOnClickCallback(std::bind(&MenuSettings::BackOnClick, this, 1));
     AddNewControlObject(btn);
-    bgmInstance = AudioHelper::PlaySample("joannaliaoThemeSong.ogg", true, AudioHelper::BGMVolume);
+    bgmInstance = AudioHelper::PlaySample("Intestellar.ogg", true, AudioHelper::BGMVolume);
 }
 void MenuSettings::Terminate() {
     AudioHelper::StopSample(bgmInstance);

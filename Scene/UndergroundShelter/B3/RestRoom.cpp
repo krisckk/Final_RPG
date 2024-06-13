@@ -41,11 +41,8 @@ void RestRoom::Initialize(){
     }
     MC->groundY = h - 100; // Set the ground level
     AddNewObject(MC);
-    bgmInstance = AudioHelper::PlaySample("joannaliaoThemeSong.ogg", true, AudioHelper::BGMVolume);
 }
 void RestRoom::Terminate(){
-    AudioHelper::StopSample(bgmInstance);
-    bgmInstance = std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE>();
     MC = nullptr; 
     al_destroy_font(PoetFont);
     al_destroy_font(BIGFont);

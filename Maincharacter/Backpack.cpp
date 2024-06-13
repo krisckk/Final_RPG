@@ -30,8 +30,6 @@ void Backpack::Initialize(){
         AddNewObject(new Engine::Image("UndergroundShelter/B4/StorageRoom/blue_water.png", 190, 330, 80, 80, 0, 0));
     if(Shared::yellowPotion)
         AddNewObject(new Engine::Image("UndergroundShelter/B4/StorageRoom/yellow_water.png", 300, 330, 80, 80, 0, 0));
-    bgmInstance = AudioHelper::PlaySample("joannaliaoThemeSong.ogg", true, AudioHelper::BGMVolume); 
-    
 }
 
 void Backpack::Draw() const{
@@ -61,8 +59,6 @@ void Backpack::Draw() const{
 }
 
 void Backpack::Terminate() {
-    AudioHelper::StopSample(bgmInstance);
-    bgmInstance = std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE>();
     al_destroy_font(pirulenFont);
     al_destroy_font(ObjectFont);
     IScene::Terminate();

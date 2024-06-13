@@ -20,7 +20,6 @@ namespace Engine {
 extern Maincharacter* MC;
 class LibraryScene final : public  Engine::IScene {
     private:
-        std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE> bgmInstance;
         ALLEGRO_FONT* PoetFont;
         ALLEGRO_FONT* BIGFont;
         ALLEGRO_BITMAP* Passwordnote;

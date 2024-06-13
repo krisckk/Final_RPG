@@ -21,7 +21,6 @@ namespace Engine {
 extern Maincharacter* MC;
 class StorageRoom final : public  Engine::IScene {
     private:
-        std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE> bgmInstance;
         ALLEGRO_FONT* PoetFont;
         ALLEGRO_FONT* BIGFont;
         static bool Red_potion;

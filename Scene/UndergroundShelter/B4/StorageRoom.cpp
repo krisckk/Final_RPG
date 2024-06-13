@@ -66,7 +66,6 @@ void StorageRoom::Initialize(){
             AddNewObject(new Engine::Image("UndergroundShelter/B4/StorageRoom/yellow_water.png", 1060 + i * 70, h - 315 + j * 51, 60, 40, 0.5, 0));
         }
     }
-    bgmInstance = AudioHelper::PlaySample("joannaliaoThemeSong.ogg", true, AudioHelper::BGMVolume);
     MC = new Maincharacter("MCRightStop.png", 80, 680, 32, 200);
     if (!MC) {
         Engine::LOG(Engine::ERROR) << "Failed to create Maincharacter object";
@@ -77,8 +76,6 @@ void StorageRoom::Initialize(){
 }
 
 void StorageRoom::Terminate() {
-    AudioHelper::StopSample(bgmInstance);
-    bgmInstance = std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE>();
     MC = nullptr; 
     IScene::Terminate();
 }

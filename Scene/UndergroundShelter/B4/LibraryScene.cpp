@@ -50,7 +50,6 @@ void LibraryScene::Initialize(){
     AddNewObject(new Engine::Image("UndergroundShelter/B4/Library/bookshelf.png", 1300, 80, 300, 300, 0, 0));
     AddNewObject(new Engine::Image("UndergroundShelter/B4/Library/stickynotes.png", 1000, 180, 50, 50));
     AddNewObject(new Engine::Image("UndergroundShelter/B4/Library/WaterFountain.png", 100, 95, 180, 300, 0, 0));
-    bgmInstance = AudioHelper::PlaySample("joannaliaoThemeSong.ogg", true, AudioHelper::BGMVolume);
     AddNewObject(new Engine::Image("2Ddooropened.png", 0, h - 460, 200, 360, 0.5, 0));
     AddNewObject(new Engine::Image("UndergroundShelter/B4/Library/Computer.png", 650, h - 300, 100, 100, 0, 0));
     AddNewObject(new Engine::Image("UndergroundShelter/B4/Library/ComputerDesk.png", 600, h - 200, 200, 100, 0, 0));
@@ -66,8 +65,6 @@ void LibraryScene::Initialize(){
 }
 
 void LibraryScene::Terminate() {
-    AudioHelper::StopSample(bgmInstance);
-    bgmInstance = std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE>();
     MC = nullptr; 
     IScene::Terminate();
 }
