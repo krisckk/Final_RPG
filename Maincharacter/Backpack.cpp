@@ -24,32 +24,31 @@ void Backpack::Initialize(){
     //AddNewObject(new Engine::Image("UndergroundShelter/LabGeneralBackgroundPlatform.png", 0, h - 520, w, 60, 0, 0));
     //bgmInstance = AudioHelper::PlaySample("joannaliaoThemeSong.ogg", true, AudioHelper::BGMVolume);
     //AddNewObject(new Engine::Image("2Ddooropened.jpg", 0, h - 450, 200, 360, 0.5, 0));
-    bgmInstance = AudioHelper::PlaySample("joannaliaoThemeSong.ogg", true, AudioHelper::BGMVolume);
+    bgmInstance = AudioHelper::PlaySample("joannaliaoThemeSong.ogg", true, AudioHelper::BGMVolume); 
     
 }
 
 void Backpack::Draw() const{
     IScene::Draw();
     al_draw_text(pirulenFont, al_map_rgb(255, 255, 255), 150, 200, ALLEGRO_ALIGN_CENTER, "Object");
-    al_draw_rectangle(70, 320, 170, 420,  al_map_rgb(255, 255, 255),2);
-    al_draw_rectangle(180, 320, 280, 420,  al_map_rgb(255, 255, 255),2);
-    al_draw_rectangle(290, 320, 390, 420,  al_map_rgb(255, 255, 255),2);
-
-
-    al_draw_rectangle(70, 500, 170, 600,  al_map_rgb(255, 255, 255),2);
+    al_draw_rectangle(70, 320, 170, 420, al_map_rgb(255, 255, 255), 2);
+    al_draw_rectangle(180, 320, 280, 420, al_map_rgb(255, 255, 255), 2);
+    al_draw_rectangle(290, 320, 390, 420, al_map_rgb(255, 255, 255), 2);
+    al_draw_rectangle(70, 500, 170, 600, al_map_rgb(255, 255, 255), 2);
     al_draw_text(ObjectFont, al_map_rgb(255, 255, 255), 120, 605, ALLEGRO_ALIGN_CENTER, "75% Oil");
-    al_draw_rectangle(70, 640, 170, 740,  al_map_rgb(255, 255, 255),2);
-    al_draw_text(ObjectFont, al_map_rgb(255, 255, 255), 120,745, ALLEGRO_ALIGN_CENTER, "95% Oil");
-    al_draw_rectangle(180, 500, 280, 600,  al_map_rgb(255, 255, 255),2);
+    al_draw_rectangle(70, 640, 170, 740, al_map_rgb(255, 255, 255), 2);
+    al_draw_text(ObjectFont, al_map_rgb(255, 255, 255), 120, 745, ALLEGRO_ALIGN_CENTER, "95% Oil");
+    al_draw_rectangle(180, 500, 280, 600, al_map_rgb(255, 255, 255), 2);
     al_draw_text(ObjectFont, al_map_rgb(255, 255, 255), 230, 605, ALLEGRO_ALIGN_CENTER, "Au");
-    al_draw_rectangle(180, 640, 280, 740,  al_map_rgb(255, 255, 255),2);
+    al_draw_rectangle(180, 640, 280, 740, al_map_rgb(255, 255, 255), 2);
     al_draw_text(ObjectFont, al_map_rgb(255, 255, 255), 230, 745, ALLEGRO_ALIGN_CENTER, "Al");
-    al_draw_rectangle(290, 500, 390, 600,  al_map_rgb(255, 255, 255),2);
+    al_draw_rectangle(290, 500, 390, 600, al_map_rgb(255, 255, 255), 2);
     al_draw_text(ObjectFont, al_map_rgb(255, 255, 255), 340, 605, ALLEGRO_ALIGN_CENTER, "Fe");
-    al_draw_rectangle(290, 640, 390, 740,  al_map_rgb(255, 255, 255),2);
-    
-
+    al_draw_rectangle(290, 640, 390, 740, al_map_rgb(255, 255, 255), 2);
     al_draw_text(pirulenFont, al_map_rgb(255, 255, 255), 750, 200, ALLEGRO_ALIGN_CENTER, "Character");
+    al_draw_rectangle(1100, 330, 1400, 370, al_map_rgb(255, 255, 255), 2);
+    al_draw_rectangle(1100, 420, 1400, 460, al_map_rgb(255, 255, 255), 2);
+    al_draw_rectangle(1100, 520, 1400, 560, al_map_rgb(255, 255, 255), 2);
 
     /*al_draw_text(ParasiteFont, al_map_rgb(54, 100, 139), 150, 470, ALLEGRO_ALIGN_CENTER, "Seeds 000");
     al_draw_text(ParasiteFont, al_map_rgb(54, 100, 139), 400, 470, ALLEGRO_ALIGN_CENTER, "Seeds 001");
