@@ -31,6 +31,7 @@
 #include "LibraryScene.hpp"
 #include "LabScene.hpp"
 #include "StorageRoom.hpp"
+#include "ElevatorB4.hpp"
 #include "Stats/Shared.hpp"
 bool StorageRoom::Red_potion = false;
 bool StorageRoom::Blue_potion = false;
@@ -144,6 +145,7 @@ void StorageRoom::OnKeyDown(int keyCode){
             break;
         case ALLEGRO_KEY_E:
             if (MC -> Position.x <= 5) Engine::GameEngine::GetInstance().ChangeScene("Library");
+            if (MC -> Position.x >= 1280 && MC -> Position.x <= 1500) Engine::GameEngine::GetInstance().ChangeScene("ElevatorB4");
             if(Red_potion) Shared::redPotion = true;
             if(Blue_potion) Shared::bluePotion = true;
             if(Yellow_potion) Shared::yellowPotion = true;
