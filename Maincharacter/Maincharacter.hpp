@@ -14,9 +14,6 @@ class Maincharacter : public Engine::Sprite {
 protected:
     float speed;
     float jumpSpeed;
-    int Lives = 3;
-    int Hunger = 100;
-    int Thirst = 100;
     Animation idleAnimation;
     Animation LeftwalkAnimation;
     Animation RightwalkAnimation;
@@ -24,7 +21,7 @@ protected:
     Animation* currentAnimation;
 
 public:
-    Maincharacter(std::string img, float x, float y, float radius, float speed, int Lives, int Hunger, int Thirst);
+    Maincharacter(std::string img, float x, float y, float radius, float speed);
     int groundY;
     void Update(float deltaTime) override;
     void Draw() const override;

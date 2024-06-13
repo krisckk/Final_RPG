@@ -23,20 +23,6 @@
 [INFO] Game initialized
 [INFO] Game start event loop
 [INFO] stopped audio (sample)
-[INFO] Loaded Resource<font>: Resource/fonts/PoetsenOne.ttf with size 56
-[INFO] Loaded Resource<image>: Resource/images/stage-select/slider.png
-[INFO] Loaded Resource<image>: Resource/images/stage-select/slider-blue.png
-[INFO] Loaded Resource<image>: Resource/images/stage-select/bar.png scaled to 190x4
-[INFO] Loaded Resource<image>: Resource/images/stage-select/end.png
-[INFO] Loaded Resource<font>: Resource/fonts/PoetsenOne.ttf with size 28
-[INFO] Loaded Resource<image>: Resource/images/Blankbackground.png scaled to 130x60
-[INFO] Loaded Resource<image>: Resource/images/Blankbackground.png
-[INFO] Created<sample_instance>: Resource/audios/joannaliaoThemeSong.ogg
-[INFO] Changed to menuSettings scene
-[INFO] stopped audio (sample)
-[INFO] Created<sample_instance>: Resource/audios/joannaliaoThemeSong.ogg
-[INFO] Changed to start scene
-[INFO] stopped audio (sample)
 [INFO] Lab scene create
 [INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/LabGeneralBackground.png scaled to 1600x900
 [INFO] Created<sample_instance>: Resource/audios/joannaliaoThemeSong.ogg
@@ -46,25 +32,5 @@
 [INFO] Loaded Resource<image>: Resource/images/MCRightStop.png
 [INFO] Changed to Lab scene
 [INFO] stopped audio (sample)
-[INFO] Library scene create
-[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/LabGeneralBackgroundPlatform.png scaled to 1600x60
-[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/B4/Library/ladder.png scaled to 160x460
-[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/B4/Library/bookshelf.png scaled to 400x300
-[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/B4/Library/bookshelf.png scaled to 300x300
-[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/B4/Library/stickynotes.png scaled to 50x50
-[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/B4/Library/WaterFountain.png scaled to 180x300
-[INFO] Created<sample_instance>: Resource/audios/joannaliaoThemeSong.ogg
-[INFO] Loaded Resource<image>: Resource/images/2Ddooropened.png scaled to 200x360
-[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/B4/Library/Computer.png scaled to 100x100
-[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/B4/Library/ComputerDesk.png scaled to 200x100
-[INFO] Loaded Resource<image>: Resource/images/2Ddoorclosed.png scaled to 300x360
-[INFO] Changed to Library scene
-[INFO] Game Terminating...
-[INFO] stopped audio (sample)
-[INFO] Game terminated
-[INFO] Game end
-[INFO] Game Initializing...
-[INFO] Loaded window icon from: icon.png
-[INFO] There are total 3 supported mouse buttons
-[INFO] Allegro5 initialized
-[INFO] Game begin
+[INFO] Backpack scene create
+[INFO] Changed to Backpack scene

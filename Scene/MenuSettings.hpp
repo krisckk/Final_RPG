@@ -17,6 +17,7 @@ class MenuSettings final : public Engine::IScene {
         void BGMSlideOnValueChanged(float value);
         void SFXSlideOnValueChanged(float value);
 	    void BackOnClick(int stage);
+        std::string GetName() const override { return "menuSettings"; }
 };
 
 #endif

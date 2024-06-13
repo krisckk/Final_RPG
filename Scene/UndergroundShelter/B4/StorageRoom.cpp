@@ -64,7 +64,7 @@ void StorageRoom::Initialize(){
         }
     }
     bgmInstance = AudioHelper::PlaySample("joannaliaoThemeSong.ogg", true, AudioHelper::BGMVolume);
-    MC = new Maincharacter("MCRightStop.png", 80, 680, 32, 100, 3, 100, 100);
+    MC = new Maincharacter("MCRightStop.png", 80, 680, 32, 100);
     if (!MC) {
         Engine::LOG(Engine::ERROR) << "Failed to create Maincharacter object";
         return;

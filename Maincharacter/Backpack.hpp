@@ -23,6 +23,7 @@ class Backpack final : public  Engine::IScene {
         void Initialize() override;
         void Terminate() override;
         void OnKeyDown(int keyCode) override;
+        std::string GetName() const override { return "Backpack"; }
         //void OnKeyUp(int keyCode) override;
 };
 

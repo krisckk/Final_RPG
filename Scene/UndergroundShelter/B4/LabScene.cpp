@@ -53,7 +53,7 @@ void LabScene::Initialize(){
     AddNewObject(new Engine::Image("UndergroundShelter/B4/LabScene/tankwithPeople.png", 1100, h - 450, 200, 360, 0, 0));
     AddNewObject(new Engine::Image("2Ddooropened.png", 1300, h - 460, 300, 360, 0, 0));
 
-    MC = new Maincharacter("MCRightStop.png", 80, 680, 32, 100, 3, 100, 100);
+    MC = new Maincharacter("MCRightStop.png", 80, 680, 32, 100);
     if (!MC) {
         Engine::LOG(Engine::ERROR) << "Failed to create Maincharacter object";
         return;

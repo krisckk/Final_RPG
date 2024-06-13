@@ -42,6 +42,8 @@ namespace Engine {
 		/// Delegate the draw event to all visible objects.
 		/// </summary>
 		void Draw() const override;
+
+		virtual std::string GetName() const = 0;
 	};
 }
 #endif // ISCENE_HPP

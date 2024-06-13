@@ -14,8 +14,8 @@
 #include "Engine/LOG.hpp"
 #include "Maincharacter.hpp"
 bool isGrounded;
-Maincharacter::Maincharacter(std::string img, float x, float y, float radius, float speed, int Lives, int Hunger, int Thirst)
-    : Engine::Sprite(img, x, y), speed(speed), Lives(Lives), Hunger(Hunger), Thirst(Thirst),
+Maincharacter::Maincharacter(std::string img, float x, float y, float radius, float speed)
+    : Engine::Sprite(img, x, y), speed(speed),
       idleAnimation({al_load_bitmap("Resource/Images/MCidleStop.png")}, 0.2f),
       RightwalkAnimation({al_load_bitmap("Resource/Images/MCRightMove1.png"), al_load_bitmap("Resource/Images/MCRightMove2.png")}, 0.2f),
       LeftwalkAnimation({al_load_bitmap("Resource/Images/MCLeftMove1.png"), al_load_bitmap("Resource/Images/MCLeftMove2.png")}, 0.1f),

@@ -23,20 +23,6 @@
 [INFO] Game initialized
 [INFO] Game start event loop
 [INFO] stopped audio (sample)
-[INFO] Loaded Resource<font>: Resource/fonts/PoetsenOne.ttf with size 56
-[INFO] Loaded Resource<image>: Resource/images/stage-select/slider.png
-[INFO] Loaded Resource<image>: Resource/images/stage-select/slider-blue.png
-[INFO] Loaded Resource<image>: Resource/images/stage-select/bar.png scaled to 190x4
-[INFO] Loaded Resource<image>: Resource/images/stage-select/end.png
-[INFO] Loaded Resource<font>: Resource/fonts/PoetsenOne.ttf with size 28
-[INFO] Loaded Resource<image>: Resource/images/Blankbackground.png scaled to 130x60
-[INFO] Loaded Resource<image>: Resource/images/Blankbackground.png
-[INFO] Created<sample_instance>: Resource/audios/joannaliaoThemeSong.ogg
-[INFO] Changed to menuSettings scene
-[INFO] stopped audio (sample)
-[INFO] Created<sample_instance>: Resource/audios/joannaliaoThemeSong.ogg
-[INFO] Changed to start scene
-[INFO] stopped audio (sample)
 [INFO] Lab scene create
 [INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/LabGeneralBackground.png scaled to 1600x900
 [INFO] Created<sample_instance>: Resource/audios/joannaliaoThemeSong.ogg
@@ -59,19 +45,14 @@
 [INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/B4/Library/ComputerDesk.png scaled to 200x100
 [INFO] Loaded Resource<image>: Resource/images/2Ddoorclosed.png scaled to 300x360
 [INFO] Changed to Library scene
-[INFO] Key pressed: 5
-[INFO] Key pressed: 3
-[INFO] Key pressed: 4
-[INFO] Key pressed: 0
-[INFO] The door is open
 [INFO] stopped audio (sample)
-[INFO] StorageRoom scene create
-[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/B4/StorageRoom/shelf.png scaled to 300x200
-[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/B4/StorageRoom/red_water.png scaled to 60x40
-[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/B4/StorageRoom/blue_water.png scaled to 60x40
-[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/B4/StorageRoom/yellow_water.png scaled to 60x40
+[INFO] Backpack scene create
 [INFO] Created<sample_instance>: Resource/audios/joannaliaoThemeSong.ogg
-[INFO] Changed to StorageRoom scene
+[INFO] Changed to Backpack scene
+[INFO] stopped audio (sample)
+[INFO] Library scene create
+[INFO] Created<sample_instance>: Resource/audios/joannaliaoThemeSong.ogg
+[INFO] Changed to Library scene
 [INFO] Game Terminating...
 [INFO] stopped audio (sample)
 [INFO] Game terminated

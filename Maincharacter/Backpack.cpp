@@ -10,6 +10,7 @@
 #include "Engine/LOG.hpp"
 #include "Engine/Resources.hpp"
 #include "Engine/Sprite.hpp"
+#include "Stats/Shared.hpp"
 
 void Backpack::Initialize(){
     int w = Engine::GameEngine::GetInstance().GetScreenSize().x;
@@ -23,7 +24,7 @@ void Backpack::Initialize(){
     //AddNewObject(new Engine::Image("UndergroundShelter/LabGeneralBackgroundPlatform.png", 0, h - 520, w, 60, 0, 0));
     //bgmInstance = AudioHelper::PlaySample("joannaliaoThemeSong.ogg", true, AudioHelper::BGMVolume);
     //AddNewObject(new Engine::Image("2Ddooropened.jpg", 0, h - 450, 200, 360, 0.5, 0));
-    
+    bgmInstance = AudioHelper::PlaySample("joannaliaoThemeSong.ogg", true, AudioHelper::BGMVolume);
     
 }
 
@@ -65,14 +66,18 @@ void Backpack::Terminate() {
     //delete MC; // Delete the dynamically allocated Maincharacter object
     /*MC = nullptr; 
     al_destroy_font(pirulenFont);*/
-
+    al_destroy_font(pirulenFont);
+    al_destroy_font(ObjectFont);
     IScene::Terminate();
 }
 
 void Backpack::OnKeyDown(int keyCode){
     //if(!showTextBox){
-    
+    const std::string StageName = Shared::previosStage;
         switch (keyCode) {
+            case ALLEGRO_KEY_ESCAPE:
+                Engine::GameEngine::GetInstance().ChangeScene(StageName);
+                break;
             case ALLEGRO_KEY_A:
                 //MC->MoveLeft(1.0f / 60.0f); // Assuming 60 FPS
                 break;
@@ -86,8 +91,10 @@ void Backpack::OnKeyDown(int keyCode){
                 //MC->ClimbDown(1.0f / 60.0f);
                 break;
             case ALLEGRO_KEY_E:
+                break;
                 //if (MC -> Position.x >= 1400 && MC -> Position.x <= 1600)   Engine::GameEngine::GetInstance().ChangeScene("Library");
             case ALLEGRO_KEY_B:
+                break;
                 //Engine::GameEngine::GetInstance().ChangeScene("Backpack");
             default:
                 break;

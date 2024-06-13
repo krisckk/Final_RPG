@@ -12,6 +12,7 @@ class Computer final : public Engine::IScene {
         explicit Computer() = default;
         void Initialize() override;
         void Terminate() override;
+        std::string GetName() const override { return "Computer"; }
         //void SettingsOnClick(int stage);
         //void NewgameOnClick(int stage);
 };

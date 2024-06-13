@@ -17,6 +17,7 @@
 #include "LOG.hpp"
 #include "Point.hpp"
 #include "Resources.hpp"
+#include "Stats/Shared.hpp"
 
 namespace Engine {
 	void GameEngine::initAllegro5() {
@@ -184,8 +185,10 @@ namespace Engine {
 		if (scenes.count(name) == 0)
 			throw std::invalid_argument("Cannot change to a unknown scene.");
 		// Terminate the old scene.
+		Shared::previosStage = activeScene ->GetName();
 		activeScene->Terminate();
 		activeScene = scenes[name];
+		Shared::currentStage = name;
 		// Release unused resources.
 		if (freeMemoryOnSceneChanged)
 			Resources::GetInstance().ReleaseUnused();

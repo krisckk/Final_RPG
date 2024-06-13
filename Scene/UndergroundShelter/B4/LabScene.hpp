@@ -38,6 +38,7 @@ public:
 	void Terminate() override;
 	void OnKeyDown(int keyCode) override;
 	void OnKeyUp(int keyCode) override;
+	std::string GetName() const override { return "Lab"; }
 };
 
 #endif //LABSCENE_HPP

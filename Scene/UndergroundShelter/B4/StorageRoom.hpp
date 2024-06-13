@@ -32,6 +32,7 @@ class StorageRoom final : public  Engine::IScene {
         void Terminate() override;
         void OnKeyDown(int keyCode) override;
         void OnKeyUp(int keyCode) override;
+        std::string GetName() const override { return "StorageRoom"; }
 };
 
 
