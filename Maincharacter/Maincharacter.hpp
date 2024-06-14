@@ -13,14 +13,14 @@
 class Maincharacter : public Engine::Sprite {
 protected:
     float speed;
-    float jumpSpeed;
     Animation idleAnimation;
     Animation LeftwalkAnimation;
     Animation RightwalkAnimation;
     Animation ClimbAnimation;
     Animation* currentAnimation;
-
+    
 public:
+    static bool isDead;
     Maincharacter(std::string img, float x, float y, float radius, float speed);
     int groundY;
     void Update(float deltaTime) override;

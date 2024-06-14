@@ -93,28 +93,35 @@ void StorageRoom::Draw() const{
         al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x + 250, 740, 0, "Go Back");
     }
     if (MC -> Position.x >= 150 && MC -> Position.x <= 340){
-        al_draw_filled_triangle(MC -> Position.x + 200, 700, MC -> Position.x + 200, 740, MC -> Position.x + 170, 720, al_map_rgb(255, 255, 255));
-        al_draw_filled_rounded_rectangle(MC -> Position.x + 200, 680, MC -> Position.x + 500, 800, 10, 10, al_map_rgb(255, 255, 255));
-        al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x + 250, 700, 0, "Press E to Get");
-        al_draw_text(PoetFont, al_map_rgb(200, 0, 0), MC -> Position.x + 250, 740, 0, "Red Potion");
+        
+        if(!Shared::redPotion){
+            al_draw_filled_triangle(MC -> Position.x + 200, 700, MC -> Position.x + 200, 740, MC -> Position.x + 170, 720, al_map_rgb(255, 255, 255));
+            al_draw_filled_rounded_rectangle(MC -> Position.x + 200, 680, MC -> Position.x + 500, 800, 10, 10, al_map_rgb(255, 255, 255));
+            al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x + 250, 700, 0, "Press E to Get");
+            al_draw_text(PoetFont, al_map_rgb(200, 0, 0), MC -> Position.x + 250, 740, 0, "Red Potion");
+        }
         Red_potion = true;
         Blue_potion = false;
         Yellow_potion = false;
     }
     else if (MC -> Position.x >= 640 && MC -> Position.x <= 830){
-        al_draw_filled_triangle(MC -> Position.x - 55, 700, MC -> Position.x - 55, 740, MC -> Position.x - 10, 720, al_map_rgb(255, 255, 255));
-        al_draw_filled_rounded_rectangle(MC -> Position.x - 350, 680, MC -> Position.x - 50, 800, 10, 10, al_map_rgb(255, 255, 255));
-        al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x - 310, 700, 0, "Press E to Get");
-        al_draw_text(PoetFont, al_map_rgb(0, 0, 200), MC -> Position.x - 310, 740, 0, "Blue Potion");
+        if(!Shared::bluePotion){
+            al_draw_filled_triangle(MC -> Position.x - 55, 700, MC -> Position.x - 55, 740, MC -> Position.x - 10, 720, al_map_rgb(255, 255, 255));
+            al_draw_filled_rounded_rectangle(MC -> Position.x - 350, 680, MC -> Position.x - 50, 800, 10, 10, al_map_rgb(255, 255, 255));
+            al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x - 320, 700, 0, "Press E to Get");
+            al_draw_text(PoetFont, al_map_rgb(0, 0, 200), MC -> Position.x - 320, 740, 0, "Blue Potion");
+        }
         Red_potion = false;
         Blue_potion = true;
         Yellow_potion = false;
     }
     else if (MC -> Position.x >= 960 && MC -> Position.x <= 1150){
-        al_draw_filled_triangle(MC -> Position.x - 55, 700, MC -> Position.x - 55, 740, MC -> Position.x - 10, 720, al_map_rgb(255, 255, 255));
-        al_draw_filled_rounded_rectangle(MC -> Position.x - 350, 680, MC -> Position.x - 50, 800, 10, 10, al_map_rgb(255, 255, 255));
-        al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x - 310, 700, 0, "Press E to Get");
-        al_draw_text(PoetFont, al_map_rgb(200, 200, 0), MC -> Position.x - 310, 740, 0, "Yellow Potion");
+        if(!Shared::yellowPotion){
+            al_draw_filled_triangle(MC -> Position.x - 55, 700, MC -> Position.x - 55, 740, MC -> Position.x - 10, 720, al_map_rgb(255, 255, 255));
+            al_draw_filled_rounded_rectangle(MC -> Position.x - 350, 680, MC -> Position.x - 50, 800, 10, 10, al_map_rgb(255, 255, 255));
+            al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x - 320, 700, 0, "Press E to Get");
+            al_draw_text(PoetFont, al_map_rgb(200, 200, 0), MC -> Position.x - 320, 740, 0, "Yellow Potion");
+        }
         Red_potion = false;
         Blue_potion = false;
         Yellow_potion = true;
@@ -127,7 +134,7 @@ void StorageRoom::Draw() const{
     if (MC -> Position.x >= 1280 && MC -> Position.x <= 1500){
         al_draw_filled_triangle(MC -> Position.x - 55, 700, MC -> Position.x - 55, 740, MC -> Position.x - 10, 720, al_map_rgb(255, 255, 255));
         al_draw_filled_rounded_rectangle(MC -> Position.x - 350, 680, MC -> Position.x - 50, 800, 10, 10, al_map_rgb(255, 255, 255));
-        al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x - 310, 710, 0, "Press E to Enter");
+        al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x - 320, 710, 0, "Press E to Enter");
     }
 
 }
@@ -143,9 +150,21 @@ void StorageRoom::OnKeyDown(int keyCode){
         case ALLEGRO_KEY_E:
             if (MC -> Position.x <= 5) Engine::GameEngine::GetInstance().ChangeScene("Library");
             if (MC -> Position.x >= 1280 && MC -> Position.x <= 1500) Engine::GameEngine::GetInstance().ChangeScene("ElevatorB4");
-            if(Red_potion) Shared::redPotion = true;
-            if(Blue_potion) Shared::bluePotion = true;
-            if(Yellow_potion) Shared::yellowPotion = true;
+            if(Red_potion) {
+                Shared::redPotion = true;
+                Shared::bluePotion = false;
+                Shared::yellowPotion = false;
+            }
+            if(Blue_potion) {
+                Shared::bluePotion = true;
+                Shared::redPotion = false;
+                Shared::yellowPotion = false;
+            }
+            if(Yellow_potion) {
+                Shared::yellowPotion = true;
+                Shared::redPotion = false;
+                Shared::bluePotion = false;
+            }
             break;
         case ALLEGRO_KEY_B:
                 Engine::GameEngine::GetInstance().ChangeScene("Backpack");

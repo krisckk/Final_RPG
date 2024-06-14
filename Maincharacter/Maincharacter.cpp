@@ -14,13 +14,14 @@
 #include "Engine/LOG.hpp"
 #include "Maincharacter.hpp"
 bool isGrounded;
+bool Maincharacter::isDead = false;
 Maincharacter::Maincharacter(std::string img, float x, float y, float radius, float speed)
     : Engine::Sprite(img, x, y), speed(speed),
-      idleAnimation({al_load_bitmap("Resource/Images/MCidleStop.png")}, 0.2f),
-      RightwalkAnimation({al_load_bitmap("Resource/Images/MCRightMove1.png"), al_load_bitmap("Resource/Images/MCRightMove2.png")}, 0.2f),
-      LeftwalkAnimation({al_load_bitmap("Resource/Images/MCLeftMove1.png"), al_load_bitmap("Resource/Images/MCLeftMove2.png")}, 0.1f),
-      ClimbAnimation({al_load_bitmap("Resource/Images/MCClimbmove1.png"), al_load_bitmap("Resource/Images/MCClimbmove2.png")}, 0.1f),
-      currentAnimation(&idleAnimation) {
+        idleAnimation({al_load_bitmap("Resource/Images/MCidleStop.png")}, 0.2f),
+        RightwalkAnimation({al_load_bitmap("Resource/Images/MCRightMove1.png"), al_load_bitmap("Resource/Images/MCRightMove2.png")}, 0.2f),
+        LeftwalkAnimation({al_load_bitmap("Resource/Images/MCLeftMove1.png"), al_load_bitmap("Resource/Images/MCLeftMove2.png")}, 0.1f),
+        ClimbAnimation({al_load_bitmap("Resource/Images/MCClimbmove1.png"), al_load_bitmap("Resource/Images/MCClimbmove2.png")}, 0.1f),
+        currentAnimation(&idleAnimation) {
     ALLEGRO_BITMAP* idleFrame = al_load_bitmap("Resource/Images/MCidleStop.png");
     if (!idleFrame) {
         Engine::LOG(Engine::ERROR) << "Failed to load idle animation frames";
@@ -66,22 +67,27 @@ void Maincharacter::Update(float deltaTime) {
     Position.y = newY;
     Sprite::Update(deltaTime);
     currentAnimation->Update(deltaTime);
-    
 }
 
 void Maincharacter::Draw() const {
     currentAnimation->Draw(Position.x, Position.y, 3.0f, Rotation);
 }
 void Maincharacter::MoveLeft(float deltaTime) {
-    Velocity.x = -speed;
-    Rotation = 0;
-    currentAnimation = &LeftwalkAnimation;
+    if(Position.x > 0){
+        Velocity.x = -speed;
+        Rotation = 0;
+        currentAnimation = &LeftwalkAnimation;
+    }
+    
 }
 
 void Maincharacter::MoveRight(float deltaTime) {
-    Velocity.x = speed;
-    Rotation = 0;
-    currentAnimation = &RightwalkAnimation;
+    if(Position.x < 1600){
+        Velocity.x = speed;
+        Rotation = 0;
+        currentAnimation = &RightwalkAnimation;
+    }
+    
 }
 void Maincharacter::Stop(){
     Velocity.x = 0;

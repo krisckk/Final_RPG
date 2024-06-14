@@ -1,5 +1,4 @@
 #include "Backpack.hpp"
-
 #include <allegro5/allegro.h>
 #include <allegro5/allegro_acodec.h>
 #include <allegro5/allegro_primitives.h>
@@ -56,6 +55,7 @@ void Backpack::Draw() const{
     al_draw_filled_rounded_rectangle(1100, 420, 1100 + Shared::hunger * 3, 460, 10, 10, al_map_rgb(255, 255, 255));
     al_draw_rounded_rectangle(1100, 520, 1400, 560, 10, 10, al_map_rgb(255, 255, 255), 2);
     al_draw_filled_rounded_rectangle(1100, 520, 1100 + Shared::thirst * 3, 560, 10, 10, al_map_rgb(255, 255, 255));
+    al_draw_text(pirulenFont, al_map_rgb(255, 255, 255), 800, 750, ALLEGRO_ALIGN_CENTER, "Press C to Close");
 }
 
 void Backpack::Terminate() {
@@ -67,7 +67,7 @@ void Backpack::Terminate() {
 void Backpack::OnKeyDown(int keyCode){
     const std::string StageName = Shared::previosStage;
         switch (keyCode) {
-            case ALLEGRO_KEY_ESCAPE:
+            case ALLEGRO_KEY_C:
                 Engine::GameEngine::GetInstance().ChangeScene(StageName);
                 break;
             default:

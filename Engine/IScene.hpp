@@ -42,7 +42,10 @@ namespace Engine {
 		/// Delegate the draw event to all visible objects.
 		/// </summary>
 		void Draw() const override;
-
+		/// <summary>
+		/// Gets the name of the scene.
+		/// </summary>
+		/// <returns>The name of the scene.</returns>
 		virtual std::string GetName() const = 0;
 	};
 }

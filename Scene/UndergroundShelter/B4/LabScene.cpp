@@ -96,14 +96,6 @@ void LabScene::OnKeyDown(int keyCode){
             case ALLEGRO_KEY_D:
                 MC->MoveRight(1.0f / 60.0f);
                 break;
-                /*
-            case ALLEGRO_KEY_W:
-                MC->ClimbUp(1.0f / 60.0f);
-                break;
-            case ALLEGRO_KEY_S:
-                MC->ClimbDown(1.0f / 60.0f);
-                break;
-                */
             case ALLEGRO_KEY_E:
                 if (MC -> Position.x >= 1350 && MC -> Position.x <= 1600)   Engine::GameEngine::GetInstance().ChangeScene("Library");
                 break;
@@ -114,7 +106,6 @@ void LabScene::OnKeyDown(int keyCode){
                 break;
         }
     }
-    //if(keyCode == ALLEGRO_KEY_E) Engine::GameEngine::GetInstance().ChangeScene("Library");
 }
 void LabScene::OnKeyUp(int keyCode){
     if(!showTextBox){
@@ -127,6 +118,11 @@ void LabScene::OnKeyUp(int keyCode){
                 break;
             case ALLEGRO_KEY_W:
                 MC->Stop();
+                break;
+            case ALLEGRO_KEY_Q:
+                Engine::GameEngine::GetInstance().ChangeScene("RestRoom");
+                break;
+            default:
                 break;
         }
     }

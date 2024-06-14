@@ -29,6 +29,7 @@ class RestRoom final : public  Engine::IScene {
         //void Update(float deltaTime) override;
         void Initialize() override;
         void Terminate() override;
+        void Draw() const override;
         void OnKeyDown(int keyCode) override;
         void OnKeyUp(int keyCode) override;
         std::string GetName() const override { return "RestRoom"; }

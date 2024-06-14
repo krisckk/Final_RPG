@@ -12,6 +12,8 @@
 #include "Scene/UndergroundShelter/B4/ElevatorB4.hpp"
 #include "Scene/UndergroundShelter/B3/RestRoom.hpp"
 #include "Scene/UndergroundShelter/B3/ElevatorB3.hpp"
+#include "Scene/UndergroundShelter/B3/GYMscene.hpp"
+#include "Scene/UndergroundShelter/B3/DiningRoom.hpp"
 #include "Scene/UndergroundShelter/B2/ElevatorB2.hpp"
 #include "Maincharacter/Backpack.hpp"
 
@@ -33,6 +35,8 @@ int main(int argc, char **argv) {
 	// B3
 	game.AddNewScene("ElevatorB3", new ElevatorB3());
 	game.AddNewScene("RestRoom", new RestRoom());
+	game.AddNewScene("GYMscene", new GYMscene());
+	game.AddNewScene("DiningRoom", new DiningRoom());
 	// B2
 	game.AddNewScene("ElevatorB2", new ElevatorB2());
     // TODO: [HACKATHON-1-SCENE] (4/4): Change the start scene
@@ -48,6 +52,8 @@ int main(int argc, char **argv) {
 	// B3
 	game.Start("ElevatorB3", 120, 1600, 900);
 	game.Start("RestRoom", 120, 1600, 900);
+	game.Start("GYMscene", 120, 1600, 900);
+	game.Start("DiningRoom", 120, 1600, 900);
 	// B2
 	game.Start("ElevatorB2", 120, 1600, 900);
 	return 0;
