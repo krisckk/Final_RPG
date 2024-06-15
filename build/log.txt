@@ -30,32 +30,7 @@
 [INFO] Loaded Resource<image>: Resource/images/2Ddooropened.png scaled to 300x360
 [INFO] Loaded Resource<image>: Resource/images/MCRightStop.png
 [INFO] Changed to Lab scene
-[INFO] StorageRoom scene create
-[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/B3/RestRoom/bulletin_board.png scaled to 400x370
-[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/B3/RestRoom/newsofa.png scaled to 400x200
-[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/B3/RestRoom/TV.jpg scaled to 150x200
-[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/B3/RestRoom/monalisa.png scaled to 140x190
-[INFO] Changed to RestRoom scene
-[INFO] StorageRoom scene create
-[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/B3/DiningRoom/vendingmachine.png scaled to 200x400
-[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/B3/DiningRoom/whitewood.png scaled to 500x250
-[INFO] Loaded Resource<image>: Resource/images/Monster/idle/idle_1.png
-[INFO] Changed to DiningRoom scene
-[INFO] GYM scene create
-[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/B3/GYMscene/running_machine.png scaled to 300x210
-[INFO] Changed to GYMscene scene
-[INFO] GYMscene Terminated
-[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/B3/DataRoom/NewBookShelf.png scaled to 300x300
-[INFO] DataRoom scene create
-[INFO] Changed to DataRoom scene
-[INFO] DataRoom scene terminated
-[INFO] Backpack scene create
-[INFO] Loaded Resource<image>: Resource/images/MCidleStop.png scaled to 320x300
-[INFO] Loaded Resource<image>: Resource/images/Li'sfavorite.png scaled to 160x90
-[INFO] Loaded Resource<image>: Resource/images/heart.png scaled to 94x75
-[INFO] Loaded Resource<image>: Resource/images/water.png scaled to 80x75
-[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/B4/StorageRoom/blue_water.png scaled to 80x80
-[INFO] Changed to Backpack scene
+[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/B3/DataRoom/NewBookShelf.png scaled to 400x350
 [INFO] DataRoom scene create
 [INFO] Changed to DataRoom scene
 [INFO] Game Terminating...

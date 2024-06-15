@@ -120,7 +120,7 @@ void LabScene::OnKeyUp(int keyCode){
                 MC->Stop();
                 break;
             case ALLEGRO_KEY_Q:
-                Engine::GameEngine::GetInstance().ChangeScene("RestRoom");
+                Engine::GameEngine::GetInstance().ChangeScene("DataRoom");
                 break;
             default:
                 break;
