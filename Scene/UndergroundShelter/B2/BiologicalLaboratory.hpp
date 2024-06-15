@@ -1,5 +1,6 @@
-#ifndef DININGROOM_HPP
-#define DININGROOM_HPP
+#ifndef BIOLOGICALLABORATORY_HPP
+#define BIOLOGICALLABORATORY_HPP
+
 
 #include <allegro5/allegro_audio.h>
 #include <allegro5/allegro_font.h>
@@ -19,21 +20,19 @@ namespace Engine {
 	class Sprite;
 }
 extern Maincharacter* MC;
-class DiningRoom final : public  Engine::IScene {
+class BiologicalLaboratory final : public  Engine::IScene {
     private:
         ALLEGRO_FONT* PoetFont;
         ALLEGRO_FONT* BIGFont;
     public:
-        explicit DiningRoom() = default;
-        //void Draw() const override;
-        //void Update(float deltaTime) override;
+        explicit BiologicalLaboratory() = default;
+        void Draw() const override;
+        void Update(float deltaTime) override;
         void Initialize() override;
         void Terminate() override;
-        void Draw() const override;
         void OnKeyDown(int keyCode) override;
         void OnKeyUp(int keyCode) override;
-        std::string GetName() const override { return "DiningRoom"; }
+        std::string GetName() const override { return "BiolovialLaboratory"; }
 };
-
 
 #endif

@@ -16,6 +16,7 @@
 #include "Scene/UndergroundShelter/B3/DiningRoom.hpp"
 #include "Scene/UndergroundShelter/B3/DataRoom.hpp"
 #include "Scene/UndergroundShelter/B2/ElevatorB2.hpp"
+#include "Scene/UndergroundShelter/B2/BiologicalLaboratory.hpp"
 #include "Maincharacter/Backpack.hpp"
 
 
@@ -41,6 +42,7 @@ int main(int argc, char **argv) {
 	game.AddNewScene("DataRoom", new DataRoom());
 	// B2
 	game.AddNewScene("ElevatorB2", new ElevatorB2());
+	game.AddNewScene("BiologicalLaboratory", new BiologicalLaboratory());
     // TODO: [HACKATHON-1-SCENE] (4/4): Change the start scene
 	game.Start("start", 120, 1600, 900);
 	game.Start("menuSettings", 120, 1600, 900);
@@ -59,5 +61,6 @@ int main(int argc, char **argv) {
 	game.Start("DataRoom", 120, 1600, 900);
 	// B2
 	game.Start("ElevatorB2", 120, 1600, 900);
+	game.Start("BiologicalLaboratory", 120, 1600, 900);
 	return 0;
 }

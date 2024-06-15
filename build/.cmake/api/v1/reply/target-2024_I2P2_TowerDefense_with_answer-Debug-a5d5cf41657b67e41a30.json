@@ -34,13 +34,13 @@
 			{
 				"command" : 1,
 				"file" : 0,
-				"line" : 109,
+				"line" : 111,
 				"parent" : 0
 			},
 			{
 				"command" : 2,
 				"file" : 0,
-				"line" : 108,
+				"line" : 110,
 				"parent" : 0
 			},
 			{
@@ -64,13 +64,13 @@
 			{
 				"command" : 4,
 				"file" : 0,
-				"line" : 105,
+				"line" : 107,
 				"parent" : 0
 			},
 			{
 				"command" : 4,
 				"file" : 0,
-				"line" : 106,
+				"line" : 108,
 				"parent" : 0
 			}
 		]
@@ -153,10 +153,11 @@
 				64,
 				67,
 				69,
-				70,
+				71,
 				72,
 				74,
-				76
+				76,
+				78
 			]
 		}
 	],
@@ -278,10 +279,11 @@
 				64,
 				67,
 				69,
-				70,
+				71,
 				72,
 				74,
-				76
+				76,
+				78
 			]
 		},
 		{
@@ -323,9 +325,10 @@
 				65,
 				66,
 				68,
-				71,
+				70,
 				73,
-				75
+				75,
+				77
 			]
 		}
 	],
@@ -693,6 +696,17 @@
 			"backtrace" : 1,
 			"path" : "Scene/UndergroundShelter/B2/ElevatorB2.hpp",
 			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"path" : "Scene/UndergroundShelter/B2/BiologicalLaboratory.hpp",
+			"sourceGroupIndex" : 1
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "Scene/UndergroundShelter/B2/BiologicalLaboratory.cpp",
+			"sourceGroupIndex" : 0
 		},
 		{
 			"backtrace" : 1,

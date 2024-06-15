@@ -12,11 +12,11 @@
 #include "UI/Animation/Plane.hpp"
 #include "Maincharacter/Maincharacter.hpp"
 #include "Maincharacter/Backpack.hpp" 
-
+#include "Monster/Monster.hpp"
 #include "Stats/Shared.hpp"
 #include "ElevatorB2.hpp"
 #include "Scene/UndergroundShelter/B3/ElevatorB3.hpp"
-
+Monster* Enemy;
 void ElevatorB2::Initialize(){
     int w = Engine::GameEngine::GetInstance().GetScreenSize().x;
     int h = Engine::GameEngine::GetInstance().GetScreenSize().y;
@@ -25,12 +25,20 @@ void ElevatorB2::Initialize(){
     Engine::LOG(Engine::INFO) << "ElevatorB3 scene create";
     PoetFont = al_load_font("Resource/fonts/PoetsenOne.ttf", 30, 0);
     FloorFont = al_load_font("Resource/fonts/pirulen.ttf", 20, 0);
+    BIGFont = al_load_font("Resource/fonts/Tiny5.ttf", 80, 0);
+    GameoverBackground = al_load_bitmap("Resource/images/menu_background.jpg");
     AddNewObject(new Engine::Image("UndergroundShelter/LabGeneralBackground.png", 0, 0, w, h, 0, 0));
     AddNewObject(new Engine::Image("2Ddooropened.png", 0, h - 460, 200, 360, 0.5, 0));
     AddNewObject(new Engine::Image("elevator.png", halfW + 30, halfH + 30, 330, 330, 0, 0));
-
     bgmInstance = AudioHelper::PlaySample("joannaliaoThemeSong.ogg", true, AudioHelper::BGMVolume);
     MC = new Maincharacter("MCRightStop.png", halfW + 30, 680, 32, 200);
+    if(!Enemy -> isDead){
+        Enemy = new Monster("Monster/idle/idle_1.png", 80, 550, 32, 50);
+        if (!Enemy) {
+            Engine::LOG(Engine::ERROR) << "Failed to create Monster object";
+        }
+        AddNewObject(Enemy);
+    }
     if (!MC) {
         Engine::LOG(Engine::ERROR) << "Failed to create Maincharacter object";
         return;
@@ -43,6 +51,7 @@ void ElevatorB2::Terminate() {
     AudioHelper::StopSample(bgmInstance);
     bgmInstance = std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE>();
     MC = nullptr; 
+    Enemy = nullptr;
     IScene::Terminate();
 }
 
@@ -63,7 +72,7 @@ void ElevatorB2::OnKeyDown(int keyCode){
             //MC->ClimbDown(1.0f / 60.0f);
             break;
         case ALLEGRO_KEY_E:
-            //if (MC -> Position.x <= 5) Engine::GameEngine::GetInstance().ChangeScene("StorageRoom");
+            if (MC -> Position.x <= 5) Engine::GameEngine::GetInstance().ChangeScene("BiologicalLaboratory");
             break;
         case ALLEGRO_KEY_I:
             break;
@@ -82,6 +91,12 @@ void ElevatorB2::OnKeyUp(int keyCode){
             break;
         case ALLEGRO_KEY_D:
             MC->Stop();
+            break;
+        case ALLEGRO_KEY_R:
+            if(MC -> isDead) Engine::GameEngine::GetInstance().ChangeScene("start");
+            break;
+        case ALLEGRO_KEY_B:
+            Engine::GameEngine::GetInstance().ChangeScene("Backpack");
             break;
         case ALLEGRO_KEY_W:
             MC->Stop();
@@ -112,9 +127,12 @@ void ElevatorB2::Draw() const{
         al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x + 230, 700, 0, "Press W to Go To B1");
         al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x + 230, 740, 0, "Press S to Go To B3");
     }
-
-
-
+    if(MC -> isDead){
+        AudioHelper::StopSample(bgmInstance);
+        al_draw_scaled_bitmap(GameoverBackground, 0, 0, 1280, 1280, 0, 0, w, h, 0);
+        al_draw_text(BIGFont, al_map_rgb(255, 255, 255), w / 2, h / 2, ALLEGRO_ALIGN_CENTER, "You are dead");
+        al_draw_text(BIGFont, al_map_rgb(255, 255, 255), w / 2, h / 2 + 150, ALLEGRO_ALIGN_CENTER, "Press R to restart");
+    }
 }
 void ElevatorB2::Update(float deltaTime){
     IScene::Update(deltaTime);

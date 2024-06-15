@@ -81,6 +81,8 @@ add_executable(2024_I2P2_TowerDefense_with_answer
         Scene/UndergroundShelter/B3/DataRoom.cpp
         Scene/UndergroundShelter/B2/ElevatorB2.cpp
         Scene/UndergroundShelter/B2/ElevatorB2.hpp
+        Scene/UndergroundShelter/B2/BiologicalLaboratory.hpp
+        Scene/UndergroundShelter/B2/BiologicalLaboratory.cpp
         Maincharacter/Animation.hpp
         Maincharacter/Animation.cpp
         Maincharacter/MainCharacter.hpp

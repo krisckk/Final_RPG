@@ -51,13 +51,11 @@ Monster::Monster(std::string img, float x, float y, float radius, float speed)
     RightFlyAnimation = Animation({RightFlyFrame1, RightFlyFrame2}, 0.2f);
     LeftFlyAnimation = Animation({LeftFlyFrame1, LeftFlyFrame2}, 0.2f);
     DieAnimation = Animation({DieFrame}, 0.2f);
-    currentAnimation = &idleAnimation;
     CollisionRadius = radius;
     bmp = std::shared_ptr<ALLEGRO_BITMAP>(al_load_bitmap(img.c_str()), al_destroy_bitmap);
 }
 void Monster::Update(float deltaTime) {
     DetectMC();
-
     if (currentAnimation != &idleAnimation && !isDead) {
         // Update the position while flying towards the Maincharacter
         Position.x += Velocity.x * deltaTime;

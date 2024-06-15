@@ -30,11 +30,22 @@
 [INFO] Loaded Resource<image>: Resource/images/2Ddooropened.png scaled to 300x360
 [INFO] Loaded Resource<image>: Resource/images/MCRightStop.png
 [INFO] Changed to Lab scene
-[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/B3/DataRoom/NewBookShelf.png scaled to 400x350
-[INFO] DataRoom scene create
-[INFO] Changed to DataRoom scene
+[INFO] ElevatorB3 scene create
+[INFO] Loaded Resource<image>: Resource/images/2Ddooropened.png scaled to 200x360
+[INFO] Loaded Resource<image>: Resource/images/elevator.png scaled to 330x330
+[INFO] Loaded Resource<audio>: Resource/audios/joannaliaoThemeSong.ogg
+[INFO] Created<sample_instance>: Resource/audios/joannaliaoThemeSong.ogg
+[INFO] Loaded Resource<image>: Resource/images/Monster/idle/idle_1.png
+[INFO] Changed to ElevatorB2 scene
+[INFO] stopped audio (sample)
+[INFO] BiologicalLaboratory scene create
+[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/LabGeneralBackgroundPlatform.png scaled to 1600x60
+[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/B4/Library/ladder.png scaled to 160x460
+[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/B2/BiologicalLaboratory/Desk.png scaled to 400x200
+[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/B2/BiologicalLaboratory/ExperimentTool.png scaled to 200x120
+[INFO] Changed to BiologicalLaboratory scene
 [INFO] Game Terminating...
-[INFO] DataRoom scene terminated
+[INFO] BiologicalLaboratory scene terminated
 [INFO] Game terminated
 [INFO] Game end
 [INFO] Game Initializing...

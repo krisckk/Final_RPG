@@ -16,7 +16,7 @@ class Monster : public Engine::Sprite {
         float speed;
         int HP;
         int damage;
-        static bool isDead;
+        
         Animation idleAnimation;
         Animation LeftFlyAnimation;
         Animation RightFlyAnimation;
@@ -24,6 +24,7 @@ class Monster : public Engine::Sprite {
         Animation *currentAnimation;
     public:
         Monster(std::string img, float x, float y, float radius, float speed);
+        static bool isDead;
         void Update(float deltaTime) override;
         void Draw() const override;
         //void MoveLeft(float deltaTime);

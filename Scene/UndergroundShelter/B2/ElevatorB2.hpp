@@ -10,6 +10,7 @@
 #include <string>
 #include "Engine/IScene.hpp"
 #include "Engine/Point.hpp"
+#include "Monster/Monster.hpp"
 #include "Maincharacter/Maincharacter.hpp"
 
 namespace Engine {
@@ -18,12 +19,15 @@ namespace Engine {
 	class Label;
 	class Sprite;
 }
+extern Monster* Enemy;
 extern Maincharacter* MC;
 class ElevatorB2 final : public  Engine::IScene {
     private:
         std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE> bgmInstance;
         ALLEGRO_FONT* PoetFont;
         ALLEGRO_FONT* FloorFont;
+        ALLEGRO_FONT* BIGFont;
+        ALLEGRO_BITMAP* GameoverBackground;
     public:
         explicit ElevatorB2() = default;
         void Draw() const override;
