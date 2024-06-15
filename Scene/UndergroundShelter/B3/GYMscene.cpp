@@ -19,6 +19,7 @@
 #include "Scene/UndergroundShelter/B4/StorageRoom.hpp"
 #include "RestRoom.hpp"
 #include "GYMscene.hpp"
+#include "DataRoom.hpp"
 #include "Stats/Shared.hpp"
 //static ALLEGRO_BITMAP* bulletin_board = NULL;
 void GYMscene::Initialize(){
@@ -45,6 +46,7 @@ void GYMscene::Initialize(){
 }
 
 void GYMscene::Terminate(){
+    Engine::LOG(Engine::INFO) << "GYMscene Terminated";
     MC = nullptr; 
     al_destroy_font(PoetFont);
     al_destroy_font(BIGFont);
@@ -79,7 +81,12 @@ void GYMscene::OnKeyDown(int keyCode){
             MC -> MoveRight(1.0f/ 60.0f);
             break;
         case ALLEGRO_KEY_E:
+            if(MC -> Position.x >= 20 && MC -> Position.x <= 150) Engine::GameEngine::GetInstance().ChangeScene("DataRoom");
             if(MC -> Position.x >= 1400) Engine::GameEngine::GetInstance().ChangeScene("DiningRoom");
+            break;
+        case ALLEGRO_KEY_B:
+            Engine::GameEngine::GetInstance().ChangeScene("Backpack");
+            break;
         default:
             break;
     }

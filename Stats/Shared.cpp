@@ -4,7 +4,7 @@ int Shared::lives = 3;
 int Shared::hunger = 100;
 int Shared::thirst = 100;
 float Shared::PositionX;
-bool Shared::bluePotion;
+bool Shared::bluePotion = true;
 bool Shared::redPotion;
 bool Shared::yellowPotion;
 std::string Shared::previosStage = "";

@@ -48,6 +48,16 @@
 [INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/B3/DataRoom/NewBookShelf.png scaled to 300x300
 [INFO] DataRoom scene create
 [INFO] Changed to DataRoom scene
+[INFO] DataRoom scene terminated
+[INFO] Backpack scene create
+[INFO] Loaded Resource<image>: Resource/images/MCidleStop.png scaled to 320x300
+[INFO] Loaded Resource<image>: Resource/images/Li'sfavorite.png scaled to 160x90
+[INFO] Loaded Resource<image>: Resource/images/heart.png scaled to 94x75
+[INFO] Loaded Resource<image>: Resource/images/water.png scaled to 80x75
+[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/B4/StorageRoom/blue_water.png scaled to 80x80
+[INFO] Changed to Backpack scene
+[INFO] DataRoom scene create
+[INFO] Changed to DataRoom scene
 [INFO] Game Terminating...
 [INFO] DataRoom scene terminated
 [INFO] Game terminated

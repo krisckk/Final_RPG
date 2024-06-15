@@ -79,7 +79,7 @@ void Monster::DetectMC()
     float distance = abs(Position.x - mcPosition.x);
 
     // If the distance is within a certain range, start flying towards the Maincharacter
-    if (distance < 1000.0f)
+    if (!isDead && distance < 1000.0f)
     { // Adjust the range as needed
         // Set the velocity to fly towards the Maincharacter
         Velocity.x = speed * (mcPosition - Position).Normalize().x;

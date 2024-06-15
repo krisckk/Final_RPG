@@ -1,5 +1,5 @@
-#ifndef RESTROOM_HPP
-#define RESTROOM_HPP
+#ifndef DATAROOM_HPP
+#define DATAROOM_HPP
 
 #include <allegro5/allegro_audio.h>
 #include <allegro5/allegro_font.h>
@@ -19,19 +19,18 @@ namespace Engine {
 	class Sprite;
 }
 extern Maincharacter* MC;
-class RestRoom final : public  Engine::IScene {
+class DataRoom final : public  Engine::IScene {
     private:
         ALLEGRO_FONT* PoetFont;
-        ALLEGRO_FONT* BIGFont;
+        //ALLEGRO_BITMAP* BookShelf;
     public:
-        explicit RestRoom() = default;
+        explicit DataRoom() = default;
         void Initialize() override;
         void Terminate() override;
         void Draw() const override;
         void OnKeyDown(int keyCode) override;
         void OnKeyUp(int keyCode) override;
-        std::string GetName() const override { return "RestRoom"; }
+        std::string GetName() const override { return "DataRoom"; }
 };
-
 
 #endif

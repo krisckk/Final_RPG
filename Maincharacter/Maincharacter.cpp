@@ -82,7 +82,7 @@ void Maincharacter::MoveLeft(float deltaTime) {
 }
 
 void Maincharacter::MoveRight(float deltaTime) {
-    if(Position.x < 1600){
+    if(Position.x < 1580){
         Velocity.x = speed;
         Rotation = 0;
         currentAnimation = &RightwalkAnimation;

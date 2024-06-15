@@ -32,6 +32,7 @@ bool stickynotes_opened = false;
 bool enter_password = false;
 bool door_open = false;
 char password[5];
+static bool correct;
 int i = 0;
 void LibraryScene::Initialize(){
     int w = Engine::GameEngine::GetInstance().GetScreenSize().x;
@@ -88,9 +89,12 @@ void LibraryScene::OnKeyDown(int keyCode){
             }
             break;
         case ALLEGRO_KEY_E:
-            if (MC -> Position.x >= 1350 && MC -> Position.x <= 1600){
+            if (MC -> Position.x >= 1350 && MC -> Position.x <= 1600 && !correct){
                 enter_password = !enter_password;
                 i = 0;
+            }
+            else if (MC -> Position.x >= 1350 && MC -> Position.x <= 1600 && correct){
+                Engine::GameEngine::GetInstance().ChangeScene("StorageRoom");
             }
             break;
         case ALLEGRO_KEY_I:
@@ -200,8 +204,9 @@ void LibraryScene::Update(float deltaTime){
     if (password[0] == '5' && password[1] == '3' && password[2] == '4' && password[3] == '0') {
         door_open = true;
         enter_password = false;
+        password[0]='\0';password[1]='\0';password[2]='\0';password[3]='\0';
+        correct=true;
         Engine::LOG(Engine::INFO) << "The door is open";
         Engine::GameEngine::GetInstance().ChangeScene("StorageRoom");
     }
 }
-

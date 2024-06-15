@@ -86,7 +86,7 @@ void StorageRoom::Draw() const{
     int h = Engine::GameEngine::GetInstance().GetScreenSize().y;
     //if (door_open) al_draw_scaled_bitmap(dooropened,0, 0, 162, 228, 1400, h - 460, 200, 360, 0);
 
-    if (MC -> Position.x <= 5){
+    if (MC -> Position.x <= 40){
         al_draw_filled_triangle(MC -> Position.x + 200, 700, MC -> Position.x + 200, 740, MC -> Position.x + 170, 720, al_map_rgb(255, 255, 255));
         al_draw_filled_rounded_rectangle(MC -> Position.x + 200, 680, MC -> Position.x + 500, 800, 10, 10, al_map_rgb(255, 255, 255));
         al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x + 250, 700, 0, "Press E to");
@@ -140,6 +140,21 @@ void StorageRoom::Draw() const{
 }
 
 void StorageRoom::OnKeyDown(int keyCode){
+    if(Red_potion && keyCode == ALLEGRO_KEY_E){
+        Shared::redPotion = true;
+        Shared::bluePotion = false;
+        Shared::yellowPotion = false;
+    }
+    else if(Blue_potion && keyCode == ALLEGRO_KEY_E){
+        Shared::redPotion = false;
+        Shared::bluePotion = true;
+        Shared::yellowPotion = false;
+    }
+    else if(Yellow_potion && keyCode == ALLEGRO_KEY_E){
+        Shared::redPotion = false;
+        Shared::bluePotion = false;
+        Shared::yellowPotion = true;
+    }
     switch (keyCode) {
         case ALLEGRO_KEY_A:
             MC->MoveLeft(1.0f / 60.0f); // Assuming 60 FPS
@@ -148,27 +163,12 @@ void StorageRoom::OnKeyDown(int keyCode){
             MC->MoveRight(1.0f / 60.0f);
             break;
         case ALLEGRO_KEY_E:
-            if (MC -> Position.x <= 5) Engine::GameEngine::GetInstance().ChangeScene("Library");
-            if (MC -> Position.x >= 1280 && MC -> Position.x <= 1500) Engine::GameEngine::GetInstance().ChangeScene("ElevatorB4");
-            if(Red_potion) {
-                Shared::redPotion = true;
-                Shared::bluePotion = false;
-                Shared::yellowPotion = false;
-            }
-            if(Blue_potion) {
-                Shared::bluePotion = true;
-                Shared::redPotion = false;
-                Shared::yellowPotion = false;
-            }
-            if(Yellow_potion) {
-                Shared::yellowPotion = true;
-                Shared::redPotion = false;
-                Shared::bluePotion = false;
-            }
+            if(MC -> Position.x <= 150) Engine::GameEngine::GetInstance().ChangeScene("Lab");
+            if(MC -> Position.x >= 1300) Engine::GameEngine::GetInstance().ChangeScene("ElevatorB4");
             break;
         case ALLEGRO_KEY_B:
-                Engine::GameEngine::GetInstance().ChangeScene("Backpack");
-                break;
+            Engine::GameEngine::GetInstance().ChangeScene("Backpack");
+            break;
         default:
             break;
     }

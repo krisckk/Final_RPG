@@ -66,10 +66,10 @@ void RestRoom::Draw() const{
         al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x + 230, 740, 0, "Enter");
     }
     if(MC -> Position.x >= 1400){
-        al_draw_filled_triangle(MC -> Position.x + 200, 700, MC -> Position.x + 200, 740, MC -> Position.x + 170, 720, al_map_rgb(255, 255, 255));
-        al_draw_filled_rounded_rectangle(MC -> Position.x + 200, 680, MC -> Position.x + 400, 800, 10, 10, al_map_rgb(255, 255, 255));
-        al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x + 230, 700, 0, "Press E to ");
-        al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x + 230, 740, 0, "Back");
+        al_draw_filled_triangle(MC -> Position.x - 55, 700, MC -> Position.x - 55, 740, MC -> Position.x - 10, 720, al_map_rgb(255, 255, 255));
+        al_draw_filled_rounded_rectangle(MC -> Position.x - 350, 680, MC -> Position.x - 50, 800, 10, 10, al_map_rgb(255, 255, 255));
+        al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x - 310, 700, 0, "Press E to ");
+        al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x - 310, 740, 0, "Back");
     }
     if (MC -> Position.x >= 350 && MC -> Position.x <= 650 && !bulletin_board_open){
         al_draw_filled_triangle(MC -> Position.x + 200, 700, MC -> Position.x + 200, 740, MC -> Position.x + 170, 720, al_map_rgb(255, 255, 255));
@@ -101,6 +101,9 @@ void RestRoom::OnKeyDown(int keyCode){
         case ALLEGRO_KEY_E:
             if(MC -> Position.x >= 20 && MC -> Position.x <= 150) Engine::GameEngine::GetInstance().ChangeScene("DiningRoom");
             if(MC -> Position.x >= 1400) Engine::GameEngine::GetInstance().ChangeScene("ElevatorB3");
+            break;
+        case ALLEGRO_KEY_B:
+            Engine::GameEngine::GetInstance().ChangeScene("Backpack");
             break;
         default:
             break;

@@ -17,66 +17,46 @@
 #include "Scene/UndergroundShelter/B4/LibraryScene.hpp"
 #include "Scene/UndergroundShelter/B4/LabScene.hpp"
 #include "Scene/UndergroundShelter/B4/StorageRoom.hpp"
-#include "Monster/Monster.hpp"
-#include "DiningRoom.hpp"
+#include "DataRoom.hpp"
 #include "Stats/Shared.hpp"
-Monster* Enemy;
-void DiningRoom::Initialize(){
+#include "Monster/Monster.hpp"
+
+void DataRoom::Initialize(){
     int w = Engine::GameEngine::GetInstance().GetScreenSize().x;
     int h = Engine::GameEngine::GetInstance().GetScreenSize().y;
     int halfW = w / 2;
     int halfH = h / 2;
-    Engine::LOG(Engine::INFO) << "StorageRoom scene create";
+    
     PoetFont = al_load_font("Resource/fonts/PoetsenOne.ttf", 30, 0);
-    BIGFont = al_load_font("Resource/fonts/Tiny5.ttf", 80, 0);
-    GameoverBackground = al_load_bitmap("Resource/images/menu_background.jpg");
     AddNewObject(new Engine::Image("UndergroundShelter/LabGeneralBackground.png", 0, 0, w, h, 0, 0));
-    AddNewObject(new Engine::Image("UndergroundShelter/B3/DiningRoom/vendingmachine.png", 350, 450, 200, 400, 0, 0));
-    AddNewObject(new Engine::Image("UndergroundShelter/B3/DiningRoom/whitewood.png", 700, 550, 500, 250, 0, 0));
     AddNewObject(new Engine::Image("2Ddooropened.png", 1550, h - 460, 300, 360, 0.5, 0));
     AddNewObject(new Engine::Image("2Ddooropened.png", 0, h - 460, 300, 360, 0, 0));
+    AddNewObject(new Engine::Image("UndergroundShelter/B3/DataRoom/NewBookShelf.png", 900, h - 400, 300, 300, 0 , 0));
     MC = new Maincharacter("MCRightStop.png", 1450, 680, 32, 200);
-    Enemy = new Monster("Monster/idle/idle_1.png", 80, 550, 32, 50);
-    if (!Enemy) {
-        Engine::LOG(Engine::ERROR) << "Failed to create Monster object";
-    }
     if (!MC) {
         Engine::LOG(Engine::ERROR) << "Failed to create Maincharacter object";
         return;
     }
     MC->groundY = h - 100; // Set the ground level
     AddNewObject(MC);
-    AddNewObject(Enemy);
+    Engine::LOG(Engine::INFO) << "DataRoom scene create";
 }
-void DiningRoom::Draw() const {
-    IScene::Draw();
-    int w = Engine::GameEngine::GetInstance().GetScreenSize().x;
-    int h = Engine::GameEngine::GetInstance().GetScreenSize().y;
-    if (MC -> Position.x >= 20 && MC -> Position.x <= 150){
-        al_draw_filled_triangle(MC -> Position.x + 200, 700, MC -> Position.x + 200, 740, MC -> Position.x + 170, 720, al_map_rgb(255, 255, 255));
-        al_draw_filled_rounded_rectangle(MC -> Position.x + 200, 680, MC -> Position.x + 400, 800, 10, 10, al_map_rgb(255, 255, 255));
-        al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x + 230, 700, 0, "Press E to ");
-        al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x + 230, 740, 0, "Enter");
-    }
+void DataRoom::Terminate(){
+    Engine::LOG(Engine::INFO) << "DataRoom scene terminated";
+    al_destroy_font(PoetFont);
+    MC = nullptr;
+    IScene::Terminate();
+}
+
+void DataRoom::Draw() const {
     if (MC -> Position.x >= 1350 && MC -> Position.x <= 1600){
         al_draw_filled_triangle(MC -> Position.x - 55, 700, MC -> Position.x - 55, 740, MC -> Position.x - 10, 720, al_map_rgb(255, 255, 255));
         al_draw_filled_rounded_rectangle(MC -> Position.x - 350, 680, MC -> Position.x - 50, 800, 10, 10, al_map_rgb(255, 255, 255));
         al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x - 310, 710, 0, "Press E to Back");
     }
-    if(MC -> isDead){
-        al_draw_scaled_bitmap(GameoverBackground, 0, 0, 1280, 1280, 0, 0, w, h, 0);
-        al_draw_text(BIGFont, al_map_rgb(255, 255, 255), w / 2, h / 2, ALLEGRO_ALIGN_CENTER, "You are dead");
-        al_draw_text(BIGFont, al_map_rgb(255, 255, 255), w / 2, h / 2 + 150, ALLEGRO_ALIGN_CENTER, "Press R to restart");
-    }
 }
-void DiningRoom::Terminate(){
-    MC = nullptr; 
-    Enemy = nullptr;
-    al_destroy_font(PoetFont);
-    al_destroy_font(BIGFont);
-    IScene::Terminate();
-}
-void DiningRoom::OnKeyDown(int keyCode){
+
+void DataRoom::OnKeyDown(int keyCode){
     switch(keyCode){
         case ALLEGRO_KEY_A:
             MC -> MoveLeft(1.0f/ 60.0f);
@@ -84,12 +64,8 @@ void DiningRoom::OnKeyDown(int keyCode){
         case ALLEGRO_KEY_D:
             MC -> MoveRight(1.0f/ 60.0f);
             break;
-        case ALLEGRO_KEY_R:
-            if(MC -> isDead) Engine::GameEngine::GetInstance().ChangeScene("start");
-            break;
         case ALLEGRO_KEY_E:
-            if(MC -> Position.x >= 20 && MC -> Position.x <= 150) Engine::GameEngine::GetInstance().ChangeScene("GYMscene");
-            if(MC -> Position.x >= 1400) Engine::GameEngine::GetInstance().ChangeScene("RestRoom");
+            if(MC -> Position.x >= 1400) Engine::GameEngine::GetInstance().ChangeScene("GYMscene");
             break;
         case ALLEGRO_KEY_B:
             Engine::GameEngine::GetInstance().ChangeScene("Backpack");
@@ -98,7 +74,8 @@ void DiningRoom::OnKeyDown(int keyCode){
             break;
     }
 }
-void DiningRoom::OnKeyUp(int keyCode){
+
+void DataRoom::OnKeyUp(int keyCode){
     switch (keyCode) {
         case ALLEGRO_KEY_A:
             MC->Stop();
