@@ -7,6 +7,12 @@ float Shared::PositionX;
 bool Shared::bluePotion = true;
 bool Shared::redPotion;
 bool Shared::yellowPotion;
+bool Shared::Gold;
+bool Shared::Aluminum;
+bool Shared::Iron;
+bool Shared::HDLoil;
+bool Shared::LDLoil;
+bool Shared::IDcard;
 std::string Shared::previosStage = "";
 std::string Shared::currentStage = "";
 void Shared::SetLives(int value) {

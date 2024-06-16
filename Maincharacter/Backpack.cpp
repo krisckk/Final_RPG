@@ -29,6 +29,16 @@ void Backpack::Initialize(){
         AddNewObject(new Engine::Image("UndergroundShelter/B4/StorageRoom/blue_water.png", 190, 330, 80, 80, 0, 0));
     if(Shared::yellowPotion)
         AddNewObject(new Engine::Image("UndergroundShelter/B4/StorageRoom/yellow_water.png", 300, 330, 80, 80, 0, 0));
+    if(Shared::Gold)
+        AddNewObject(new Engine::Image("Gold.png", 190, 510, 80, 80, 0, 0));
+    if(Shared::Aluminum)
+        AddNewObject(new Engine::Image("Aluminum.png", 190, 650, 80, 80, 0, 0));
+    if(Shared::Iron)
+        AddNewObject(new Engine::Image("Iron.png", 300, 510, 80, 80, 0, 0));
+    if(Shared::HDLoil)
+        AddNewObject(new Engine::Image("UndergroundShelter/B1/HardwareRoom/FussilOil.png", 80, 650, 80, 80, 0, 0));
+    if(Shared::LDLoil)
+        AddNewObject(new Engine::Image("UndergroundShelter/B1/HardwareRoom/FussilOil.png", 80, 510, 80, 80, 0, 0));
 }
 
 void Backpack::Draw() const{

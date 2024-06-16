@@ -10,6 +10,12 @@ public:
     static bool redPotion;
     static bool bluePotion;
     static bool yellowPotion;
+    static bool Gold;
+    static bool Aluminum;
+    static bool Iron;
+    static bool HDLoil;
+    static bool LDLoil;
+    static bool IDcard;
     static std::string previosStage;
     static std::string currentStage;
     static void SetLives(int value);

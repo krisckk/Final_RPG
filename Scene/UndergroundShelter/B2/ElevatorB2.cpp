@@ -65,6 +65,8 @@ void ElevatorB2::OnKeyDown(int keyCode){
             break;
         case ALLEGRO_KEY_W:
             //MC->ClimbUp(1.0f / 60.0f);
+            if (MC -> Position.x >= 850 && MC -> Position.x <= 1000)
+                Engine::GameEngine::GetInstance().ChangeScene("ElevatorB1");
             break;
         case ALLEGRO_KEY_S:
             if (MC -> Position.x >= 850 && MC -> Position.x <= 1000)

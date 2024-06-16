@@ -102,6 +102,9 @@ void LabScene::OnKeyDown(int keyCode){
             case ALLEGRO_KEY_B:
                 Engine::GameEngine::GetInstance().ChangeScene("Backpack");
                 break;
+            case ALLEGRO_KEY_Q:
+                Engine::GameEngine::GetInstance().ChangeScene("HardwareRoom");
+                break;
             default:
                 break;
         }
@@ -118,9 +121,6 @@ void LabScene::OnKeyUp(int keyCode){
                 break;
             case ALLEGRO_KEY_W:
                 MC->Stop();
-                break;
-            case ALLEGRO_KEY_Q:
-                Engine::GameEngine::GetInstance().ChangeScene("ElevatorB2");
                 break;
             default:
                 break;

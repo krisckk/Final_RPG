@@ -44,7 +44,7 @@ void ElevatorB4::Initialize(){
     AddNewObject(new Engine::Image("UndergroundShelter/LabGeneralBackground.png", 0, 0, w, h, 0, 0));
     AddNewObject(new Engine::Image("2Ddooropened.png", 0, h - 460, 200, 360, 0.5, 0));
     AddNewObject(new Engine::Image("elevator.png", halfW + 30, halfH + 30, 330, 330, 0, 0));
-
+    if(!Shared::Iron) AddNewObject(new Engine::Image("Iron.png", 500, 750, 80, 60, 0, 0));
     bgmInstance = AudioHelper::PlaySample("joannaliaoThemeSong.ogg", true, AudioHelper::BGMVolume);
     MC = new Maincharacter("MCRightStop.png", 80, 680, 32, 200);
     if (!MC) {
@@ -72,11 +72,9 @@ void ElevatorB4::OnKeyDown(int keyCode){
             break;
         case ALLEGRO_KEY_W:
             if (MC -> Position.x >= 850 && MC -> Position.x <= 1000)
-                Engine::GameEngine::GetInstance().ChangeScene("ElevatorB3");
-            //MC->ClimbUp(1.0f / 60.0f);
             break;
-        case ALLEGRO_KEY_S:
-            //MC->ClimbDown(1.0f / 60.0f);
+        case ALLEGRO_KEY_P:
+            if(MC -> Position.x >= 380 && MC -> Position.x <= 580) Shared::Iron = true;
             break;
         case ALLEGRO_KEY_E:
             if (MC -> Position.x <= 5) Engine::GameEngine::GetInstance().ChangeScene("StorageRoom");
@@ -126,7 +124,12 @@ void ElevatorB4::Draw() const{
         al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x + 230, 700, 0, "Press W to");
         al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x + 230, 740, 0, "Go To B3");
     }
-
+    if(MC -> Position.x >= 380 && MC -> Position.x <= 580 && !Shared::Iron){
+        al_draw_filled_triangle(MC -> Position.x - 55, 700, MC -> Position.x - 55, 740, MC -> Position.x - 10, 720, al_map_rgb(255, 255, 255));
+        al_draw_filled_rounded_rectangle(MC -> Position.x - 350, 680, MC -> Position.x - 50, 800, 10, 10, al_map_rgb(255, 255, 255));
+        al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x - 310, 700, 0, "Press P to");
+        al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x - 310, 740, 0, "Pick Up");
+    }
 
 
 }

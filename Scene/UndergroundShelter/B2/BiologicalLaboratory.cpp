@@ -37,6 +37,7 @@ void BiologicalLaboratory::Initialize() {
     AddNewObject(new Engine::Image("UndergroundShelter/B4/LabScene/tankwithPeople.png", 550, 30, 200, 360, 0, 0));
     AddNewObject(new Engine::Image("UndergroundShelter/B2/BiologicalLaboratory/Desk.png", 1000, 210, 400, 200, 0, 0));
     AddNewObject(new Engine::Image("UndergroundShelter/B2/BiologicalLaboratory/ExperimentTool.png", 1100, 150, 200, 120, 0, 0));
+    if(!Shared::Aluminum) AddNewObject(new Engine::Image("Aluminum.png", 1500, 330, 80, 60, 0, 0));
     MC = new Maincharacter("MCRightStop.png", 1450, 680, 32, 200);
     if (!MC) {
         Engine::LOG(Engine::ERROR) << "Failed to create Maincharacter object";
@@ -57,10 +58,16 @@ void BiologicalLaboratory::Update(float deltaTime){
 
 void BiologicalLaboratory::Draw() const {
     IScene::Draw();
-    if (MC -> Position.x >= 1250 && MC -> Position.x <= 1600){
+    if (MC -> Position.x >= 1250 && MC -> Position.x <= 1600 && MC -> Position.y > 450){
         al_draw_filled_triangle(MC -> Position.x - 55, 700, MC -> Position.x - 55, 740, MC -> Position.x - 10, 720, al_map_rgb(255, 255, 255));
         al_draw_filled_rounded_rectangle(MC -> Position.x - 350, 680, MC -> Position.x - 50, 800, 10, 10, al_map_rgb(255, 255, 255));
         al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x - 310, 710, 0, "Press E to Enter");
+    }
+    if(MC -> Position.y < 450 && MC -> Position.x >= 1380 && !Shared::Aluminum){
+        al_draw_filled_triangle(MC -> Position.x - 55, 250, MC -> Position.x - 55, 290, MC -> Position.x - 10, 270, al_map_rgb(255, 255, 255));
+        al_draw_filled_rounded_rectangle(MC -> Position.x - 350, 230, MC -> Position.x - 50, 350, 10, 10, al_map_rgb(255, 255, 255));
+        al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x - 310, 250, 0, "Press P to");
+        al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x - 310, 290, 0, "Pick Up");
     }
 }
 void BiologicalLaboratory::OnKeyDown(int keyCode){
@@ -80,6 +87,16 @@ void BiologicalLaboratory::OnKeyDown(int keyCode){
         case ALLEGRO_KEY_S:
             if(MC -> Position.x >= 280 && MC -> Position.x <= 400 && MC -> Position.y <= 570){
                 MC->ClimbDown(1.0f / 60.0f);
+            }
+            break;
+        case ALLEGRO_KEY_P:
+            if(MC -> Position.y < 450 && MC -> Position.x >= 1380){
+                Shared::Aluminum = true;
+            }
+            break;
+        case ALLEGRO_KEY_E:
+            if(MC -> Position.x >= 1250 && MC -> Position.x <= 1600 && MC -> Position.y > 450){
+                Engine::GameEngine::GetInstance().ChangeScene("ElevatorB2");
             }
             break;
     }

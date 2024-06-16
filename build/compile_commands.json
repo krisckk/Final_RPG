@@ -205,6 +205,30 @@
 },
 {
   "directory": "/Users/krischou/Final_RPG/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ -I/Users/krischou/Final_RPG/. -I/Users/krischou/Final_RPG/Resource -I/Users/krischou/Final_RPG/Engine -I/Users/krischou/Final_RPG/lib -I/usr/local/include -g -std=gnu++14 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -mmacosx-version-min=14.3 -o CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/UndergroundShelter/B1/ElevatorB1.cpp.o -c /Users/krischou/Final_RPG/Scene/UndergroundShelter/B1/ElevatorB1.cpp",
+  "file": "/Users/krischou/Final_RPG/Scene/UndergroundShelter/B1/ElevatorB1.cpp",
+  "output": "CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/UndergroundShelter/B1/ElevatorB1.cpp.o"
+},
+{
+  "directory": "/Users/krischou/Final_RPG/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ -I/Users/krischou/Final_RPG/. -I/Users/krischou/Final_RPG/Resource -I/Users/krischou/Final_RPG/Engine -I/Users/krischou/Final_RPG/lib -I/usr/local/include -g -std=gnu++14 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -mmacosx-version-min=14.3 -o CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/UndergroundShelter/B1/HardwareRoom.cpp.o -c /Users/krischou/Final_RPG/Scene/UndergroundShelter/B1/HardwareRoom.cpp",
+  "file": "/Users/krischou/Final_RPG/Scene/UndergroundShelter/B1/HardwareRoom.cpp",
+  "output": "CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/UndergroundShelter/B1/HardwareRoom.cpp.o"
+},
+{
+  "directory": "/Users/krischou/Final_RPG/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ -I/Users/krischou/Final_RPG/. -I/Users/krischou/Final_RPG/Resource -I/Users/krischou/Final_RPG/Engine -I/Users/krischou/Final_RPG/lib -I/usr/local/include -g -std=gnu++14 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -mmacosx-version-min=14.3 -o CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/UndergroundShelter/B1/Office.cpp.o -c /Users/krischou/Final_RPG/Scene/UndergroundShelter/B1/Office.cpp",
+  "file": "/Users/krischou/Final_RPG/Scene/UndergroundShelter/B1/Office.cpp",
+  "output": "CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/UndergroundShelter/B1/Office.cpp.o"
+},
+{
+  "directory": "/Users/krischou/Final_RPG/build",
+  "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ -I/Users/krischou/Final_RPG/. -I/Users/krischou/Final_RPG/Resource -I/Users/krischou/Final_RPG/Engine -I/Users/krischou/Final_RPG/lib -I/usr/local/include -g -std=gnu++14 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -mmacosx-version-min=14.3 -o CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/UndergroundShelter/B1/ElevatorToFloor.cpp.o -c /Users/krischou/Final_RPG/Scene/UndergroundShelter/B1/ElevatorToFloor.cpp",
+  "file": "/Users/krischou/Final_RPG/Scene/UndergroundShelter/B1/ElevatorToFloor.cpp",
+  "output": "CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Scene/UndergroundShelter/B1/ElevatorToFloor.cpp.o"
+},
+{
+  "directory": "/Users/krischou/Final_RPG/build",
   "command": "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ -I/Users/krischou/Final_RPG/. -I/Users/krischou/Final_RPG/Resource -I/Users/krischou/Final_RPG/Engine -I/Users/krischou/Final_RPG/lib -I/usr/local/include -g -std=gnu++14 -isysroot /Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX14.5.sdk -mmacosx-version-min=14.3 -o CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Maincharacter/Animation.cpp.o -c /Users/krischou/Final_RPG/Maincharacter/Animation.cpp",
   "file": "/Users/krischou/Final_RPG/Maincharacter/Animation.cpp",
   "output": "CMakeFiles/2024_I2P2_TowerDefense_with_answer.dir/Maincharacter/Animation.cpp.o"
