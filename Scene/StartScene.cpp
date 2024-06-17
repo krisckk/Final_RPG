@@ -2,6 +2,7 @@
 #include <functional>
 #include <memory>
 #include <string>
+#include <fstream>
 #include "Engine/AudioHelper.hpp"
 #include "Engine/GameEngine.hpp"
 #include "Engine/Point.hpp"
@@ -12,6 +13,7 @@
 #include "UI/Component/Slider.hpp"
 #include "Scene/StartScene.hpp"
 #include "Scene/UndergroundShelter/B4/LabScene.hpp"
+#include "Stats/Shared.hpp"
 void StartScene::Initialize() {
     int w = Engine::GameEngine::GetInstance().GetScreenSize().x;
     int h = Engine::GameEngine::GetInstance().GetScreenSize().y;
@@ -25,7 +27,7 @@ void StartScene::Initialize() {
     AddNewControlObject(btn);
 
     btn = new Engine::ImageButton("lose/continue_unhover.png", "lose/continue_hovered.png", halfW / 2 - 250, halfH / 2 + 170, 290, 30, 0, 0);
-    btn->SetOnClickCallback(std::bind(&StartScene::SettingsOnClick, this, 1));
+    btn->SetOnClickCallback(std::bind(&StartScene::ContinueOnClick, this, 1));
     AddNewControlObject(btn);
 
     btn = new Engine::ImageButton("lose/scoreboard_unhover.png", "lose/scoreboard_hovered.png", halfW / 2 - 250, halfH / 2 + 210, 290, 30, 0, 0);
@@ -42,6 +44,30 @@ void StartScene::Terminate() {
     AudioHelper::StopSample(bgmInstance);
     bgmInstance = std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE>();
     IScene::Terminate();
+}
+
+void StartScene::ContinueOnClick(int stage){
+    std::ifstream saveFile("../Maincharacter/SaveData.txt");
+    if (saveFile.is_open()) {
+        std::string sceneName;
+        saveFile >> sceneName;
+        Shared::currentStage = sceneName;
+
+        saveFile >> Shared::redPotion;
+        saveFile >> Shared::bluePotion;
+        saveFile >> Shared::yellowPotion;
+        saveFile >> Shared::Gold;
+        saveFile >> Shared::Aluminum;
+        saveFile >> Shared::Iron;
+        saveFile >> Shared::HDLoil;
+        saveFile >> Shared::LDLoil;
+        saveFile >> Shared::IDcard;
+        saveFile >> Shared::GoodRocket;
+        saveFile >> Shared::BadRocket;
+
+        saveFile.close();
+        Engine::GameEngine::GetInstance().ChangeScene(sceneName);
+    }
 }
 void StartScene::SettingsOnClick(int stage){
     Engine::GameEngine::GetInstance().ChangeScene("menuSettings");

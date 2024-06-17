@@ -2,7 +2,10 @@
 #include <allegro5/allegro.h>
 #include <allegro5/allegro_acodec.h>
 #include <allegro5/allegro_primitives.h>
-
+#include <iostream>
+#include <ostream>
+#include <fstream>
+#include <sstream>
 #include "Engine/AudioHelper.hpp"
 #include "Engine/GameEngine.hpp"
 #include "Engine/Group.hpp"
@@ -34,22 +37,10 @@ void PauseScene::Initialize(){
     btn = new Engine::ImageButton("button_save.png", "button_save_hovered.png", halfW, halfH + 75, 500, 70, 0.5, 0.5);
     btn->SetOnClickCallback(std::bind(&PauseScene::SaveOnClick, this, 1));
     AddNewControlObject(btn);
-    //AddNewObject(new Engine::Image("MCidleStop.png", 600, 300, w / 5, h / 3, 0, 0));
-    //AddNewObject(new Engine::Image("Li'sfavorite.png", 933, 390, w / 10, h / 10, 0, 0));
-    //AddNewObject(new Engine::Image("heart.png", 940, 300, w / 17, h / 12, 0, 0));
-    //AddNewObject(new Engine::Image("water.png", 940, 510, w / 20, h / 12, 0, 0));
-    //if(Shared::redPotion)
-    //    AddNewObject(new Engine::Image("UndergroundShelter/B4/StorageRoom/red_water.png", 80, 330, 80, 80, 0, 0));
 }
 
 void PauseScene::Draw() const{
     IScene::Draw();
-    //al_draw_text(pirulenFont, al_map_rgb(255, 255, 255), 800, 350, ALLEGRO_ALIGN_CENTER, "RESUME");
-    //al_draw_text(pirulenFont, al_map_rgb(255, 255, 255), 800, 550, ALLEGRO_ALIGN_CENTER, "SAVE PROCESS");
-    //al_draw_text(pirulenFont, al_map_rgb(255, 255, 255), 150, 200, ALLEGRO_ALIGN_CENTER, "Object");
-    //al_draw_rectangle(70, 320, 170, 420, al_map_rgb(255, 255, 255), 2);
-    //al_draw_rounded_rectangle(1100, 330, 1400, 370, 10, 10, al_map_rgb(255, 255, 255), 2);
-    //al_draw_filled_rounded_rectangle(1100, 330, 1100 + Shared::lives * 100, 370, 10, 10, al_map_rgb(255, 255, 255));
 }
 
 void PauseScene::Terminate() {
@@ -67,15 +58,23 @@ void PauseScene::OnKeyDown(int keyCode){
             default:
                 break;
         }
-    
-    //if(keyCode == ALLEGRO_KEY_E) Engine::GameEngine::GetInstance().ChangeScene("Library");
 }
 
 void PauseScene::SaveOnClick(int stage){
+    Engine::LOG(Engine::INFO) << "SaveOnClick";
+    std::ofstream saveFile("../Maincharacter/SaveData.txt");// , std::ios::app
+    if (saveFile.is_open()) {
+        saveFile << Shared::previosStage << " "<< Shared::lives << " " << Shared::redPotion << " " << Shared::bluePotion << " " << Shared::yellowPotion
+        << " " << Shared::Gold << " " << Shared::Aluminum << " " << Shared::Iron << " " << Shared::HDLoil << " " << Shared::LDLoil << " " << Shared::IDcard << " "
+        << Shared::GoodRocket << " " << Shared::BadRocket << std::endl;
+    }
+    else {
+        Engine::LOG(Engine::ERROR) << "FILE unable to open.";
+    }
+    saveFile.close();
     Engine::GameEngine::GetInstance().ChangeScene("start");
 }
 void PauseScene::ResumeOnClick(int stage){
     const std::string StageName = Shared::previosStage;
     Engine::GameEngine::GetInstance().ChangeScene(StageName);
-    //Engine::GameEngine::GetInstance().ChangeScene("Lab");
 }

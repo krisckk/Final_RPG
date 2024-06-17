@@ -26,7 +26,7 @@ void Factory::Initialize(){
     BIGFont = al_load_font("Resource/fonts/PoetsenOne.ttf", 150, 0);
     AddNewObject(new Engine::Image("UndergroundShelter/Floor/Factory/FactoryBackground.jpg", 0, 0, w, h, 0, 0));
     AddNewObject(new Engine::Image("2Ddooropened.png", 0, h - 460, 200, 360, 0.5, 0));
-    AddNewObject(new Engine::Image("2Ddooropened.png", 1300, h - 460, 300, 360, 0, 0));
+    AddNewObject(new Engine::Image("2Ddooropened.png", 1400, h - 460, 300, 360, 0, 0));
     AddNewObject(new Engine::Image("UndergroundShelter/Floor/Factory/BrokenRocket.png", 170, 90, 400, 700, 0, 0));
     if(!Shared::GoodRocket && !Shared::BadRocket){
         AddNewObject(new Engine::Image("UndergroundShelter/Floor/Factory/UncompleteRocket.png", 650, 90, 400, 700, 0, 0));
@@ -37,7 +37,7 @@ void Factory::Initialize(){
     else if(!Shared::GoodRocket && Shared::BadRocket){
         AddNewObject(new Engine::Image("UndergroundShelter/Floor/Factory/BadRocket.png", 650, 90, 400, 700, 0, 0));
     }
-    AddNewObject(new Engine::Image("UndergroundShelter/Floor/Factory/CraftingTable.jpg", 1100, 600, 200, 200, 0, 0));
+    AddNewObject(new Engine::Image("UndergroundShelter/Floor/Factory/CraftingTable.jpg", 1150, 600, 200, 200, 0, 0));
     MC = new Maincharacter("MCRightStop.png", 40, 700, 32, 200);
     if (!MC) {
         Engine::LOG(Engine::ERROR) << "Failed to create Maincharacter object";
@@ -68,7 +68,13 @@ void Factory::Draw() const{
         al_draw_filled_rounded_rectangle(MC -> Position.x + 200, 680, MC -> Position.x + 500, 800, 10, 10, al_map_rgb(255, 255, 255));
         al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x + 250, 710, 0, "This is broken.");
     }
-    if (MC -> Position.x >= 1280 && MC -> Position.x <= 1500){
+    if (MC -> Position.x >= 1030 && MC -> Position.x <= 1350){
+        al_draw_filled_triangle(MC -> Position.x - 55, 700, MC -> Position.x - 55, 740, MC -> Position.x - 10, 720, al_map_rgb(255, 255, 255));
+        al_draw_filled_rounded_rectangle(MC -> Position.x - 350, 680, MC -> Position.x - 50, 800, 10, 10, al_map_rgb(255, 255, 255));
+        al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x - 320, 700, 0, "Press I to Interact");
+        al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x - 320, 740, 0, "Press C to Close");
+    }
+    if (MC -> Position.x >= 1380 && MC -> Position.x <= 1600){
         al_draw_filled_triangle(MC -> Position.x - 55, 700, MC -> Position.x - 55, 740, MC -> Position.x - 10, 720, al_map_rgb(255, 255, 255));
         al_draw_filled_rounded_rectangle(MC -> Position.x - 350, 680, MC -> Position.x - 50, 800, 10, 10, al_map_rgb(255, 255, 255));
         al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x - 320, 710, 0, "Press E to Enter");

@@ -37,7 +37,29 @@
 [INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/Floor/Factory/UncompleteRocket.png scaled to 400x700
 [INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/Floor/Factory/CraftingTable.jpg scaled to 200x200
 [INFO] Changed to Factory scene
+[INFO] ElevatorFloor scene create
+[INFO] Loaded Resource<image>: Resource/images/elevator.png scaled to 330x330
+[INFO] Loaded Resource<audio>: Resource/audios/joannaliaoThemeSong.ogg
+[INFO] Created<sample_instance>: Resource/audios/joannaliaoThemeSong.ogg
+[INFO] Changed to ElevatorFloor scene
+[INFO] stopped audio (sample)
+[INFO] PauseScene create
+[INFO] Loaded Resource<image>: Resource/images/button_resume.png scaled to 270x70
+[INFO] Loaded Resource<image>: Resource/images/button_resume.png
+[INFO] Loaded Resource<image>: Resource/images/button_resume_hovered.png
+[INFO] Loaded Resource<image>: Resource/images/button_save.png scaled to 500x70
+[INFO] Loaded Resource<image>: Resource/images/button_save.png
+[INFO] Loaded Resource<image>: Resource/images/button_save_hovered.png
+[INFO] Changed to PauseScene scene
+[INFO] SaveOnClick
+[INFO] Created<sample_instance>: Resource/audios/Time.ogg
+[INFO] Changed to start scene
+[INFO] stopped audio (sample)
+[INFO] ElevatorFloor scene create
+[INFO] Created<sample_instance>: Resource/audios/joannaliaoThemeSong.ogg
+[INFO] Changed to ElevatorFloor scene
 [INFO] Game Terminating...
+[INFO] stopped audio (sample)
 [INFO] Game terminated
 [INFO] Game end
 [INFO] Game Initializing...
