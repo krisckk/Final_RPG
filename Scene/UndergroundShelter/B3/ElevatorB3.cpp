@@ -45,6 +45,8 @@ void ElevatorB3::Terminate() {
     bgmInstance = std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE>();
     MC = nullptr; 
     IScene::Terminate();
+    al_destroy_font(PoetFont);
+    al_destroy_font(FloorFont);
 }
 
 void ElevatorB3::OnKeyDown(int keyCode){
@@ -72,6 +74,9 @@ void ElevatorB3::OnKeyDown(int keyCode){
             break;
         case ALLEGRO_KEY_B:
             Engine::GameEngine::GetInstance().ChangeScene("Backpack");
+            break;
+        case ALLEGRO_KEY_ESCAPE:
+            Engine::GameEngine::GetInstance().ChangeScene("PauseScene");
             break;
         default:
             break;

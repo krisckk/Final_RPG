@@ -30,27 +30,14 @@
 [INFO] Loaded Resource<image>: Resource/images/2Ddooropened.png scaled to 300x360
 [INFO] Loaded Resource<image>: Resource/images/MCRightStop.png
 [INFO] Changed to Lab scene
-[INFO] HardwareRoom scene create
-[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/B1/Hardwareroom/FussilOil.png scaled to 300x300
-[INFO] Changed to HardwareRoom scene
-[INFO] HardwareRoom Terminated
-[INFO] HardwareRoom scene create
-[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/B1/Office/OfficeDesk.png scaled to 700x400
-[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/B1/Office/IDcard.png scaled to 80x80
-[INFO] Changed to Office scene
-[INFO] Office Terminated
-[INFO] ElevatorToFloor scene create
-[INFO] Loaded Resource<image>: Resource/images/elevator.png scaled to 330x330
-[INFO] Loaded Resource<audio>: Resource/audios/joannaliaoThemeSong.ogg
-[INFO] Created<sample_instance>: Resource/audios/joannaliaoThemeSong.ogg
-[INFO] Changed to ElevatorToFloor scene
-[INFO] stopped audio (sample)
-[INFO] ElevatorFloor scene create
+[INFO] Factory scene create
 [INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/Floor/Factory/FactoryBackground.jpg scaled to 1600x900
-[INFO] Created<sample_instance>: Resource/audios/joannaliaoThemeSong.ogg
-[INFO] Changed to ElevatorFloor scene
+[INFO] Loaded Resource<image>: Resource/images/2Ddooropened.png scaled to 200x360
+[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/Floor/Factory/BrokenRocket.png scaled to 400x700
+[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/Floor/Factory/UncompleteRocket.png scaled to 400x700
+[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/Floor/Factory/CraftingTable.jpg scaled to 200x200
+[INFO] Changed to Factory scene
 [INFO] Game Terminating...
-[INFO] stopped audio (sample)
 [INFO] Game terminated
 [INFO] Game end
 [INFO] Game Initializing...

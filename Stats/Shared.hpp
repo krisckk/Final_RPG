@@ -16,6 +16,8 @@ public:
     static bool HDLoil;
     static bool LDLoil;
     static bool IDcard;
+    static bool GoodRocket;
+    static bool BadRocket;
     static std::string previosStage;
     static std::string currentStage;
     static void SetLives(int value);

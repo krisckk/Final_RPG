@@ -21,13 +21,17 @@ namespace Engine {
 extern Maincharacter* MC;
 class ElevatorFloor final : public  Engine::IScene {
     private:
+        bool showTextBox = true; // Flag to control the visibility of the text box
+        float textBoxTimer = 0.0f; // Timer to track the elapsed time
         std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE> bgmInstance;
         ALLEGRO_FONT* PoetFont;
         ALLEGRO_FONT* FloorFont;
+        ALLEGRO_FONT* pirulenFont;
     public:
         explicit ElevatorFloor() = default;
         void Draw() const override;
         void Update(float deltaTime) override;
+        void UpdateTextBox(float deltaTime);
         void Initialize() override;
         void Terminate() override;
         void OnKeyDown(int keyCode) override;

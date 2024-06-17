@@ -85,6 +85,9 @@ void Office::OnKeyDown(int keyCode){
         case ALLEGRO_KEY_P:
             if(MC -> Position.x >= 870 && MC -> Position.x <= 1050) Shared::IDcard = true;
             break;
+        case ALLEGRO_KEY_ESCAPE:
+            Engine::GameEngine::GetInstance().ChangeScene("PauseScene");
+            break;
         default:
             break;
     }

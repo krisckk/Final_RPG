@@ -1,6 +1,7 @@
 #include <allegro5/allegro.h>
 #include "IScene.hpp"
-
+#include <string>
+#include <stdexcept>
 namespace Engine {
 	void IScene::Terminate() {
 		Clear();

@@ -2,6 +2,7 @@
 #define ISCENE_HPP
 
 #include "Group.hpp"
+#include <string>
 
 namespace Engine {
 	/// <summary>

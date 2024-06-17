@@ -38,6 +38,8 @@ void Computer::Terminate()
     AudioHelper::StopSample(bgmInstance);
     bgmInstance = std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE>();
     IScene::Terminate();
+    al_destroy_font(PoetFont);
+    al_destroy_bitmap(OSImage);
 }
 void Computer::Draw() const
 {
@@ -165,6 +167,7 @@ void Computer::OnKeyDown(int keyCode)
             OS = false;
             Seeds = false;
         }
+        else if(Diary) Diary = false;
         else
         {
             Seeds = false;

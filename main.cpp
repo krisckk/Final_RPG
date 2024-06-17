@@ -22,7 +22,9 @@
 #include "Scene/UndergroundShelter/B1/Office.hpp"
 #include "Scene/UndergroundShelter/B1/ElevatorToFloor.hpp"
 #include "Scene/UndergroundShelter/Floor/ElevatorFloor.hpp"
+#include "Scene/UndergroundShelter/Floor/Factory.hpp"
 #include "Maincharacter/Backpack.hpp"
+#include "Maincharacter/PauseScene.hpp"
 
 
 int main(int argc, char **argv) {
@@ -33,6 +35,7 @@ int main(int argc, char **argv) {
 	game.AddNewScene("start", new StartScene());
 	game.AddNewScene("menuSettings", new MenuSettings());
 	game.AddNewScene("Computer", new Computer());
+	game.AddNewScene("PauseScene", new PauseScene());
 	// B4
 	game.AddNewScene("Lab", new LabScene());
 	game.AddNewScene("Library", new LibraryScene());
@@ -55,10 +58,12 @@ int main(int argc, char **argv) {
 	game.AddNewScene("ElevatorToFloor", new ElevatorToFloor());
 	// Floor
 	game.AddNewScene("ElevatorFloor", new ElevatorFloor());
-    // TODO: [HACKATHON-1-SCENE] (4/4): Change the start scene
+	game.AddNewScene("Factory", new Factory());
+    
 	game.Start("start", 120, 1600, 900);
 	game.Start("menuSettings", 120, 1600, 900);
 	game.Start("Backpack", 120, 1600, 900);
+	game.Start("PauseScene", 120, 1600, 900);
 	// B4
 	game.Start("Lab", 120, 1600, 900);
 	game.Start("Library", 120, 1600, 900);
@@ -81,5 +86,6 @@ int main(int argc, char **argv) {
 	game.Start("ElevatorToFloor", 120, 1600, 900);
 	// Floor 
 	game.Start("ElevatorFloor", 120, 1600, 900);
+	game.Start("Factory", 120, 1600, 900);
 	return 0;
 }

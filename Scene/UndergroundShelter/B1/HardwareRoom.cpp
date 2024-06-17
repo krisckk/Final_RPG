@@ -103,6 +103,9 @@ void HardwareRoom::OnKeyDown(int keyCode){
                 Shared::HDLoil = false;
             }
             break;
+        case ALLEGRO_KEY_ESCAPE:
+            Engine::GameEngine::GetInstance().ChangeScene("PauseScene");
+            break;
         default:
             break;
     }

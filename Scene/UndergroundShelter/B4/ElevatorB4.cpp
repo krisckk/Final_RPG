@@ -59,6 +59,8 @@ void ElevatorB4::Terminate() {
     AudioHelper::StopSample(bgmInstance);
     bgmInstance = std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE>();
     MC = nullptr; 
+    al_destroy_font(PoetFont);
+    al_destroy_font(FloorFont);
     IScene::Terminate();
 }
 
@@ -71,7 +73,9 @@ void ElevatorB4::OnKeyDown(int keyCode){
             MC->MoveRight(1.0f / 60.0f);
             break;
         case ALLEGRO_KEY_W:
-            if (MC -> Position.x >= 850 && MC -> Position.x <= 1000)
+            if (MC -> Position.x >= 850 && MC -> Position.x <= 1000) {
+                Engine::GameEngine::GetInstance().ChangeScene("ElevatorB3");
+            }
             break;
         case ALLEGRO_KEY_P:
             if(MC -> Position.x >= 380 && MC -> Position.x <= 580) Shared::Iron = true;
@@ -81,6 +85,9 @@ void ElevatorB4::OnKeyDown(int keyCode){
             break;
         case ALLEGRO_KEY_B:
             Engine::GameEngine::GetInstance().ChangeScene("Backpack");
+            break;
+        case ALLEGRO_KEY_ESCAPE:
+            Engine::GameEngine::GetInstance().ChangeScene("PauseScene");
             break;
         default:
             break;

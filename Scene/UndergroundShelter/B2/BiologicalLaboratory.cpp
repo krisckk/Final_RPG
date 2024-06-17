@@ -61,7 +61,7 @@ void BiologicalLaboratory::Draw() const {
     if (MC -> Position.x >= 1250 && MC -> Position.x <= 1600 && MC -> Position.y > 450){
         al_draw_filled_triangle(MC -> Position.x - 55, 700, MC -> Position.x - 55, 740, MC -> Position.x - 10, 720, al_map_rgb(255, 255, 255));
         al_draw_filled_rounded_rectangle(MC -> Position.x - 350, 680, MC -> Position.x - 50, 800, 10, 10, al_map_rgb(255, 255, 255));
-        al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x - 310, 710, 0, "Press E to Enter");
+        al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x - 310, 710, 0, "Press E to back");
     }
     if(MC -> Position.y < 450 && MC -> Position.x >= 1380 && !Shared::Aluminum){
         al_draw_filled_triangle(MC -> Position.x - 55, 250, MC -> Position.x - 55, 290, MC -> Position.x - 10, 270, al_map_rgb(255, 255, 255));
@@ -98,6 +98,11 @@ void BiologicalLaboratory::OnKeyDown(int keyCode){
             if(MC -> Position.x >= 1250 && MC -> Position.x <= 1600 && MC -> Position.y > 450){
                 Engine::GameEngine::GetInstance().ChangeScene("ElevatorB2");
             }
+            break;
+        case ALLEGRO_KEY_ESCAPE:
+            Engine::GameEngine::GetInstance().ChangeScene("PauseScene");
+            break;
+        default:
             break;
     }
 }

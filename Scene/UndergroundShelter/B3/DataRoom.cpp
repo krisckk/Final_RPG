@@ -31,11 +31,11 @@ void DataRoom::Initialize(){
     third = false;
     fourth = false;
     PoetFont = al_load_font("Resource/fonts/PoetsenOne.ttf", 30, 0);
-    firstData = al_load_bitmap("Resource/images/UndergroundShelter/B3/DataRoom/HumanPreservation.png");
+    firstData = al_load_bitmap("Resource/images/UndergroundShelter/B3/DataRoom/dataone.png");
     Background = al_load_bitmap("Resource/images/UndergroundShelter/B3/DataRoom/DataBackground.jpg");
-    secondData = al_load_bitmap("Resource/images/UndergroundShelter/B3/DataRoom/BiologicalReport.png");
-    thirdData = al_load_bitmap("Resource/images/UndergroundShelter/B3/DataRoom/Compensation.png");
-    fourthData = al_load_bitmap("Resource/images/UndergroundShelter/B3/DataRoom/SpaceshipReport.png");
+    secondData = al_load_bitmap("Resource/images/UndergroundShelter/B3/DataRoom/datatwo.png");
+    thirdData = al_load_bitmap("Resource/images/UndergroundShelter/B3/DataRoom/datathree.png");
+    fourthData = al_load_bitmap("Resource/images/UndergroundShelter/B3/DataRoom/datafour.png");
     AddNewObject(new Engine::Image("UndergroundShelter/LabGeneralBackground.png", 0, 0, w, h, 0, 0));
     AddNewObject(new Engine::Image("2Ddooropened.png", 1550, h - 460, 300, 360, 0.5, 0));
     AddNewObject(new Engine::Image("UndergroundShelter/B3/DataRoom/NewBookShelf.png", 900, h - 410, 400, 350, 0 , 0));
@@ -56,6 +56,10 @@ void DataRoom::Terminate(){
     al_destroy_font(PoetFont);
     al_destroy_bitmap(firstData);
     al_destroy_bitmap(Background);
+    al_destroy_bitmap(firstData);
+    al_destroy_bitmap(secondData);
+    al_destroy_bitmap(thirdData);
+    al_destroy_bitmap(fourthData);
     MC = nullptr;
     IScene::Terminate();
 }
@@ -88,11 +92,10 @@ void DataRoom::Draw() const {
         al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x - 310, 710, 0, "Press I to interact");
     }
     if(first || second || third || fourth){
-        al_draw_scaled_bitmap(Background, 0, 0, 711, 400, 0, 0, 1600, 900, 0);
-        if(first) al_draw_scaled_bitmap(firstData, 0, 0, 1084, 576, 200, 100, 1200, 700, 0);
-        if(second) al_draw_scaled_bitmap(secondData, 0, 0, 1040, 328, 100, 100, 1400, 700, 0);
-        if(third) al_draw_scaled_bitmap(thirdData, 0, 0, 1202, 146, 200, 300, 1200, 300, 0);
-        if(fourth) al_draw_scaled_bitmap(fourthData, 0, 0, 1040, 328, 100, 100, 1400, 700, 0);
+        if(first) al_draw_scaled_bitmap(firstData, 0, 0, 1009, 600, 0, 0, 1600, 900, 0);
+        if(second) al_draw_scaled_bitmap(secondData, 0, 0, 1009, 600, 0, 0, 1600, 900, 0);
+        if(third) al_draw_scaled_bitmap(thirdData, 0, 0, 1009, 600, 0, 0, 1600, 900, 0);
+        if(fourth) al_draw_scaled_bitmap(fourthData, 0, 0, 729, 494, 0, 0, 1600, 900, 0);
         al_draw_text(PoetFont, al_map_rgb(255, 255, 255), 800, 820, ALLEGRO_ALIGN_CENTER, "Press C to close");
     }
 }
@@ -110,6 +113,9 @@ void DataRoom::OnKeyDown(int keyCode){
             break;
         case ALLEGRO_KEY_B:
             Engine::GameEngine::GetInstance().ChangeScene("Backpack");
+            break;
+        case ALLEGRO_KEY_ESCAPE:
+            Engine::GameEngine::GetInstance().ChangeScene("PauseScene");
             break;
         case ALLEGRO_KEY_I:
             if(MC -> Position.x >= 10 && MC -> Position.x <= 250){

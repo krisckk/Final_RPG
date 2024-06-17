@@ -64,6 +64,8 @@ void StorageRoom::Initialize(){
 void StorageRoom::Terminate() {
     MC = nullptr; 
     IScene::Terminate();
+    al_destroy_font(BIGFont);
+    al_destroy_font(PoetFont);
 }
 
 void StorageRoom::Draw() const{
@@ -149,11 +151,14 @@ void StorageRoom::OnKeyDown(int keyCode){
             MC->MoveRight(1.0f / 60.0f);
             break;
         case ALLEGRO_KEY_E:
-            if(MC -> Position.x <= 150) Engine::GameEngine::GetInstance().ChangeScene("Lab");
+            if(MC -> Position.x <= 150) Engine::GameEngine::GetInstance().ChangeScene("Library");
             if(MC -> Position.x >= 1300) Engine::GameEngine::GetInstance().ChangeScene("ElevatorB4");
             break;
         case ALLEGRO_KEY_B:
             Engine::GameEngine::GetInstance().ChangeScene("Backpack");
+            break;
+        case ALLEGRO_KEY_ESCAPE:
+            Engine::GameEngine::GetInstance().ChangeScene("PauseScene");
             break;
         default:
             break;

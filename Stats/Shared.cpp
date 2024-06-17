@@ -13,6 +13,8 @@ bool Shared::Iron;
 bool Shared::HDLoil;
 bool Shared::LDLoil;
 bool Shared::IDcard;
+bool Shared::GoodRocket;
+bool Shared::BadRocket;
 std::string Shared::previosStage = "";
 std::string Shared::currentStage = "";
 void Shared::SetLives(int value) {

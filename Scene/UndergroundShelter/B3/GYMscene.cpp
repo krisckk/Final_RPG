@@ -94,6 +94,9 @@ void GYMscene::OnKeyDown(int keyCode){
         case ALLEGRO_KEY_P:
             if(MC -> Position.x >= 980 && MC -> Position.x <= 1180) Shared::Gold = true;
             break;
+        case ALLEGRO_KEY_ESCAPE:
+            Engine::GameEngine::GetInstance().ChangeScene("PauseScene");
+            break;
         default:
             break;
     }

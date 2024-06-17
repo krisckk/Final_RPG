@@ -93,12 +93,16 @@ add_executable(2024_I2P2_TowerDefense_with_answer
         Scene/UndergroundShelter/B1/ElevatorToFloor.cpp
         Scene/UndergroundShelter/Floor/ElevatorFloor.hpp
         Scene/UndergroundShelter/Floor/ElevatorFloor.cpp
+        Scene/UndergroundShelter/Floor/Factory.cpp
+        Scene/UndergroundShelter/Floor/Factory.hpp
         Maincharacter/Animation.hpp
         Maincharacter/Animation.cpp
         Maincharacter/MainCharacter.hpp
         Maincharacter/MainCharacter.cpp
         Maincharacter/Backpack.cpp
         Maincharacter/Backpack.hpp
+        Maincharacter/PauseScene.hpp
+        Maincharacter/PauseScene.cpp
         Monster/Monster.cpp
         Monster/Monster.hpp
         Stats/Shared.cpp

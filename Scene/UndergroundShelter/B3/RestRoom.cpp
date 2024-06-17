@@ -105,6 +105,9 @@ void RestRoom::OnKeyDown(int keyCode){
         case ALLEGRO_KEY_B:
             Engine::GameEngine::GetInstance().ChangeScene("Backpack");
             break;
+        case ALLEGRO_KEY_ESCAPE:
+            Engine::GameEngine::GetInstance().ChangeScene("PauseScene");
+            break;
         default:
             break;
     }

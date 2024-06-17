@@ -68,6 +68,9 @@ void LibraryScene::Initialize(){
 void LibraryScene::Terminate() {
     MC = nullptr; 
     IScene::Terminate();
+    al_destroy_font(BIGFont);
+    al_destroy_font(PoetFont);
+    al_destroy_bitmap(Passwordnote);
 }
 
 void LibraryScene::OnKeyDown(int keyCode){
@@ -137,6 +140,9 @@ void LibraryScene::OnKeyDown(int keyCode){
                     i++;
                 }
             }
+        case ALLEGRO_KEY_ESCAPE:
+            Engine::GameEngine::GetInstance().ChangeScene("PauseScene");
+            break;
         default:
             break;
     }
