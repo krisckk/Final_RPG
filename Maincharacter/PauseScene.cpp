@@ -62,7 +62,7 @@ void PauseScene::OnKeyDown(int keyCode){
 
 void PauseScene::SaveOnClick(int stage){
     Engine::LOG(Engine::INFO) << "SaveOnClick";
-    std::ofstream saveFile("../Maincharacter/SaveData.txt");// , std::ios::app
+    std::ofstream saveFile("../Maincharacter/SaveData.txt", std::ios::trunc);// , std::ios::app
     if (saveFile.is_open()) {
         saveFile << Shared::previosStage << " "<< Shared::lives << " " << Shared::redPotion << " " << Shared::bluePotion << " " << Shared::yellowPotion
         << " " << Shared::Gold << " " << Shared::Aluminum << " " << Shared::Iron << " " << Shared::HDLoil << " " << Shared::LDLoil << " " << Shared::IDcard << " "
