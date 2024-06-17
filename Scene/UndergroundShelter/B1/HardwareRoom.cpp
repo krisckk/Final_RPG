@@ -19,6 +19,7 @@
 #include "HardwareRoom.hpp"
 
 void HardwareRoom::Initialize(){
+    Shared::HardwareRoom = true;
     int w = Engine::GameEngine::GetInstance().GetScreenSize().x;
     int h = Engine::GameEngine::GetInstance().GetScreenSize().y;
     int halfW = w / 2;

@@ -24,6 +24,7 @@
 #include "UI/Component/Label.hpp"
 #include "UI/Animation/DirtyEffect.hpp"
 #include "UI/Animation/Plane.hpp"
+#include "Stats/Shared.hpp"
 #include "Maincharacter/Maincharacter.hpp"
 #include "LibraryScene.hpp"
 #include "LabScene.hpp"
@@ -35,6 +36,7 @@ char password[5];
 static bool correct;
 int i = 0;
 void LibraryScene::Initialize(){
+    Shared::LibraryScene = true;
     int w = Engine::GameEngine::GetInstance().GetScreenSize().x;
     int h = Engine::GameEngine::GetInstance().GetScreenSize().y;
     int halfW = w / 2;
@@ -140,6 +142,7 @@ void LibraryScene::OnKeyDown(int keyCode){
                     i++;
                 }
             }
+            break;
         case ALLEGRO_KEY_ESCAPE:
             Engine::GameEngine::GetInstance().ChangeScene("PauseScene");
             break;

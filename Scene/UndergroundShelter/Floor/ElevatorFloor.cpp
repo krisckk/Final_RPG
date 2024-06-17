@@ -16,6 +16,7 @@
 #include "ElevatorFloor.hpp"
 #include "Scene/UndergroundShelter/B3/ElevatorB3.hpp"
 void ElevatorFloor::Initialize(){
+    Shared::ElevatorFloor = true;
     int w = Engine::GameEngine::GetInstance().GetScreenSize().x;
     int h = Engine::GameEngine::GetInstance().GetScreenSize().y;
     int halfW = w / 2;

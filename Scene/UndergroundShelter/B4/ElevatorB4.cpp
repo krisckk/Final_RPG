@@ -34,6 +34,7 @@
 #include "Scene/UndergroundShelter/B3/ElevatorB3.hpp"
 
 void ElevatorB4::Initialize(){
+    Shared::ElevatorB4 = true;
     int w = Engine::GameEngine::GetInstance().GetScreenSize().x;
     int h = Engine::GameEngine::GetInstance().GetScreenSize().y;
     int halfW = w / 2;
@@ -45,7 +46,7 @@ void ElevatorB4::Initialize(){
     AddNewObject(new Engine::Image("2Ddooropened.png", 0, h - 460, 200, 360, 0.5, 0));
     AddNewObject(new Engine::Image("elevator.png", halfW + 30, halfH + 30, 330, 330, 0, 0));
     if(!Shared::Iron) AddNewObject(new Engine::Image("Iron.png", 500, 750, 80, 60, 0, 0));
-    bgmInstance = AudioHelper::PlaySample("joannaliaoThemeSong.ogg", true, AudioHelper::BGMVolume);
+    bgmInstance = AudioHelper::PlaySample("Weightless.ogg", true, AudioHelper::BGMVolume);
     MC = new Maincharacter("MCRightStop.png", 80, 680, 32, 200);
     if (!MC) {
         Engine::LOG(Engine::ERROR) << "Failed to create Maincharacter object";

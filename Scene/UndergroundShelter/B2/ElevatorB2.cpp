@@ -18,6 +18,7 @@
 #include "Scene/UndergroundShelter/B3/ElevatorB3.hpp"
 Monster* Enemy;
 void ElevatorB2::Initialize(){
+    Shared::ElevatorB2 = true;
     int w = Engine::GameEngine::GetInstance().GetScreenSize().x;
     int h = Engine::GameEngine::GetInstance().GetScreenSize().y;
     int halfW = w / 2;
@@ -30,7 +31,7 @@ void ElevatorB2::Initialize(){
     AddNewObject(new Engine::Image("UndergroundShelter/LabGeneralBackground.png", 0, 0, w, h, 0, 0));
     AddNewObject(new Engine::Image("2Ddooropened.png", 0, h - 460, 200, 360, 0.5, 0));
     AddNewObject(new Engine::Image("elevator.png", halfW + 30, halfH + 30, 330, 330, 0, 0));
-    bgmInstance = AudioHelper::PlaySample("joannaliaoThemeSong.ogg", true, AudioHelper::BGMVolume);
+    bgmInstance = AudioHelper::PlaySample("Weightless.ogg", true, AudioHelper::BGMVolume);
     MC = new Maincharacter("MCRightStop.png", halfW + 30, 680, 32, 200);
     if(!Enemy -> isDead){
         Enemy = new Monster("Monster/idle/idle_1.png", 80, 550, 32, 50);
@@ -50,6 +51,10 @@ void ElevatorB2::Initialize(){
 void ElevatorB2::Terminate() {
     AudioHelper::StopSample(bgmInstance);
     bgmInstance = std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE>();
+    al_destroy_font(PoetFont);
+    al_destroy_font(FloorFont);
+    al_destroy_font(BIGFont);
+    al_destroy_bitmap(GameoverBackground);
     MC = nullptr; 
     Enemy = nullptr;
     IScene::Terminate();

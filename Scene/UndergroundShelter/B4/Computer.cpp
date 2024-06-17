@@ -23,7 +23,7 @@ void Computer::Initialize()
     PoetFont = al_load_font("Resource/fonts/PoetsenOne.ttf", 17, 0);
     OSImage = al_load_bitmap("Resource/images/UndergroundShelter/B4/Computer/OS.jpg");
     AddNewObject(new Engine::Image("UndergroundShelter/B4/Computer/WindowsBackground.png", 0, 0, w, h, 0, 0));
-    bgmInstance = AudioHelper::PlaySample("joannaliaoThemeSong.ogg", true, AudioHelper::BGMVolume);
+    bgmInstance = AudioHelper::PlaySample("Weightless.ogg", true, AudioHelper::BGMVolume);
 
     Engine::ImageButton *btn;
     btn = new Engine::ImageButton("UndergroundShelter/B4/Computer/file.png", "UndergroundShelter/B4/Computer/file.png", halfW / 2 + 850, halfH / 2 + 90, 120, 120, 0, 0);

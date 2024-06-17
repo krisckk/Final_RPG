@@ -17,6 +17,7 @@
 #include "Factory.hpp"
 #include "Stats/Shared.hpp"
 void Factory::Initialize(){
+    Shared::Factory = true;
     int w = Engine::GameEngine::GetInstance().GetScreenSize().x;
     int h = Engine::GameEngine::GetInstance().GetScreenSize().y;
     int halfW = w / 2;
@@ -68,6 +69,11 @@ void Factory::Draw() const{
         al_draw_filled_rounded_rectangle(MC -> Position.x + 200, 680, MC -> Position.x + 500, 800, 10, 10, al_map_rgb(255, 255, 255));
         al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x + 250, 710, 0, "This is broken.");
     }
+    if (MC -> Position.x >= 605 && MC -> Position.x <= 990){
+        al_draw_filled_triangle(MC -> Position.x + 200, 700, MC -> Position.x + 200, 740, MC -> Position.x + 170, 720, al_map_rgb(255, 255, 255));
+        al_draw_filled_rounded_rectangle(MC -> Position.x + 200, 680, MC -> Position.x + 500, 800, 10, 10, al_map_rgb(255, 255, 255));
+        al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x + 250, 710, 0, "Press E to Enter");
+    }
     if (MC -> Position.x >= 1030 && MC -> Position.x <= 1350){
         al_draw_filled_triangle(MC -> Position.x - 55, 700, MC -> Position.x - 55, 740, MC -> Position.x - 10, 720, al_map_rgb(255, 255, 255));
         al_draw_filled_rounded_rectangle(MC -> Position.x - 350, 680, MC -> Position.x - 50, 800, 10, 10, al_map_rgb(255, 255, 255));
@@ -91,7 +97,7 @@ void Factory::OnKeyDown(int keyCode){
             break;
         case ALLEGRO_KEY_E:
             if(MC -> Position.x <= 150) Engine::GameEngine::GetInstance().ChangeScene("ElevatorFloor");
-            if(MC -> Position.x >= 1300) Engine::GameEngine::GetInstance().ChangeScene("ElevatorB4");
+            if(MC -> Position.x >= 1300) Engine::GameEngine::GetInstance().ChangeScene("Road");
             break;
         case ALLEGRO_KEY_B:
             Engine::GameEngine::GetInstance().ChangeScene("Backpack");
@@ -99,6 +105,10 @@ void Factory::OnKeyDown(int keyCode){
         case ALLEGRO_KEY_ESCAPE:
             Engine::GameEngine::GetInstance().ChangeScene("PauseScene");
             break;
+        case ALLEGRO_KEY_I:
+            if (MC -> Position.x >= 1030 && MC -> Position.x <= 1350){
+                Engine::GameEngine::GetInstance().ChangeScene("CraftingTable");
+            }
         default:
             break;
     }

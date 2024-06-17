@@ -18,6 +18,7 @@
 #include "Scene/UndergroundShelter/B2/ElevatorB2.hpp"
 
 void ElevatorB1::Initialize(){
+    Shared::ElevatorB1 = true;
     int w = Engine::GameEngine::GetInstance().GetScreenSize().x;
     int h = Engine::GameEngine::GetInstance().GetScreenSize().y;
     int halfW = w / 2;
@@ -29,7 +30,7 @@ void ElevatorB1::Initialize(){
     AddNewObject(new Engine::Image("2Ddooropened.png", 0, h - 460, 200, 360, 0.5, 0));
     AddNewObject(new Engine::Image("elevator.png", halfW + 30, halfH + 30, 330, 330, 0, 0));
 
-    bgmInstance = AudioHelper::PlaySample("joannaliaoThemeSong.ogg", true, AudioHelper::BGMVolume);
+    bgmInstance = AudioHelper::PlaySample("Weightless.ogg", true, AudioHelper::BGMVolume);
     MC = new Maincharacter("MCRightStop.png", halfW + 30, 680, 32, 200);
     if (!MC) {
         Engine::LOG(Engine::ERROR) << "Failed to create Maincharacter object";
@@ -42,6 +43,8 @@ void ElevatorB1::Initialize(){
 void ElevatorB1::Terminate() {
     AudioHelper::StopSample(bgmInstance);
     bgmInstance = std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE>();
+    al_destroy_font(PoetFont);
+    al_destroy_font(FloorFont);
     MC = nullptr; 
     IScene::Terminate();
 }

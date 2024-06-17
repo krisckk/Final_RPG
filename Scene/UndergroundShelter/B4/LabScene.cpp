@@ -10,13 +10,14 @@
 #include "UI/Component/Label.hpp"
 #include "UI/Animation/DirtyEffect.hpp"
 #include "UI/Animation/Plane.hpp"
+#include "Stats/Shared.hpp"
 #include "Maincharacter/Maincharacter.hpp"
 #include "LabScene.hpp"
 #include "LibraryScene.hpp"
 Maincharacter* MC;
 void LabScene::Initialize(){
+    Shared::LabScene = true;
     // BackGround
-    
     int w = Engine::GameEngine::GetInstance().GetScreenSize().x;
     int h = Engine::GameEngine::GetInstance().GetScreenSize().y;
     int halfW = w / 2;

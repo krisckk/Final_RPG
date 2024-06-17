@@ -66,7 +66,10 @@ void PauseScene::SaveOnClick(int stage){
     if (saveFile.is_open()) {
         saveFile << Shared::previosStage << " "<< Shared::lives << " " << Shared::redPotion << " " << Shared::bluePotion << " " << Shared::yellowPotion
         << " " << Shared::Gold << " " << Shared::Aluminum << " " << Shared::Iron << " " << Shared::HDLoil << " " << Shared::LDLoil << " " << Shared::IDcard << " "
-        << Shared::GoodRocket << " " << Shared::BadRocket << std::endl;
+        << Shared::GoodRocket << " " << Shared::BadRocket << " " << Shared::LabScene << " " << Shared::LibraryScene << " " << Shared::StorageRoom << " " << Shared::ElevatorB4 << " " 
+        << Shared::ElevatorB3 << " " << Shared::RestRoom << " " << Shared::DiningRoom << " " << Shared::GYMscene << " " << Shared::DataRoom << " " << Shared::ElevatorB2 << " " 
+        << Shared::BiologicalLaboratory << " " << Shared::ElevatorB1 << " " << Shared::HardwareRoom << " " << Shared::Office << " " << Shared::ElevatorToFloor << " "
+        << Shared::ElevatorFloor << " " << Shared::Factory << " " << Shared::Road << " " << Shared::House << " " << Shared::Home << std::endl;
     }
     else {
         Engine::LOG(Engine::ERROR) << "FILE unable to open.";

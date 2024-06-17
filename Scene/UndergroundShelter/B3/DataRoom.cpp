@@ -22,6 +22,7 @@
 #include "Monster/Monster.hpp"
 
 void DataRoom::Initialize(){
+    Shared::DataRoom = true;
     int w = Engine::GameEngine::GetInstance().GetScreenSize().x;
     int h = Engine::GameEngine::GetInstance().GetScreenSize().y;
     int halfW = w / 2;

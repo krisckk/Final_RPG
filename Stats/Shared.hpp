@@ -1,6 +1,7 @@
 #ifndef SHARED_HPP
 #define SHARED_HPP
 #include <string>
+#include <vector>
 class Shared {
 public:
     static int lives;
@@ -20,6 +21,32 @@ public:
     static bool BadRocket;
     static std::string previosStage;
     static std::string currentStage;
+    // B4
+    static bool LabScene;
+    static bool LibraryScene;
+    static bool StorageRoom;
+    static bool ElevatorB4;
+    // B3
+    static bool ElevatorB3;
+    static bool RestRoom;
+    static bool DiningRoom;
+    static bool GYMscene;
+    static bool DataRoom;
+    // B2
+    static bool ElevatorB2;
+    static bool BiologicalLaboratory;
+    // B1
+    static bool ElevatorB1;
+    static bool HardwareRoom;
+    static bool Office;
+    static bool ElevatorToFloor;
+    // Floor
+    static bool ElevatorFloor;
+    static bool Factory;
+    // Ground
+    static bool Road;
+    static bool House;
+    static bool Home;
     static void SetLives(int value);
     static void SetHunger(int value);
     static void SetThirst(int value);

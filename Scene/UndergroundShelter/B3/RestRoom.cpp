@@ -24,6 +24,7 @@ static ALLEGRO_BITMAP* bulletin_board = NULL;
 bool bulletin_board_open = false;
 
 void RestRoom::Initialize(){
+    Shared::RestRoom = true;
     int w = Engine::GameEngine::GetInstance().GetScreenSize().x;
     int h = Engine::GameEngine::GetInstance().GetScreenSize().y;
     int halfW = w / 2;

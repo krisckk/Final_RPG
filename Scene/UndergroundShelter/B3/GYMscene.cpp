@@ -23,6 +23,7 @@
 #include "Stats/Shared.hpp"
 //static ALLEGRO_BITMAP* bulletin_board = NULL;
 void GYMscene::Initialize(){
+    Shared::GYMscene = true;
     int w = Engine::GameEngine::GetInstance().GetScreenSize().x;
     int h = Engine::GameEngine::GetInstance().GetScreenSize().y;
     int halfW = w / 2;

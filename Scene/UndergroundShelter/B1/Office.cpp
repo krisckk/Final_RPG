@@ -18,6 +18,7 @@
 #include "Stats/Shared.hpp"
 #include "Office.hpp"
 void Office::Initialize(){
+    Shared::Office = true;
     int w = Engine::GameEngine::GetInstance().GetScreenSize().x;
     int h = Engine::GameEngine::GetInstance().GetScreenSize().y;
     int halfW = w / 2;

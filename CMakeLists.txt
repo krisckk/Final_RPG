@@ -95,6 +95,14 @@ add_executable(2024_I2P2_TowerDefense_with_answer
         Scene/UndergroundShelter/Floor/ElevatorFloor.cpp
         Scene/UndergroundShelter/Floor/Factory.cpp
         Scene/UndergroundShelter/Floor/Factory.hpp
+        Scene/UndergroundShelter/Floor/CraftingTable.cpp
+        Scene/UndergroundShelter/Floor/CraftingTable.hpp
+        Scene/Ground/Home.cpp
+        Scene/Ground/Home.hpp
+        Scene/Ground/House.cpp
+        Scene/Ground/House.hpp
+        Scene/Ground/Road.cpp
+        Scene/Ground/Road.hpp
         Maincharacter/Animation.hpp
         Maincharacter/Animation.cpp
         Maincharacter/MainCharacter.hpp

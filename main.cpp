@@ -23,6 +23,10 @@
 #include "Scene/UndergroundShelter/B1/ElevatorToFloor.hpp"
 #include "Scene/UndergroundShelter/Floor/ElevatorFloor.hpp"
 #include "Scene/UndergroundShelter/Floor/Factory.hpp"
+#include "Scene/UndergroundShelter/Floor/CraftingTable.hpp"
+#include "Scene/Ground/Home.hpp"
+#include "Scene/Ground/House.hpp"
+#include "Scene/Ground/Road.hpp"
 #include "Maincharacter/Backpack.hpp"
 #include "Maincharacter/PauseScene.hpp"
 
@@ -45,8 +49,8 @@ int main(int argc, char **argv) {
 	// B3
 	game.AddNewScene("ElevatorB3", new ElevatorB3());
 	game.AddNewScene("RestRoom", new RestRoom());
-	game.AddNewScene("GYMscene", new GYMscene());
 	game.AddNewScene("DiningRoom", new DiningRoom());
+	game.AddNewScene("GYMscene", new GYMscene());
 	game.AddNewScene("DataRoom", new DataRoom());
 	// B2
 	game.AddNewScene("ElevatorB2", new ElevatorB2());
@@ -59,7 +63,12 @@ int main(int argc, char **argv) {
 	// Floor
 	game.AddNewScene("ElevatorFloor", new ElevatorFloor());
 	game.AddNewScene("Factory", new Factory());
-    
+	game.AddNewScene("CraftingTable", new CraftingTable());
+    // Ground
+	game.AddNewScene("Home", new Home());
+	game.AddNewScene("House", new House());
+	game.AddNewScene("Road", new Road());
+
 	game.Start("start", 120, 1600, 900);
 	game.Start("menuSettings", 120, 1600, 900);
 	game.Start("Backpack", 120, 1600, 900);
@@ -87,5 +96,10 @@ int main(int argc, char **argv) {
 	// Floor 
 	game.Start("ElevatorFloor", 120, 1600, 900);
 	game.Start("Factory", 120, 1600, 900);
+	game.Start("CraftingTable", 120, 1600, 900);
+	// Ground
+	game.Start("Home", 120, 1600, 900);
+	game.Start("House", 120, 1600, 900);
+	game.Start("Road", 120, 1600, 900);
 	return 0;
 }
