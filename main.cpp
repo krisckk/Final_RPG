@@ -21,6 +21,7 @@
 #include "Scene/UndergroundShelter/B1/HardwareRoom.hpp"
 #include "Scene/UndergroundShelter/B1/Office.hpp"
 #include "Scene/UndergroundShelter/B1/ElevatorToFloor.hpp"
+#include "Scene/UndergroundShelter/Floor/ElevatorFloor.hpp"
 #include "Maincharacter/Backpack.hpp"
 
 
@@ -52,6 +53,8 @@ int main(int argc, char **argv) {
 	game.AddNewScene("HardwareRoom", new HardwareRoom());
 	game.AddNewScene("Office", new Office());
 	game.AddNewScene("ElevatorToFloor", new ElevatorToFloor());
+	// Floor
+	game.AddNewScene("ElevatorFloor", new ElevatorFloor());
     // TODO: [HACKATHON-1-SCENE] (4/4): Change the start scene
 	game.Start("start", 120, 1600, 900);
 	game.Start("menuSettings", 120, 1600, 900);
@@ -76,5 +79,7 @@ int main(int argc, char **argv) {
 	game.Start("HardwareRoom", 120, 1600, 900);
 	game.Start("Office", 120, 1600, 900);
 	game.Start("ElevatorToFloor", 120, 1600, 900);
+	// Floor 
+	game.Start("ElevatorFloor", 120, 1600, 900);
 	return 0;
 }

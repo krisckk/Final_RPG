@@ -39,11 +39,16 @@
 [INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/B1/Office/IDcard.png scaled to 80x80
 [INFO] Changed to Office scene
 [INFO] Office Terminated
-[INFO] ElevatorB3 scene create
+[INFO] ElevatorToFloor scene create
 [INFO] Loaded Resource<image>: Resource/images/elevator.png scaled to 330x330
 [INFO] Loaded Resource<audio>: Resource/audios/joannaliaoThemeSong.ogg
 [INFO] Created<sample_instance>: Resource/audios/joannaliaoThemeSong.ogg
 [INFO] Changed to ElevatorToFloor scene
+[INFO] stopped audio (sample)
+[INFO] ElevatorFloor scene create
+[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/Floor/Factory/FactoryBackground.jpg scaled to 1600x900
+[INFO] Created<sample_instance>: Resource/audios/joannaliaoThemeSong.ogg
+[INFO] Changed to ElevatorFloor scene
 [INFO] Game Terminating...
 [INFO] stopped audio (sample)
 [INFO] Game terminated

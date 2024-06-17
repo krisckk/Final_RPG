@@ -13,21 +13,21 @@
 #include "Maincharacter/Maincharacter.hpp"
 #include "Maincharacter/Backpack.hpp" 
 #include "Stats/Shared.hpp"
-#include "ElevatorToFloor.hpp"
+#include "ElevatorFloor.hpp"
 #include "Scene/UndergroundShelter/B3/ElevatorB3.hpp"
-void ElevatorToFloor::Initialize(){
+void ElevatorFloor::Initialize(){
     int w = Engine::GameEngine::GetInstance().GetScreenSize().x;
     int h = Engine::GameEngine::GetInstance().GetScreenSize().y;
     int halfW = w / 2;
     int halfH = h / 2;
-    Engine::LOG(Engine::INFO) << "ElevatorToFloor scene create";
+    Engine::LOG(Engine::INFO) << "ElevatorFloor scene create";
     PoetFont = al_load_font("Resource/fonts/PoetsenOne.ttf", 30, 0);
     FloorFont = al_load_font("Resource/fonts/pirulen.ttf", 20, 0);
-    AddNewObject(new Engine::Image("UndergroundShelter/LabGeneralBackground.png", 0, 0, w, h, 0, 0));
+    AddNewObject(new Engine::Image("UndergroundShelter/Floor/Factory/FactoryBackground.jpg", 0, 0, w, h, 0, 0));
     AddNewObject(new Engine::Image("2Ddooropened.png", 1550, h - 460, 300, 360, 0.5, 0));
     AddNewObject(new Engine::Image("elevator.png", halfW - 170, halfH + 30, 330, 330, 0, 0));
     bgmInstance = AudioHelper::PlaySample("joannaliaoThemeSong.ogg", true, AudioHelper::BGMVolume);
-    MC = new Maincharacter("MCRightStop.png", 1550, 680, 32, 200);
+    MC = new Maincharacter("MCRightStop.png", halfW - 30, 680, 32, 200);
     if (!MC) {
         Engine::LOG(Engine::ERROR) << "Failed to create Maincharacter object";
         return;
@@ -36,14 +36,14 @@ void ElevatorToFloor::Initialize(){
     AddNewObject(MC);
 }
 
-void ElevatorToFloor::Terminate() {
+void ElevatorFloor::Terminate() {
     AudioHelper::StopSample(bgmInstance);
     bgmInstance = std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE>();
     MC = nullptr; 
     IScene::Terminate();
 }
 
-void ElevatorToFloor::OnKeyDown(int keyCode){
+void ElevatorFloor::OnKeyDown(int keyCode){
     switch (keyCode) {
         case ALLEGRO_KEY_A:
             MC->MoveLeft(1.0f / 60.0f); // Assuming 60 FPS
@@ -51,9 +51,9 @@ void ElevatorToFloor::OnKeyDown(int keyCode){
         case ALLEGRO_KEY_D:
             MC->MoveRight(1.0f / 60.0f);
             break;
-        case ALLEGRO_KEY_W:
-            if (MC -> Position.x >= 650 && MC -> Position.x <= 800 && Shared::IDcard)
-                Engine::GameEngine::GetInstance().ChangeScene("ElevatorFloor");
+        case ALLEGRO_KEY_S:
+            if (MC -> Position.x >= 850 && MC -> Position.x <= 1000 && Shared::IDcard)
+                Engine::GameEngine::GetInstance().ChangeScene("ElevatorToFloor");
             break;
         case ALLEGRO_KEY_E:
             if(MC -> Position.x >= 1400) Engine::GameEngine::GetInstance().ChangeScene("Office");
@@ -68,7 +68,7 @@ void ElevatorToFloor::OnKeyDown(int keyCode){
     }
 }
 
-void ElevatorToFloor::OnKeyUp(int keyCode){
+void ElevatorFloor::OnKeyUp(int keyCode){
     switch (keyCode) {
         case ALLEGRO_KEY_A:
             MC->Stop();
@@ -83,30 +83,24 @@ void ElevatorToFloor::OnKeyUp(int keyCode){
             break;
     }
 }
-void ElevatorToFloor::Draw() const{
+void ElevatorFloor::Draw() const{
     IScene::Draw();
     int w = Engine::GameEngine::GetInstance().GetScreenSize().x;
     int h = Engine::GameEngine::GetInstance().GetScreenSize().y;
     al_draw_filled_rectangle(w / 2 - 20, h / 2 + 75, w / 2  + 58, h / 2 + 96, al_map_rgb(60, 60, 70));
-    al_draw_text(FloorFont, al_map_rgb(255, 255, 255), w / 2 , h / 2 + 73, 0, "B1");
+    al_draw_text(FloorFont, al_map_rgb(255, 255, 255), w / 2 , h / 2 + 73, 0, "B0");
     if (MC -> Position.x >= 1350 && MC -> Position.x <= 1600){
         al_draw_filled_triangle(MC -> Position.x - 55, 700, MC -> Position.x - 55, 740, MC -> Position.x - 10, 720, al_map_rgb(255, 255, 255));
         al_draw_filled_rounded_rectangle(MC -> Position.x - 350, 680, MC -> Position.x - 50, 800, 10, 10, al_map_rgb(255, 255, 255));
-        al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x - 310, 710, 0, "Press E to Back");
+        al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x - 310, 710, 0, "Press E to Enter");
     }
     if (MC -> Position.x >= 650 && MC -> Position.x <= 800 && Shared::IDcard){
         al_draw_filled_triangle(MC -> Position.x + 200, 700, MC -> Position.x + 200, 740, MC -> Position.x + 170, 720, al_map_rgb(255, 255, 255));
         al_draw_filled_rounded_rectangle(MC -> Position.x + 200, 680, MC -> Position.x + 550, 800, 10, 10, al_map_rgb(255, 255, 255));
-        al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x + 230, 700, 0, "Press W to Go To Floor");
-    }
-    else if(MC -> Position.x >= 650 && MC -> Position.x <= 800 && !Shared::IDcard){
-        al_draw_filled_triangle(MC -> Position.x + 200, 700, MC -> Position.x + 200, 740, MC -> Position.x + 170, 720, al_map_rgb(255, 255, 255));
-        al_draw_filled_rounded_rectangle(MC -> Position.x + 200, 680, MC -> Position.x + 550, 800, 10, 10, al_map_rgb(255, 255, 255));
-        al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x + 230, 700, 0, "GO back and get the");
-        al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x + 230, 740, 0, "Fucking ID Card");
+        al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x + 230, 700, 0, "Press S to Go To B1");
     }
 }
-void ElevatorToFloor::Update(float deltaTime){
+void ElevatorFloor::Update(float deltaTime){
     IScene::Update(deltaTime);
 }
 
