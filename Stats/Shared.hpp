@@ -27,6 +27,7 @@ public:
     static bool BadRocket7;
     static std::string previosStage;
     static std::string currentStage;
+    static bool HomeLetterOpen;
     // B4
     static bool LabScene;
     static bool LibraryScene;

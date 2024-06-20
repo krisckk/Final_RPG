@@ -68,6 +68,7 @@ void Home::OnKeyDown(int keyCode){
             //Engine::LOG(Engine::INFO) << "open";
             if (MC -> Position.x >= 850 && MC -> Position.x <= 1000 && !letter_opened){
                 letter_opened = true;
+                Shared::HomeLetterOpen = true;
             }
             break;
         case ALLEGRO_KEY_E:

@@ -21,6 +21,7 @@ bool Shared::BadRocket4;
 bool Shared::BadRocket5;
 bool Shared::BadRocket6;
 bool Shared::BadRocket7;
+bool Shared::HomeLetterOpen;
 // B4
 bool Shared::LabScene;
 bool Shared::LibraryScene;
