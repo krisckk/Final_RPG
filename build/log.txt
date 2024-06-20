@@ -30,62 +30,10 @@
 [INFO] Loaded Resource<image>: Resource/images/2Ddooropened.png scaled to 300x360
 [INFO] Loaded Resource<image>: Resource/images/MCRightStop.png
 [INFO] Changed to Lab scene
-[INFO] Library scene create
-[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/LabGeneralBackgroundPlatform.png scaled to 1600x60
-[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/B4/Library/ladder.png scaled to 160x460
-[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/B4/Library/bookshelf.png scaled to 400x300
-[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/B4/Library/bookshelf.png scaled to 300x300
-[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/B4/Library/stickynotes.png scaled to 50x50
-[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/B4/Library/WaterFountain.png scaled to 180x300
-[INFO] Loaded Resource<image>: Resource/images/2Ddooropened.png scaled to 200x360
-[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/B4/Library/Computer.png scaled to 100x100
-[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/B4/Library/ComputerDesk.png scaled to 200x100
-[INFO] Loaded Resource<image>: Resource/images/2Ddoorclosed.png scaled to 300x360
-[INFO] Changed to Library scene
-[INFO] Key pressed: 5
-[INFO] Key pressed: 3
-[INFO] Key pressed: 4
-[INFO] Key pressed: 0
-[INFO] The door is open
-[INFO] StorageRoom scene create
-[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/B4/StorageRoom/shelf.png scaled to 300x200
-[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/B4/StorageRoom/red_water.png scaled to 60x40
-[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/B4/StorageRoom/blue_water.png scaled to 60x40
-[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/B4/StorageRoom/yellow_water.png scaled to 60x40
-[INFO] Changed to StorageRoom scene
-[INFO] ElevatorB4 scene create
-[INFO] Loaded Resource<image>: Resource/images/elevator.png scaled to 330x330
-[INFO] Loaded Resource<audio>: Resource/audios/Weightless.ogg
-[INFO] Created<sample_instance>: Resource/audios/Weightless.ogg
-[INFO] Changed to ElevatorB4 scene
-[INFO] stopped audio (sample)
-[INFO] ElevatorB3 scene create
-[INFO] Created<sample_instance>: Resource/audios/Weightless.ogg
-[INFO] Changed to ElevatorB3 scene
-[INFO] stopped audio (sample)
-[INFO] StorageRoom scene create
-[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/B3/RestRoom/bulletin_board.png scaled to 400x370
-[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/B3/RestRoom/newsofa.png scaled to 400x200
-[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/B3/RestRoom/TV.jpg scaled to 150x200
-[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/B3/RestRoom/monalisa.png scaled to 140x190
-[INFO] Changed to RestRoom scene
-[INFO] StorageRoom scene create
-[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/B3/DiningRoom/vendingmachine.png scaled to 200x400
-[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/B3/DiningRoom/whitewood.png scaled to 500x250
-[INFO] Changed to DiningRoom scene
-[INFO] GYM scene create
-[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/B3/GYMscene/running_machine.png scaled to 300x210
-[INFO] Loaded Resource<image>: Resource/images/Gold.png scaled to 80x60
-[INFO] Changed to GYMscene scene
-[INFO] GYMscene Terminated
-[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/B3/DataRoom/NewBookShelf.png scaled to 400x350
-[INFO] DataRoom scene create
-[INFO] Changed to DataRoom scene
-[INFO] DataRoom scene terminated
-[INFO] GYM scene create
-[INFO] Changed to GYMscene scene
+[INFO] Map create
+[INFO] Loaded Resource<image>: Resource/images/Map/LabScene.png scaled to 200x100
+[INFO] Changed to Map scene
 [INFO] Game Terminating...
-[INFO] GYMscene Terminated
 [INFO] Game terminated
 [INFO] Game end
 [INFO] Game Initializing...

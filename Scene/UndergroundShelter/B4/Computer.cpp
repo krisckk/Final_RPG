@@ -7,13 +7,17 @@
 #include "Engine/AudioHelper.hpp"
 #include "Engine/GameEngine.hpp"
 #include "Engine/Point.hpp"
+#include "Engine/LOG.hpp"
 #include "Engine/Resources.hpp"
 #include "UI/Component/Image.hpp"
 #include "UI/Component/ImageButton.hpp"
 #include "UI/Component/Label.hpp"
 #include "UI/Component/Slider.hpp"
 #include "Computer.hpp"
-//bool OS=false;
+
+char word[5];
+int cur = 0;
+
 void Computer::Initialize()
 {
     int w = Engine::GameEngine::GetInstance().GetScreenSize().x;
@@ -22,6 +26,8 @@ void Computer::Initialize()
     int halfH = h / 2;
     PoetFont = al_load_font("Resource/fonts/PoetsenOne.ttf", 17, 0);
     OSImage = al_load_bitmap("Resource/images/UndergroundShelter/B4/Computer/OS.jpg");
+    BIGFont = al_load_font("Resource/fonts/PoetsenOne.ttf", 40, 0);
+    signinImage = al_load_bitmap("Resource/images/UndergroundShelter/B4/Computer/user.jpg");
     AddNewObject(new Engine::Image("UndergroundShelter/B4/Computer/WindowsBackground.png", 0, 0, w, h, 0, 0));
     bgmInstance = AudioHelper::PlaySample("Weightless.ogg", true, AudioHelper::BGMVolume);
 
@@ -32,6 +38,10 @@ void Computer::Initialize()
     btn = new Engine::ImageButton("UndergroundShelter/B4/Computer/file.png", "UndergroundShelter/B4/Computer/file.png", halfW / 2 + 850, halfH / 2 + 200, 120, 120, 0, 0);
     btn->SetOnClickCallback(std::bind(&Computer::SeedsOnClick, this, 1));
     AddNewControlObject(btn);
+    btn = new Engine::ImageButton("UndergroundShelter/B4/Computer/file.png", "UndergroundShelter/B4/Computer/file.png", halfW / 2 + 850, halfH / 2 + 310, 120, 120, 0, 0);
+    btn->SetOnClickCallback(std::bind(&Computer::PasswordOnClick, this, 1));
+    AddNewControlObject(btn);
+
 }
 void Computer::Terminate()
 {
@@ -39,7 +49,9 @@ void Computer::Terminate()
     bgmInstance = std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE>();
     IScene::Terminate();
     al_destroy_font(PoetFont);
+    al_destroy_font(BIGFont);
     al_destroy_bitmap(OSImage);
+    al_destroy_bitmap(signinImage);
 }
 void Computer::Draw() const
 {
@@ -52,7 +64,10 @@ void Computer::Draw() const
 
     al_draw_text(PoetFont, al_map_rgb(0, 0, 0), halfW / 2 + 865, halfH / 2 + 170, 0, "Researcher's");
     al_draw_text(PoetFont, al_map_rgb(0, 0, 0), halfW / 2 + 890, halfH / 2 + 190, 0, "Diary");
-    al_draw_text(PoetFont, al_map_rgb(0, 0, 0), halfW / 2 + 890, halfH / 2 + 280, 0, "Seeds");
+    al_draw_text(PoetFont, al_map_rgb(0, 0, 0), halfW / 2 + 890, halfH / 2 + 280, 0, "Seeds");    
+    al_draw_text(PoetFont, al_map_rgb(0, 0, 0), halfW / 2 + 890, halfH / 2 + 370, 0, "Password");
+
+
     if (Seeds)
     {
         al_draw_filled_rectangle(w / 2 - 300, 100, w / 2 + 300, 760, al_map_rgb(255, 255, 255));
@@ -128,6 +143,26 @@ void Computer::Draw() const
 
         al_draw_text(PoetFont, al_map_rgb(0, 0, 0), w / 2 - 100, 840, 0, "Press C to close the file");
     }
+    else if (password)
+    {
+        al_draw_filled_rectangle(w / 2, 460, w / 2 + 300, 760, al_map_rgb(255, 255, 255));
+        al_draw_text(PoetFont, al_map_rgb(0, 0, 0), w / 2 + 50, 600, 0, "0310");
+
+    }
+
+    if (!signin) 
+    {
+        al_draw_scaled_bitmap(signinImage, 0, 0, 800, 541, 0, 0, 1600, 900, 0);
+    }
+
+    if (!signin)
+    {
+        if (word[0] != '\0') al_draw_textf(BIGFont, al_map_rgb(0, 0, 0), 585, 470, 0, ".");
+        if (word[1] != '\0') al_draw_textf(BIGFont, al_map_rgb(0, 0, 0), 595, 470, 0, ".");
+        if (word[2] != '\0') al_draw_textf(BIGFont, al_map_rgb(0, 0, 0), 605, 470, 0, ".");
+        if (word[3] != '\0') al_draw_textf(BIGFont, al_map_rgb(0, 0, 0), 615, 470, 0, ".");
+    }
+
 }
 
 void Computer::SeedsOnClick(int stage)
@@ -136,7 +171,7 @@ void Computer::SeedsOnClick(int stage)
     int h = Engine::GameEngine::GetInstance().GetScreenSize().y;
     int halfW = w / 2;
     int halfH = h / 2;
-    if (!Diary)
+    if (!Diary && !password)
         Seeds = true;
     else
         Seeds = false;
@@ -148,11 +183,20 @@ void Computer::DiaryOnClick(int stage)
     int h = Engine::GameEngine::GetInstance().GetScreenSize().y;
     int halfW = w / 2;
     int halfH = h / 2;
-    if (!Seeds)
+    if (!Seeds && !password)
         Diary = true;
     else
         Diary = false;
 }
+
+void Computer::PasswordOnClick(int stage)
+{
+    if (!Seeds && !Diary)
+        password = true;
+    else
+        password = false;
+}
+
 void Computer::OnKeyDown(int keyCode)
 {
     switch (keyCode)
@@ -167,12 +211,54 @@ void Computer::OnKeyDown(int keyCode)
             OS = false;
             Seeds = false;
         }
-        else if(Diary) Diary = false;
+        else if (Diary)
+        {
+            Diary = false;
+        } 
+        else if (password)
+        {
+            password = false;
+        }
         else
         {
             Seeds = false;
             Diary = false;
+            password = false;
             Engine::GameEngine::GetInstance().ChangeScene("Library");
+        }
+        break;
+    case ALLEGRO_KEY_ENTER:
+        if (!signin)
+        {
+            if (word[0] == '5' && word[1] == '3' && word[2] == '4' && word[3] == '0')
+            {
+                signin = true;
+            }
+        }
+        break;
+    case ALLEGRO_KEY_1:
+    case ALLEGRO_KEY_2:
+    case ALLEGRO_KEY_3:
+    case ALLEGRO_KEY_4:
+    case ALLEGRO_KEY_5:
+    case ALLEGRO_KEY_6:
+    case ALLEGRO_KEY_7:
+    case ALLEGRO_KEY_8:
+    case ALLEGRO_KEY_9:
+    case ALLEGRO_KEY_0:
+    case ALLEGRO_KEY_BACKSPACE:
+        if (!signin){
+            if (keyCode == ALLEGRO_KEY_BACKSPACE){
+                if (word[0]!= '\0'){
+                    for (int j = 0; j < 4; j++) word[j] = '\0';
+                    cur = 0;
+                }
+            }
+            else{
+                Engine::LOG(Engine::INFO) << "Key pressed: " << keyCode - 27;
+                word[cur] = *al_keycode_to_name(keyCode);
+                cur++;
+            }
         }
         break;
     default:

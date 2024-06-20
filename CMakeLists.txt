@@ -63,6 +63,8 @@ add_executable(2024_I2P2_TowerDefense_with_answer
         Scene/LoseScene.cpp
         Scene/WinScene.cpp
         Scene/WinScene.hpp
+        Scene/Map/Map.hpp
+        Scene/Map/Map.cpp
         Scene/UndergroundShelter/B4/LabScene.hpp
         Scene/UndergroundShelter/B4/LabScene.cpp
         Scene/UndergroundShelter/B4/LibraryScene.hpp

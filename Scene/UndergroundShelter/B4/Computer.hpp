@@ -9,10 +9,14 @@ class Computer final : public Engine::IScene {
     private:
         std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE> bgmInstance;
         ALLEGRO_FONT* PoetFont;
+        ALLEGRO_FONT* BIGFont;
         ALLEGRO_BITMAP* OSImage;
-        bool Seeds=false;
-        bool Diary=false;
-        bool OS=false;
+        ALLEGRO_BITMAP* signinImage;
+        bool Seeds = false;
+        bool Diary = false;
+        bool OS = false;
+        bool signin = false;
+        bool password = false;
     public:
         explicit Computer() = default;
         void Initialize() override;
@@ -20,6 +24,7 @@ class Computer final : public Engine::IScene {
         std::string GetName() const override { return "Computer"; }
         void SeedsOnClick(int stage);
         void DiaryOnClick(int stage);
+        void PasswordOnClick(int stage);
         void Draw() const override;
         void OnKeyDown(int keyCode) override;
 };

@@ -140,6 +140,10 @@ void Factory::OnKeyDown(int keyCode){
             if (MC -> Position.x >= 1030 && MC -> Position.x <= 1350){
                 Engine::GameEngine::GetInstance().ChangeScene("CraftingTable");
             }
+            break;
+        case ALLEGRO_KEY_M:
+            Engine::GameEngine::GetInstance().ChangeScene("Map");
+            break;
         default:
             break;
     }
