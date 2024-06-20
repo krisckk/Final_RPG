@@ -22,15 +22,15 @@ extern Maincharacter* MC;
 class DataRoom final : public  Engine::IScene {
     private:
         ALLEGRO_FONT* PoetFont;
-        bool first;
-        bool second;
-        bool third;
-        bool fourth;
         ALLEGRO_BITMAP* Background;
         ALLEGRO_BITMAP* firstData;
         ALLEGRO_BITMAP* secondData;
         ALLEGRO_BITMAP* thirdData;
         ALLEGRO_BITMAP* fourthData;
+        bool first;
+        bool second;
+        bool third;
+        bool fourth;
     public:
         explicit DataRoom() = default;
         void Initialize() override;

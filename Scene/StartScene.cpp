@@ -71,5 +71,14 @@ void StartScene::SettingsOnClick(int stage){
     Engine::GameEngine::GetInstance().ChangeScene("menuSettings");
 }
 void StartScene::NewgameOnClick(int stage){
+    Shared::redPotion = false;
+    Shared::bluePotion = false;
+    Shared::yellowPotion = false;
+    Shared::Gold = false;
+    Shared::Aluminum = false;
+    Shared::Iron = false;
+    Shared::HDLoil = false;
+    Shared::LDLoil = false;
+    Shared::IDcard = false;
     Engine::GameEngine::GetInstance().ChangeScene("Lab");
 }

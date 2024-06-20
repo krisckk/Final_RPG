@@ -55,7 +55,6 @@ void DataRoom::Initialize(){
 void DataRoom::Terminate(){
     Engine::LOG(Engine::INFO) << "DataRoom scene terminated";
     al_destroy_font(PoetFont);
-    al_destroy_bitmap(firstData);
     al_destroy_bitmap(Background);
     al_destroy_bitmap(firstData);
     al_destroy_bitmap(secondData);

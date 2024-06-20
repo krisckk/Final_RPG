@@ -27,6 +27,8 @@
 #include "Scene/Ground/Home.hpp"
 #include "Scene/Ground/House.hpp"
 #include "Scene/Ground/Road.hpp"
+#include "Scene/WinScene.hpp"
+#include "Scene/LoseScene.hpp"
 #include "Maincharacter/Backpack.hpp"
 #include "Maincharacter/PauseScene.hpp"
 
@@ -40,6 +42,8 @@ int main(int argc, char **argv) {
 	game.AddNewScene("menuSettings", new MenuSettings());
 	game.AddNewScene("Computer", new Computer());
 	game.AddNewScene("PauseScene", new PauseScene());
+	game.AddNewScene("Lose", new LoseScene());
+	game.AddNewScene("Win", new WinScene());
 	// B4
 	game.AddNewScene("Lab", new LabScene());
 	game.AddNewScene("Library", new LibraryScene());
@@ -73,6 +77,8 @@ int main(int argc, char **argv) {
 	game.Start("menuSettings", 120, 1600, 900);
 	game.Start("Backpack", 120, 1600, 900);
 	game.Start("PauseScene", 120, 1600, 900);
+	game.Start("Win", 120, 1600, 900);
+	game.Start("Lose", 120, 1600, 900);
 	// B4
 	game.Start("Lab", 120, 1600, 900);
 	game.Start("Library", 120, 1600, 900);

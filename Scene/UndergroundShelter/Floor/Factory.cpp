@@ -121,6 +121,14 @@ void Factory::OnKeyDown(int keyCode){
         case ALLEGRO_KEY_E:
             if(MC -> Position.x <= 150) Engine::GameEngine::GetInstance().ChangeScene("ElevatorFloor");
             if(MC -> Position.x >= 1300) Engine::GameEngine::GetInstance().ChangeScene("Road");
+            if (MC -> Position.x >= 605 && MC -> Position.x <= 990 && (Shared::GoodRocket || Shared::BadRocket1|| Shared::BadRocket2 || Shared::BadRocket3 || Shared::BadRocket4 ||Shared::BadRocket5 || Shared::BadRocket6 ||Shared::BadRocket7)){
+                if(Shared::GoodRocket){
+                    Engine::GameEngine::GetInstance().ChangeScene("Win");
+                }
+                else if(Shared::BadRocket2 || Shared::BadRocket3 || Shared::BadRocket4 ||Shared::BadRocket5 || Shared::BadRocket6 ||Shared::BadRocket7){
+                    Engine::GameEngine::GetInstance().ChangeScene("Lose");
+                }
+            }
             break;
         case ALLEGRO_KEY_B:
             Engine::GameEngine::GetInstance().ChangeScene("Backpack");

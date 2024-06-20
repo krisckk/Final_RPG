@@ -31,12 +31,11 @@ void GYMscene::Initialize(){
     Engine::LOG(Engine::INFO) << "GYM scene create";
     PoetFont = al_load_font("Resource/fonts/PoetsenOne.ttf", 30, 0);
     BIGFont = al_load_font("Resource/fonts/PoetsenOne.ttf", 150, 0);
-    //bulletin_board = al_load_bitmap("Resource/images/UndergroundShelter/B3/RestRoom/bulletin_board_NEW.png");
     AddNewObject(new Engine::Image("UndergroundShelter/LabGeneralBackground.png", 0, 0, w, h, 0, 0));
     AddNewObject(new Engine::Image("2Ddooropened.png", 1550, h - 460, 300, 360, 0.5, 0));
     AddNewObject(new Engine::Image("2Ddooropened.png", 0, h - 460, 300, 360, 0, 0));
     AddNewObject(new Engine::Image("UndergroundShelter/B3/GYMscene/running_machine.png", 600, 620, 300, 210, 0, 0));
-    if(!Shared::Gold) AddNewObject(new Engine::Image("Gold.png", 1100, 750, 80, 60, 0, 0));
+    AddNewObject(new Engine::Image("Gold.png", 1100, 750, 80, 60, 0, 0));
     MC = new Maincharacter("MCRightStop.png", 1450, 680, 32, 200);
     if (!MC) {
         Engine::LOG(Engine::ERROR) << "Failed to create Maincharacter object";
