@@ -14,7 +14,13 @@ bool Shared::HDLoil = true;
 bool Shared::LDLoil;
 bool Shared::IDcard;
 bool Shared::GoodRocket;
-bool Shared::BadRocket;
+bool Shared::BadRocket1;
+bool Shared::BadRocket2;
+bool Shared::BadRocket3;
+bool Shared::BadRocket4;
+bool Shared::BadRocket5;
+bool Shared::BadRocket6;
+bool Shared::BadRocket7;
 // B4
 bool Shared::LabScene;
 bool Shared::LibraryScene;

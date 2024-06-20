@@ -34,7 +34,14 @@ void CraftingTable::Initialize()
     IRON_PIC = al_load_bitmap("Resource/images/UndergroundShelter/Floor/CraftingTable/button_iron.png");
     AL_PIC = al_load_bitmap("Resource/images/UndergroundShelter/Floor/CraftingTable/button_Al.png");
     OIL_PIC = al_load_bitmap("Resource/images/UndergroundShelter/Floor/CraftingTable/button_oil.png");
-
+    goodRocket = al_load_bitmap("Resource/images/UndergroundShelter/Floor/Factory/GoodRocket.png");
+    badRocket1 = al_load_bitmap("Resource/images/UndergroundShelter/Floor/Factory/BadRocket1.png");
+    badRocket2 = al_load_bitmap("Resource/images/UndergroundShelter/Floor/Factory/BadRocket2.png");
+    badRocket3 = al_load_bitmap("Resource/images/UndergroundShelter/Floor/Factory/BadRocket3.png");
+    badRocket4 = al_load_bitmap("Resource/images/UndergroundShelter/Floor/Factory/BadRocket4.png");
+    badRocket5 = al_load_bitmap("Resource/images/UndergroundShelter/Floor/Factory/BadRocket5.png");
+    badRocket6 = al_load_bitmap("Resource/images/UndergroundShelter/Floor/Factory/BadRocket6.png");
+    badRocket7 = al_load_bitmap("Resource/images/UndergroundShelter/Floor/Factory/BadRocket7.png");
     Engine::ImageButton *btn;
     AddNewObject(new Engine::Image("UndergroundShelter/Floor/CraftingTable/minecraft.png", 800, 450, 903, 850, 0.5, 0.5));
     if(Shared::redPotion)
@@ -65,33 +72,30 @@ void CraftingTable::Initialize()
     if(Shared::HDLoil)
     {
         btn = new Engine::ImageButton("UndergroundShelter/Floor/CraftingTable/button_oil.png", "UndergroundShelter/Floor/CraftingTable/button_oil.png", 390, 550, 70, 70, 0, 0);
-        btn->SetOnClickCallback(std::bind(&CraftingTable::Oil75OnClick, this, 1));
+        btn->SetOnClickCallback(std::bind(&CraftingTable::Oil95OnClick, this, 1));
         AddNewControlObject(btn);
         
     }
     else if(Shared::LDLoil)
     {
         btn = new Engine::ImageButton("UndergroundShelter/Floor/CraftingTable/button_oil.png", "UndergroundShelter/Floor/CraftingTable/button_oil.png", 390, 550, 70, 70, 0, 0);
-        btn->SetOnClickCallback(std::bind(&CraftingTable::Oil95OnClick, this, 1));
+        btn->SetOnClickCallback(std::bind(&CraftingTable::Oil75OnClick, this, 1));
         AddNewControlObject(btn);
     }
 
 }
 void CraftingTable::Terminate()
 {
-    AudioHelper::StopSample(bgmInstance);
-    bgmInstance = std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE>();
-    IScene::Terminate();
     al_destroy_font(PoetFont);
     al_destroy_font(pirulenFont);
     al_destroy_bitmap(GOLD_PIC);
     al_destroy_bitmap(IRON_PIC);
     al_destroy_bitmap(AL_PIC);
     al_destroy_bitmap(OIL_PIC);
+    al_destroy_bitmap(goodRocket);
+    IScene::Terminate();
 }
-void CraftingTable::Draw() const
-{
-    Engine::ImageButton *btn;
+void CraftingTable::Draw() const{
     IScene::Draw();
     int w = Engine::GameEngine::GetInstance().GetScreenSize().x;
     int h = Engine::GameEngine::GetInstance().GetScreenSize().y;
@@ -103,8 +107,30 @@ void CraftingTable::Draw() const
     if (gold_select) al_draw_scaled_bitmap(GOLD_PIC, 0, 0, 70, 70, 805, 258, 70, 70, 0);
     if (iron_select) al_draw_scaled_bitmap(IRON_PIC, 0, 0, 70, 70, 805, 160, 70, 70, 0);
     if (al_select) al_draw_scaled_bitmap(AL_PIC, 0, 0, 70, 70, 895, 258, 70, 70, 0);
-
-    
+    if  (oil95_select && iron_select && al_select && !gold_select){
+        al_draw_scaled_bitmap(goodRocket, 0, 0, 585, 621, 1095, 210, 70, 70, 0);
+    }
+    else if(oil95_select && iron_select && al_select && gold_select) {
+        al_draw_scaled_bitmap(badRocket1, 0, 0, 699, 901, 1095, 210, 70, 70, 0);
+    }
+    else if(oil95_select && gold_select && al_select && !iron_select) {
+        al_draw_scaled_bitmap(badRocket2, 0, 0, 489, 641, 1095, 210, 70, 70, 0);
+    }
+    else if(oil95_select && gold_select && !al_select && iron_select) {
+        al_draw_scaled_bitmap(badRocket3, 0, 0, 727, 980, 1095, 210, 70, 70, 0);
+    }
+    else if(oil75_select && iron_select && al_select && !gold_select) {
+        al_draw_scaled_bitmap(badRocket4, 0, 0, 356, 480, 1095, 210, 70, 70, 0);
+    }
+    else if(oil75_select && iron_select && al_select && gold_select) {
+        al_draw_scaled_bitmap(badRocket5, 0, 0, 821, 1097, 1095, 210, 70, 70, 0);
+    }
+    else if(oil75_select && gold_select && al_select && !iron_select) {
+        al_draw_scaled_bitmap(badRocket6, 0, 0, 899, 1211, 1095, 210, 70, 70, 0);
+    }
+    else if(oil75_select && gold_select && !al_select && iron_select) {
+        al_draw_scaled_bitmap(badRocket7, 0, 0, 480, 626, 1095, 210, 70, 70, 0);
+    }
     if (oil75_select) 
     {
         al_draw_scaled_bitmap(OIL_PIC, 0, 0, 70, 70, 900, 160, 70, 70, 0);
@@ -150,10 +176,90 @@ void CraftingTable::OnKeyDown(int keyCode)
 {
     switch (keyCode)
     {
-    case ALLEGRO_KEY_C:
-        Engine::GameEngine::GetInstance().ChangeScene("Factory");
-        break;
-    default:
-        break;
+        case ALLEGRO_KEY_C:
+            if(oil95_select && iron_select && al_select && !gold_select) {
+                Shared::GoodRocket = true;
+                Shared::BadRocket1 = false;
+                Shared::BadRocket2 = false;
+                Shared::BadRocket3 = false;
+                Shared::BadRocket4 = false;
+                Shared::BadRocket5 = false;
+                Shared::BadRocket6 = false;
+                Shared::BadRocket7 = false;
+            }
+            else if(oil95_select && iron_select && al_select && gold_select) {
+                Shared::GoodRocket = false;
+                Shared::BadRocket1 = true; 
+                Shared::BadRocket2 = false;
+                Shared::BadRocket3 = false;
+                Shared::BadRocket4 = false;
+                Shared::BadRocket5 = false;
+                Shared::BadRocket6 = false;
+                Shared::BadRocket7 = false;
+            }
+            else if(oil95_select && gold_select && al_select && !iron_select) {
+                Shared::GoodRocket = false;
+                Shared::BadRocket1 = false;
+                Shared::BadRocket2 = true;
+                Shared::BadRocket3 = false;
+                Shared::BadRocket4 = false;
+                Shared::BadRocket5 = false;
+                Shared::BadRocket6 = false;
+                Shared::BadRocket7 = false;
+            }
+            else if(oil95_select && gold_select && !al_select && iron_select) {
+                Shared::GoodRocket = false;
+                Shared::BadRocket1 = false;
+                Shared::BadRocket2 = false;
+                Shared::BadRocket3 = true;
+                Shared::BadRocket4 = false;
+                Shared::BadRocket5 = false;
+                Shared::BadRocket6 = false;
+                Shared::BadRocket7 = false;
+            }
+            else if(oil75_select && iron_select && al_select && !gold_select) {
+                Shared::GoodRocket = false;
+                Shared::BadRocket1 = false;
+                Shared::BadRocket2 = false;
+                Shared::BadRocket3 = false;
+                Shared::BadRocket4 = true;
+                Shared::BadRocket5 = false;
+                Shared::BadRocket6 = false;
+                Shared::BadRocket7 = false;
+            }
+            else if(oil75_select && iron_select && al_select && gold_select) {
+                Shared::GoodRocket = false;
+                Shared::BadRocket1 = false;
+                Shared::BadRocket2 = false;
+                Shared::BadRocket3 = false;
+                Shared::BadRocket4 = false;
+                Shared::BadRocket5 = true;
+                Shared::BadRocket6 = false;
+                Shared::BadRocket7 = false;
+            }
+            else if(oil75_select && gold_select && al_select && !iron_select) {
+                Shared::GoodRocket = false;
+                Shared::BadRocket1 = false;
+                Shared::BadRocket2 = false;
+                Shared::BadRocket3 = false;
+                Shared::BadRocket4 = false;
+                Shared::BadRocket5 = false;
+                Shared::BadRocket6 = true;
+                Shared::BadRocket7 = false;
+            }
+            else if(oil75_select && gold_select && !al_select && iron_select) {
+                Shared::GoodRocket = false;
+                Shared::BadRocket1 = false;
+                Shared::BadRocket2 = false;
+                Shared::BadRocket3 = false;
+                Shared::BadRocket4 = false;
+                Shared::BadRocket5 = false;
+                Shared::BadRocket6 = false;
+                Shared::BadRocket7 = true;
+            }
+            Engine::GameEngine::GetInstance().ChangeScene("Factory");
+            break;
+        default:
+            break;
     }
-}
+}\

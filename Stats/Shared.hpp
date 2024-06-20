@@ -18,7 +18,13 @@ public:
     static bool LDLoil;
     static bool IDcard;
     static bool GoodRocket;
-    static bool BadRocket;
+    static bool BadRocket1;
+    static bool BadRocket2;
+    static bool BadRocket3;
+    static bool BadRocket4;
+    static bool BadRocket5;
+    static bool BadRocket6;
+    static bool BadRocket7;
     static std::string previosStage;
     static std::string currentStage;
     // B4

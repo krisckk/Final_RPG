@@ -33,19 +33,15 @@
 [INFO] Factory scene create
 [INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/Floor/Factory/FactoryBackground.jpg scaled to 1600x900
 [INFO] Loaded Resource<image>: Resource/images/2Ddooropened.png scaled to 200x360
-[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/Floor/Factory/BrokenRocket.png scaled to 400x700
-[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/Floor/Factory/UncompleteRocket.png scaled to 400x700
+[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/Floor/Factory/Test.png scaled to 400x700
+[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/Floor/Factory/UncompleteRocket.png scaled to 400x300
 [INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/Floor/Factory/CraftingTable.jpg scaled to 200x200
 [INFO] Changed to Factory scene
-[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/Floor/CraftingTable/minecraft.png scaled to 903x850
-[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/B4/StorageRoom/blue_water.png scaled to 80x70
-[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/Floor/CraftingTable/button_gold.png scaled to 70x70
-[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/Floor/CraftingTable/button_gold.png
-[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/Floor/CraftingTable/button_Al.png scaled to 70x70
-[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/Floor/CraftingTable/button_Al.png
-[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/Floor/CraftingTable/button_iron.png scaled to 70x70
-[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/Floor/CraftingTable/button_iron.png
-[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/Floor/CraftingTable/button_oil.png scaled to 70x70
-[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/Floor/CraftingTable/button_oil.png
-[INFO] Changed to CraftingTable scene
 [INFO] Game Terminating...
+[INFO] Game terminated
+[INFO] Game end
+[INFO] Game Initializing...
+[INFO] Loaded window icon from: icon.png
+[INFO] There are total 3 supported mouse buttons
+[INFO] Allegro5 initialized
+[INFO] Game begin

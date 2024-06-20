@@ -62,8 +62,6 @@ void StartScene::ContinueOnClick(int stage){
         saveFile >> Shared::HDLoil;
         saveFile >> Shared::LDLoil;
         saveFile >> Shared::IDcard;
-        saveFile >> Shared::GoodRocket;
-        saveFile >> Shared::BadRocket;
 
         saveFile.close();
         Engine::GameEngine::GetInstance().ChangeScene(sceneName);

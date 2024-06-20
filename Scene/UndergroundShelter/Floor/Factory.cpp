@@ -28,15 +28,33 @@ void Factory::Initialize(){
     AddNewObject(new Engine::Image("UndergroundShelter/Floor/Factory/FactoryBackground.jpg", 0, 0, w, h, 0, 0));
     AddNewObject(new Engine::Image("2Ddooropened.png", 0, h - 460, 200, 360, 0.5, 0));
     AddNewObject(new Engine::Image("2Ddooropened.png", 1400, h - 460, 300, 360, 0, 0));
-    AddNewObject(new Engine::Image("UndergroundShelter/Floor/Factory/BrokenRocket.png", 170, 90, 400, 700, 0, 0));
-    if(!Shared::GoodRocket && !Shared::BadRocket){
-        AddNewObject(new Engine::Image("UndergroundShelter/Floor/Factory/UncompleteRocket.png", 650, 90, 400, 700, 0, 0));
+    AddNewObject(new Engine::Image("UndergroundShelter/Floor/Factory/Test.png", 170, 90, 400, 700, 0, 0));
+    if(!Shared::GoodRocket && !Shared::BadRocket1 && !Shared::BadRocket2 && !Shared::BadRocket3 && !Shared::BadRocket4 && !Shared::BadRocket5 && !Shared::BadRocket6 && !Shared::BadRocket7){
+        AddNewObject(new Engine::Image("UndergroundShelter/Floor/Factory/UncompleteRocket.png", 650, 490, 400, 300, 0, 0));
     }
-    else if(Shared::GoodRocket && !Shared::BadRocket){
+    else if(Shared::GoodRocket && !Shared::BadRocket1 && !Shared::BadRocket2 && !Shared::BadRocket3 && !Shared::BadRocket4 && !Shared::BadRocket5 && !Shared::BadRocket6 && !Shared::BadRocket7){
         AddNewObject(new Engine::Image("UndergroundShelter/Floor/Factory/GoodRocket.png", 650, 90, 400, 700, 0, 0));
     }
-    else if(!Shared::GoodRocket && Shared::BadRocket){
-        AddNewObject(new Engine::Image("UndergroundShelter/Floor/Factory/BadRocket.png", 650, 90, 400, 700, 0, 0));
+    else if(!Shared::GoodRocket && Shared::BadRocket1 && !Shared::BadRocket2 && !Shared::BadRocket3 && !Shared::BadRocket4 && !Shared::BadRocket5 && !Shared::BadRocket6 && !Shared::BadRocket7){
+        AddNewObject(new Engine::Image("UndergroundShelter/Floor/Factory/BadRocket1.png", 650, 90, 400, 700, 0, 0));
+    }
+    else if(!Shared::GoodRocket && !Shared::BadRocket1 && Shared::BadRocket2 && !Shared::BadRocket3 && !Shared::BadRocket4 && !Shared::BadRocket5 && !Shared::BadRocket6 && !Shared::BadRocket7){
+        AddNewObject(new Engine::Image("UndergroundShelter/Floor/Factory/BadRocket2.png", 650, 90, 400, 700, 0, 0));
+    }
+    else if(!Shared::GoodRocket && !Shared::BadRocket1 && !Shared::BadRocket2 && Shared::BadRocket3 && !Shared::BadRocket4 && !Shared::BadRocket5 && !Shared::BadRocket6 && !Shared::BadRocket7){
+        AddNewObject(new Engine::Image("UndergroundShelter/Floor/Factory/BadRocket3.png", 650, 90, 400, 700, 0, 0));
+    }
+    else if(!Shared::GoodRocket && !Shared::BadRocket1 && !Shared::BadRocket2 && !Shared::BadRocket3 && Shared::BadRocket4 && !Shared::BadRocket5 && !Shared::BadRocket6 && !Shared::BadRocket7){
+        AddNewObject(new Engine::Image("UndergroundShelter/Floor/Factory/BadRocket4.png", 650, 90, 400, 700, 0, 0));
+    }
+    else if(!Shared::GoodRocket && !Shared::BadRocket1 && !Shared::BadRocket2 && !Shared::BadRocket3 && !Shared::BadRocket4 && Shared::BadRocket5 && !Shared::BadRocket6 && !Shared::BadRocket7){
+        AddNewObject(new Engine::Image("UndergroundShelter/Floor/Factory/BadRocket5.png", 650, 90, 400, 700, 0, 0));
+    }
+    else if(!Shared::GoodRocket && !Shared::BadRocket1 && !Shared::BadRocket2 && !Shared::BadRocket3 && !Shared::BadRocket4 && !Shared::BadRocket5 && Shared::BadRocket6 && !Shared::BadRocket7){
+        AddNewObject(new Engine::Image("UndergroundShelter/Floor/Factory/BadRocket6.png", 650, 90, 400, 700, 0, 0));
+    }
+    else if(!Shared::GoodRocket && !Shared::BadRocket1 && !Shared::BadRocket2 && !Shared::BadRocket3 && !Shared::BadRocket4 && !Shared::BadRocket5 && !Shared::BadRocket6 && Shared::BadRocket7){
+        AddNewObject(new Engine::Image("UndergroundShelter/Floor/Factory/BadRocket7.png", 650, 90, 400, 700, 0, 0));
     }
     AddNewObject(new Engine::Image("UndergroundShelter/Floor/Factory/CraftingTable.jpg", 1150, 600, 200, 200, 0, 0));
     MC = new Maincharacter("MCRightStop.png", 40, 700, 32, 200);
@@ -49,9 +67,9 @@ void Factory::Initialize(){
 }
 void Factory::Terminate() {
     MC = nullptr; 
-    IScene::Terminate();
     al_destroy_font(BIGFont);
     al_destroy_font(PoetFont);
+    IScene::Terminate();
 }
 
 void Factory::Draw() const{
@@ -69,7 +87,12 @@ void Factory::Draw() const{
         al_draw_filled_rounded_rectangle(MC -> Position.x + 200, 680, MC -> Position.x + 500, 800, 10, 10, al_map_rgb(255, 255, 255));
         al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x + 250, 710, 0, "This is broken.");
     }
-    if (MC -> Position.x >= 605 && MC -> Position.x <= 990){
+    if (MC -> Position.x >= 605 && MC -> Position.x <= 990 && !Shared::GoodRocket && !Shared::BadRocket1 && !Shared::BadRocket2 && !Shared::BadRocket3 && !Shared::BadRocket4 && !Shared::BadRocket5 && !Shared::BadRocket6 && !Shared::BadRocket7){
+        al_draw_filled_triangle(MC -> Position.x + 200, 700, MC -> Position.x + 200, 740, MC -> Position.x + 170, 720, al_map_rgb(255, 255, 255));
+        al_draw_filled_rounded_rectangle(MC -> Position.x + 200, 680, MC -> Position.x + 500, 800, 10, 10, al_map_rgb(255, 255, 255));
+        al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x + 250, 710, 0, "Uncomplete");
+    }
+    if (MC -> Position.x >= 605 && MC -> Position.x <= 990 && (Shared::GoodRocket || Shared::BadRocket1|| Shared::BadRocket2 || Shared::BadRocket3 || Shared::BadRocket4 ||Shared::BadRocket5 || Shared::BadRocket6 ||Shared::BadRocket7)){
         al_draw_filled_triangle(MC -> Position.x + 200, 700, MC -> Position.x + 200, 740, MC -> Position.x + 170, 720, al_map_rgb(255, 255, 255));
         al_draw_filled_rounded_rectangle(MC -> Position.x + 200, 680, MC -> Position.x + 500, 800, 10, 10, al_map_rgb(255, 255, 255));
         al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x + 250, 710, 0, "Press E to Enter");
@@ -127,6 +150,5 @@ void Factory::OnKeyUp(int keyCode){
 
 void Factory::Update(float deltaTime){
     IScene::Update(deltaTime);
-    
 }
 

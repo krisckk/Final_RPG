@@ -7,13 +7,20 @@
 
 class CraftingTable final : public Engine::IScene {
     private:
-        std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE> bgmInstance;
         ALLEGRO_FONT* PoetFont;
         ALLEGRO_FONT* pirulenFont;
         ALLEGRO_BITMAP* GOLD_PIC;
         ALLEGRO_BITMAP* IRON_PIC;
         ALLEGRO_BITMAP* AL_PIC;
         ALLEGRO_BITMAP* OIL_PIC;
+        ALLEGRO_BITMAP* goodRocket;
+        ALLEGRO_BITMAP* badRocket1;
+        ALLEGRO_BITMAP* badRocket2;
+        ALLEGRO_BITMAP* badRocket3;
+        ALLEGRO_BITMAP* badRocket4;
+        ALLEGRO_BITMAP* badRocket5;
+        ALLEGRO_BITMAP* badRocket6;
+        ALLEGRO_BITMAP* badRocket7;
     public:
         explicit CraftingTable() = default;
         void Initialize() override;
