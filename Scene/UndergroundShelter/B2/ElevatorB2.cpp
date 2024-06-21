@@ -33,6 +33,7 @@ void ElevatorB2::Initialize(){
     AddNewObject(new Engine::Image("elevator.png", halfW + 30, halfH + 30, 330, 330, 0, 0));
     bgmInstance = AudioHelper::PlaySample("Weightless.ogg", true, AudioHelper::BGMVolume);
     MC = new Maincharacter("MCRightStop.png", halfW + 30, 680, 32, 200);
+    if(MC->isDead) MC->isDead = false;
     if(!Enemy -> isDead){
         Enemy = new Monster("Monster/idle/idle_1.png", 80, 550, 32, 50);
         if (!Enemy) {

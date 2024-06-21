@@ -8,6 +8,7 @@ public:
     static int hunger;
     static int thirst;
     static float PositionX; 
+    static bool correct;
     static bool redPotion;
     static bool bluePotion;
     static bool yellowPotion;

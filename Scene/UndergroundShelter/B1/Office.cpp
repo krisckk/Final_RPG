@@ -29,7 +29,8 @@ void Office::Initialize(){
     AddNewObject(new Engine::Image("UndergroundShelter/LabGeneralBackground.png", 0, 0, w, h, 0, 0));
     AddNewObject(new Engine::Image("2Ddooropened.png", 1550, h - 460, 300, 360, 0.5, 0));
     AddNewObject(new Engine::Image("2Ddooropened.png", 0, h - 460, 300, 360, 0, 0));
-    AddNewObject(new Engine::Image("UndergroundShelter/B1/Office/OfficeDesk.png", 500, 490, 700, 400, 0, 0));
+    AddNewObject(new Engine::Image("UndergroundShelter/B1/Office/the_scream.png", 500, 200, 240, 300, 0, 0));
+    AddNewObject(new Engine::Image("UndergroundShelter/B1/Office/OfficeDesk.png", 600, 490, 450, 400, 0, 0));
     if(!Shared::IDcard) AddNewObject(new Engine::Image("UndergroundShelter/B1/Office/IDcard.png", 1000, 685, 80, 80, 0, 0));
     MC = new Maincharacter("MCRightStop.png", 1450, 680, 32, 200);
     if (!MC) {

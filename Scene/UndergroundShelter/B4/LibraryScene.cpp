@@ -31,9 +31,9 @@
 #include "Maincharacter/Backpack.hpp" 
 bool stickynotes_opened = false;
 bool enter_password = false;
-bool door_open = false;
+//bool door_open = false;
 char password[5];
-static bool correct;
+//static bool correct;
 int i = 0;
 void LibraryScene::Initialize(){
     Shared::LibraryScene = true;
@@ -69,10 +69,10 @@ void LibraryScene::Initialize(){
 
 void LibraryScene::Terminate() {
     MC = nullptr; 
-    IScene::Terminate();
     al_destroy_font(BIGFont);
     al_destroy_font(PoetFont);
     al_destroy_bitmap(Passwordnote);
+    IScene::Terminate();
 }
 
 void LibraryScene::OnKeyDown(int keyCode){
@@ -94,11 +94,13 @@ void LibraryScene::OnKeyDown(int keyCode){
             }
             break;
         case ALLEGRO_KEY_E:
-            if (MC -> Position.x >= 1350 && MC -> Position.x <= 1600 && !correct){
+            if (MC -> Position.x >= 1350 && MC -> Position.x <= 1600 && !(Shared::correct)){
+                //if(Shared::correct){
                 enter_password = !enter_password;
                 i = 0;
+                
             }
-            else if (MC -> Position.x >= 1350 && MC -> Position.x <= 1600 && correct){
+            else if (MC -> Position.x >= 1350 && MC -> Position.x <= 1600 && Shared::correct){
                 Engine::GameEngine::GetInstance().ChangeScene("StorageRoom");
             }
             break;
@@ -179,7 +181,7 @@ void LibraryScene::Draw() const{
         al_draw_filled_triangle(MC -> Position.x - 55, 700, MC -> Position.x - 55, 740, MC -> Position.x - 10, 720, al_map_rgb(255, 255, 255));
         al_draw_filled_rounded_rectangle(MC -> Position.x - 350, 680, MC -> Position.x - 50, 800, 10, 10, al_map_rgb(255, 255, 255));
         al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x - 320, 710, 0, "Press E to Enter");
-        if (!door_open) al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x - 320, 750, 0, "Password");
+        //if (!door_open) al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x - 320, 750, 0, "Password");
     }
     if (MC -> Position.x >= 900 && MC -> Position.x <= 1050 && MC -> Position.y < 450 && !stickynotes_opened){
         al_draw_filled_triangle(MC -> Position.x - 55, MC -> Position.y , MC -> Position.x - 55, MC -> Position.y + 40, MC -> Position.x - 10, MC -> Position.y + 20, al_map_rgb(255, 255, 255));
@@ -197,7 +199,7 @@ void LibraryScene::Draw() const{
         al_draw_filled_rounded_rectangle(400, 200, 1200, 700, 10, 10, al_map_rgb(255, 255, 102));
         al_draw_scaled_bitmap(Passwordnote, 0, 0, 563, 228, 600, 350, 400, 200, 0);
     }
-    if (enter_password && !door_open){
+    if (enter_password){
         al_draw_filled_rounded_rectangle(390, 350, 580, 550, 10, 10, al_map_rgb(255, 255, 255));
         al_draw_filled_rounded_rectangle(600, 350, 790, 550, 10, 10, al_map_rgb(255, 255, 255));
         al_draw_filled_rounded_rectangle(810, 350, 1000, 550, 10, 10, al_map_rgb(255, 255, 255));
@@ -211,10 +213,13 @@ void LibraryScene::Draw() const{
 void LibraryScene::Update(float deltaTime){
     IScene::Update(deltaTime);
     if (password[0] == '5' && password[1] == '3' && password[2] == '4' && password[3] == '0') {
-        door_open = true;
+        //door_open = true;
         enter_password = false;
-        password[0]='\0';password[1]='\0';password[2]='\0';password[3]='\0';
-        correct=true;
+        password[0]='\0';
+        password[1]='\0';
+        password[2]='\0';
+        password[3]='\0';
+        Shared::correct = true;
         Engine::LOG(Engine::INFO) << "The door is open";
         Engine::GameEngine::GetInstance().ChangeScene("StorageRoom");
     }

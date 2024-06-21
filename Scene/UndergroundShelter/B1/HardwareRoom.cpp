@@ -31,8 +31,8 @@ void HardwareRoom::Initialize(){
     AddNewObject(new Engine::Image("UndergroundShelter/LabGeneralBackground.png", 0, 0, w, h, 0, 0));
     AddNewObject(new Engine::Image("2Ddooropened.png", 1550, h - 460, 300, 360, 0.5, 0));
     AddNewObject(new Engine::Image("2Ddooropened.png", 0, h - 460, 300, 360, 0, 0));
-    AddNewObject(new Engine::Image("UndergroundShelter/B1/Hardwareroom/FussilOil.png", 400, 540, 300, 300, 0, 0));
-    AddNewObject(new Engine::Image("UndergroundShelter/B1/Hardwareroom/FussilOil.png", 900, 540, 300, 300, 0, 0));
+    AddNewObject(new Engine::Image("UndergroundShelter/B1/Hardwareroom/HDFussilOil.png", 400, 640, 200, 200, 0, 0));
+    AddNewObject(new Engine::Image("UndergroundShelter/B1/Hardwareroom/LDFussilOil.png", 900, 640, 200, 200, 0, 0));
     MC = new Maincharacter("MCRightStop.png", 1450, 680, 32, 200);
     if (!MC) {
         Engine::LOG(Engine::ERROR) << "Failed to create Maincharacter object";
@@ -53,8 +53,8 @@ void HardwareRoom::Draw() const {
     IScene::Draw();
     int w = Engine::GameEngine::GetInstance().GetScreenSize().x;
     int h = Engine::GameEngine::GetInstance().GetScreenSize().y;
-    al_draw_text(FloorFont, al_map_rgb(0, 0, 0), 540, 680, ALLEGRO_ALIGN_CENTER, "95%  Oil");
-    al_draw_text(FloorFont, al_map_rgb(0, 0, 0), 1040, 680, ALLEGRO_ALIGN_CENTER, "75%  Oil");
+    //al_draw_text(FloorFont, al_map_rgb(0, 0, 0), 540, 680, ALLEGRO_ALIGN_CENTER, "95%  Oil");
+    //al_draw_text(FloorFont, al_map_rgb(0, 0, 0), 1040, 680, ALLEGRO_ALIGN_CENTER, "75%  Oil");
     if (MC -> Position.x >= 20 && MC -> Position.x <= 150){
         al_draw_filled_triangle(MC -> Position.x + 200, 700, MC -> Position.x + 200, 740, MC -> Position.x + 170, 720, al_map_rgb(255, 255, 255));
         al_draw_filled_rounded_rectangle(MC -> Position.x + 200, 680, MC -> Position.x + 400, 800, 10, 10, al_map_rgb(255, 255, 255));

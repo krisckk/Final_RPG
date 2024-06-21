@@ -36,8 +36,9 @@ void BiologicalLaboratory::Initialize() {
     AddNewObject(new Engine::Image("UndergroundShelter/B4/LabScene/tankwithPeople.png", 1100, h - 450, 200, 360, 0, 0));
     AddNewObject(new Engine::Image("UndergroundShelter/B4/LabScene/tankwithPeople.png", 50, 30, 200, 360, 0, 0));
     AddNewObject(new Engine::Image("UndergroundShelter/B4/LabScene/tankwithPeople.png", 550, 30, 200, 360, 0, 0));
-    AddNewObject(new Engine::Image("UndergroundShelter/B2/BiologicalLaboratory/Desk.png", 1000, 210, 400, 200, 0, 0));
-    AddNewObject(new Engine::Image("UndergroundShelter/B2/BiologicalLaboratory/ExperimentTool.png", 1100, 150, 200, 120, 0, 0));
+    //AddNewObject(new Engine::Image("UndergroundShelter/B2/BiologicalLaboratory/Desk.png", 1000, 210, 400, 200, 0, 0));
+    AddNewObject(new Engine::Image("UndergroundShelter/B2/BiologicalLaboratory/sunflower.png", 1100, 100, 200, 250, 0, 0));
+    //AddNewObject(new Engine::Image("UndergroundShelter/B2/BiologicalLaboratory/ExperimentTool.png", 1100, 150, 200, 120, 0, 0));
     if(!Shared::Aluminum) AddNewObject(new Engine::Image("Aluminum.png", 1500, 330, 80, 60, 0, 0));
     MC = new Maincharacter("MCRightStop.png", 1450, 680, 32, 200);
     if (!MC) {

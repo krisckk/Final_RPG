@@ -47,7 +47,7 @@ void Map::Initialize(){
     if(Shared::Factory) AddNewObject(new Engine::Image("Map/Factory.png", 600, 200, 200, 100, 0, 0));
     if(Shared::Road) AddNewObject(new Engine::Image("Map/Road.png", 800, 200, 200, 100, 0, 0));
     if(Shared::House) AddNewObject(new Engine::Image("Map/House.png", 1000, 200, 200, 100, 0, 0));
-    if(Shared::Home) AddNewObject(new Engine::Image("Map/Home.png", 1200, 100, 200, 100, 0, 0));
+    if(Shared::Home) AddNewObject(new Engine::Image("Map/Home.png", 1200, 200, 200, 100, 0, 0));
 }
 
 void Map::Draw() const{

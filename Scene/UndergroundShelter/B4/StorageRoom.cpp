@@ -42,8 +42,7 @@ void StorageRoom::Initialize(){
     AddNewObject(new Engine::Image("UndergroundShelter/B4/StorageRoom/shelf.png", 1130, h - 300, 300, 200, 0.5, 0));
     AddNewObject(new Engine::Image("UndergroundShelter/B4/StorageRoom/shelf.png", 320, halfH - 270, 300, 200, 0.5, 0));
     AddNewObject(new Engine::Image("UndergroundShelter/B4/StorageRoom/shelf.png", 810, halfH - 270, 300, 200, 0.5, 0));
-    AddNewObject(new Engine::Image("UndergroundShelter/B4/StorageRoom/shelf.png", 1130, halfH - 270, 300, 200, 0.5, 0));
-    
+    AddNewObject(new Engine::Image("UndergroundShelter/B4/StorageRoom/god.png", 1200, halfH-350, 250, 190, 0, 0));
     for (int i = 0; i < 3; i++)
     {
         for (int j = 0; j < 4; j++)

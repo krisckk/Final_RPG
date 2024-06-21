@@ -80,5 +80,7 @@ void StartScene::NewgameOnClick(int stage){
     Shared::HDLoil = false;
     Shared::LDLoil = false;
     Shared::IDcard = false;
+    Shared::correct = false;
+
     Engine::GameEngine::GetInstance().ChangeScene("Lab");
 }
