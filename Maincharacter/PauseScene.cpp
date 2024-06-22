@@ -65,7 +65,8 @@ void PauseScene::SaveOnClick(int stage){
     std::ofstream saveFile("../Maincharacter/SaveData.txt", std::ios::trunc);// , std::ios::app
     if (saveFile.is_open()) {
         saveFile << Shared::previosStage << " "<< Shared::lives << " " << Shared::redPotion << " " << Shared::bluePotion << " " << Shared::yellowPotion
-        << " " << Shared::Gold << " " << Shared::Aluminum << " " << Shared::Iron << " " << Shared::HDLoil << " " << Shared::LDLoil << " " << Shared::IDcard << " "
+        << " " << Shared::Gold << " " << Shared::Aluminum << " " << Shared::Iron << " " << Shared::HDLoil << " " << Shared::LDLoil << " " << Shared::IDcard << " " 
+        << Shared::coin << " " << Shared::Achievement_cola << " " << Shared::Achievement_home << " "
         << Shared::LabScene << " " << Shared::LibraryScene << " " << Shared::StorageRoom << " " << Shared::ElevatorB4 << " " 
         << Shared::ElevatorB3 << " " << Shared::RestRoom << " " << Shared::DiningRoom << " " << Shared::GYMscene << " " << Shared::DataRoom << " " << Shared::ElevatorB2 << " " 
         << Shared::BiologicalLaboratory << " " << Shared::ElevatorB1 << " " << Shared::HardwareRoom << " " << Shared::Office << " " << Shared::ElevatorToFloor << " "

@@ -86,7 +86,7 @@ void LabScene::OnKeyDown(int keyCode){
                 Engine::GameEngine::GetInstance().ChangeScene("Backpack");
                 break;
             case ALLEGRO_KEY_Q:
-                Engine::GameEngine::GetInstance().ChangeScene("Factory");
+                Engine::GameEngine::GetInstance().ChangeScene("GYMscene");
                 break;
             case ALLEGRO_KEY_ESCAPE:
                 Engine::GameEngine::GetInstance().ChangeScene("PauseScene");

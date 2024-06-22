@@ -23,6 +23,8 @@ class GYMscene final : public  Engine::IScene {
     private:
         ALLEGRO_FONT* PoetFont;
         ALLEGRO_FONT* BIGFont;
+        ALLEGRO_BITMAP* BARBELL;
+        ALLEGRO_BITMAP* COIN;
     public:
         explicit GYMscene() = default;
         void Initialize() override;

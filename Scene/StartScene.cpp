@@ -31,7 +31,7 @@ void StartScene::Initialize() {
     AddNewControlObject(btn);
 
     btn = new Engine::ImageButton("lose/scoreboard_unhover.png", "lose/scoreboard_hovered.png", halfW / 2 - 250, halfH / 2 + 210, 290, 30, 0, 0);
-    btn->SetOnClickCallback(std::bind(&StartScene::SettingsOnClick, this, 1));
+    btn->SetOnClickCallback(std::bind(&StartScene::AchievementOnClick, this, 1));
     AddNewControlObject(btn);
 
     btn = new Engine::ImageButton("lose/settings_unhover.png", "lose/settings_hovered.png", halfW / 2 - 250, halfH / 2 + 250, 290, 30, 0, 0);
@@ -62,6 +62,9 @@ void StartScene::ContinueOnClick(int stage){
         saveFile >> Shared::HDLoil;
         saveFile >> Shared::LDLoil;
         saveFile >> Shared::IDcard;
+        saveFile >> Shared::coin;
+        saveFile >> Shared::Achievement_cola;
+        saveFile >> Shared::Achievement_home;
 
         saveFile.close();
         Engine::GameEngine::GetInstance().ChangeScene(sceneName);
@@ -69,6 +72,9 @@ void StartScene::ContinueOnClick(int stage){
 }
 void StartScene::SettingsOnClick(int stage){
     Engine::GameEngine::GetInstance().ChangeScene("menuSettings");
+}
+void StartScene::AchievementOnClick(int stage){
+    Engine::GameEngine::GetInstance().ChangeScene("Achievement");
 }
 void StartScene::NewgameOnClick(int stage){
     Shared::redPotion = false;
@@ -80,7 +86,12 @@ void StartScene::NewgameOnClick(int stage){
     Shared::HDLoil = false;
     Shared::LDLoil = false;
     Shared::IDcard = false;
+    Shared::coin = false;
     Shared::correct = false;
+    Shared::Achievement_cola = false;
+    Shared::Achievement_home = false;
+
+    
 
     Engine::GameEngine::GetInstance().ChangeScene("Lab");
 }

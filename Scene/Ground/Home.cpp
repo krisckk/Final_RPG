@@ -69,6 +69,7 @@ void Home::OnKeyDown(int keyCode){
             if (MC -> Position.x >= 850 && MC -> Position.x <= 1000 && !letter_opened){
                 letter_opened = true;
                 Shared::HomeLetterOpen = true;
+                Shared::Achievement_home = true;
             }
             break;
         case ALLEGRO_KEY_E:
@@ -79,6 +80,9 @@ void Home::OnKeyDown(int keyCode){
             break;
         case ALLEGRO_KEY_R:
             Engine::GameEngine::GetInstance().ChangeScene("Road");
+            break;
+        case ALLEGRO_KEY_M:
+            Engine::GameEngine::GetInstance().ChangeScene("Map");
             break;
         default:
             break;

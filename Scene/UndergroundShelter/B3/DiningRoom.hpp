@@ -25,8 +25,6 @@ class DiningRoom final : public  Engine::IScene {
         ALLEGRO_FONT* BIGFont;
     public:
         explicit DiningRoom() = default;
-        //void Draw() const override;
-        //void Update(float deltaTime) override;
         void Initialize() override;
         void Terminate() override;
         void Draw() const override;

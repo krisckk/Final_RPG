@@ -148,6 +148,9 @@ void LibraryScene::OnKeyDown(int keyCode){
         case ALLEGRO_KEY_ESCAPE:
             Engine::GameEngine::GetInstance().ChangeScene("PauseScene");
             break;
+        case ALLEGRO_KEY_M:
+            Engine::GameEngine::GetInstance().ChangeScene("Map");
+            break;
         default:
             break;
     }
@@ -212,7 +215,7 @@ void LibraryScene::Draw() const{
 }
 void LibraryScene::Update(float deltaTime){
     IScene::Update(deltaTime);
-    if (password[0] == '5' && password[1] == '3' && password[2] == '4' && password[3] == '0') {
+    if (password[0] == '0' && password[1] == '3' && password[2] == '1' && password[3] == '0') {
         //door_open = true;
         enter_password = false;
         password[0]='\0';

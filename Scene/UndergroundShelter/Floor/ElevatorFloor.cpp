@@ -68,6 +68,9 @@ void ElevatorFloor::OnKeyDown(int keyCode){
             case ALLEGRO_KEY_B:
                 Engine::GameEngine::GetInstance().ChangeScene("Backpack");
                 break;
+            case ALLEGRO_KEY_M:
+                Engine::GameEngine::GetInstance().ChangeScene("Map");
+                break;
             default:
                 break;
         }

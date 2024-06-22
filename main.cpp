@@ -5,6 +5,7 @@
 #include "Engine/LOG.hpp"
 #include "Scene/StartScene.hpp"
 #include "Scene/MenuSettings.hpp"
+#include "Scene/Achievement.hpp"
 #include "Scene/UndergroundShelter/B4/LabScene.hpp"
 #include "Scene/UndergroundShelter/B4/LibraryScene.hpp"
 #include "Scene/UndergroundShelter/B4/Computer.hpp"
@@ -40,6 +41,7 @@ int main(int argc, char **argv) {
     // TODO: [HACKATHON-1-SCENE] (3/4): Register Scenes here
 	game.AddNewScene("start", new StartScene());
 	game.AddNewScene("menuSettings", new MenuSettings());
+	game.AddNewScene("Achievement", new Achievement());
 	game.AddNewScene("Computer", new Computer());
 	game.AddNewScene("PauseScene", new PauseScene());
 	game.AddNewScene("Lose", new LoseScene());
@@ -76,6 +78,7 @@ int main(int argc, char **argv) {
 
 	game.Start("start", 120, 1600, 900);
 	game.Start("menuSettings", 120, 1600, 900);
+	game.Start("Achievement", 120, 1600, 900);
 	game.Start("Backpack", 120, 1600, 900);
 	game.Start("PauseScene", 120, 1600, 900);
 	game.Start("Win", 120, 1600, 900);

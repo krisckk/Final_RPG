@@ -149,6 +149,9 @@ void DataRoom::OnKeyDown(int keyCode){
             if(third) third = false;
             if(fourth) fourth = false;
             break;
+        case ALLEGRO_KEY_M:
+            Engine::GameEngine::GetInstance().ChangeScene("Map");
+            break;
         default:
             break;
     }

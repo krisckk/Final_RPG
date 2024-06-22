@@ -18,6 +18,7 @@ public:
     static bool HDLoil;
     static bool LDLoil;
     static bool IDcard;
+    static bool coin;
     static bool GoodRocket;
     static bool BadRocket1;
     static bool BadRocket2;
@@ -29,6 +30,8 @@ public:
     static std::string previosStage;
     static std::string currentStage;
     static bool HomeLetterOpen;
+    static bool Achievement_cola;
+    static bool Achievement_home;
     // B4
     static bool LabScene;
     static bool LibraryScene;

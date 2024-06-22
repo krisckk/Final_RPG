@@ -72,6 +72,9 @@ void House::OnKeyDown(int keyCode){
         case ALLEGRO_KEY_R:
             Engine::GameEngine::GetInstance().ChangeScene("Road");
             break;
+        case ALLEGRO_KEY_M:
+            Engine::GameEngine::GetInstance().ChangeScene("Map");
+            break;
         default:
             break;
     }

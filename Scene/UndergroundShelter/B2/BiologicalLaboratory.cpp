@@ -104,6 +104,9 @@ void BiologicalLaboratory::OnKeyDown(int keyCode){
         case ALLEGRO_KEY_ESCAPE:
             Engine::GameEngine::GetInstance().ChangeScene("PauseScene");
             break;
+        case ALLEGRO_KEY_M:
+            Engine::GameEngine::GetInstance().ChangeScene("Map");
+            break;
         default:
             break;
     }

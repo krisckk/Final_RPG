@@ -14,6 +14,7 @@ bool Shared::Iron = true;
 bool Shared::HDLoil = true;
 bool Shared::LDLoil;
 bool Shared::IDcard;
+bool Shared::coin;
 bool Shared::GoodRocket;
 bool Shared::BadRocket1;
 bool Shared::BadRocket2;
@@ -23,6 +24,8 @@ bool Shared::BadRocket5;
 bool Shared::BadRocket6;
 bool Shared::BadRocket7;
 bool Shared::HomeLetterOpen;
+bool Shared::Achievement_cola;
+bool Shared::Achievement_home;
 // B4
 bool Shared::LabScene;
 bool Shared::LibraryScene;

@@ -56,6 +56,13 @@ void DiningRoom::Draw() const {
         al_draw_filled_rounded_rectangle(MC -> Position.x - 350, 680, MC -> Position.x - 50, 800, 10, 10, al_map_rgb(255, 255, 255));
         al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x - 310, 710, 0, "Press E to Back");
     }
+    if (MC -> Position.x >= 270 && MC -> Position.x <= 450 && Shared::coin && !Shared::Achievement_cola){
+        al_draw_filled_triangle(MC -> Position.x + 200, 700, MC -> Position.x + 200, 740, MC -> Position.x + 170, 720, al_map_rgb(255, 255, 255));
+        al_draw_filled_rounded_rectangle(MC -> Position.x + 200, 680, MC -> Position.x + 500, 800, 10, 10, al_map_rgb(255, 255, 255));
+        al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x + 230, 700, 0, "Press I to use coin");
+        al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x + 230, 740, 0, "to get drink");
+    }
+
 }
 void DiningRoom::Terminate(){
     MC = nullptr; 
@@ -78,8 +85,14 @@ void DiningRoom::OnKeyDown(int keyCode){
         case ALLEGRO_KEY_B:
             Engine::GameEngine::GetInstance().ChangeScene("Backpack");
             break;
+        case ALLEGRO_KEY_I:
+            if (MC -> Position.x >= 270 && MC -> Position.x <= 450 && Shared::coin) Shared::Achievement_cola = true;
+            break;
         case ALLEGRO_KEY_ESCAPE:
             Engine::GameEngine::GetInstance().ChangeScene("PauseScene");
+            break;
+        case ALLEGRO_KEY_M:
+            Engine::GameEngine::GetInstance().ChangeScene("Map");
             break;
         default:
             break;

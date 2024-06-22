@@ -21,7 +21,9 @@
 #include "GYMscene.hpp"
 #include "DataRoom.hpp"
 #include "Stats/Shared.hpp"
-//static ALLEGRO_BITMAP* bulletin_board = NULL;
+int use_barbell = 0;
+bool get_coin = false;
+bool coin_picked = false;
 void GYMscene::Initialize(){
     Shared::GYMscene = true;
     int w = Engine::GameEngine::GetInstance().GetScreenSize().x;
@@ -31,11 +33,15 @@ void GYMscene::Initialize(){
     Engine::LOG(Engine::INFO) << "GYM scene create";
     PoetFont = al_load_font("Resource/fonts/PoetsenOne.ttf", 30, 0);
     BIGFont = al_load_font("Resource/fonts/PoetsenOne.ttf", 150, 0);
+    BARBELL = al_load_bitmap("Resource/images/UndergroundShelter/B3/GYMscene/barbell.png");
+    COIN = al_load_bitmap("Resource/images/UndergroundShelter/B3/GYMscene/coin.png");
     AddNewObject(new Engine::Image("UndergroundShelter/LabGeneralBackground.png", 0, 0, w, h, 0, 0));
     AddNewObject(new Engine::Image("2Ddooropened.png", 1550, h - 460, 300, 360, 0.5, 0));
     AddNewObject(new Engine::Image("2Ddooropened.png", 0, h - 460, 300, 360, 0, 0));
     AddNewObject(new Engine::Image("UndergroundShelter/B3/GYMscene/running_machine.png", 600, 620, 300, 210, 0, 0));
     AddNewObject(new Engine::Image("Gold.png", 1100, 750, 80, 60, 0, 0));
+    AddNewObject(new Engine::Image("UndergroundShelter/B3/GYMscene/barbell.png", 330, 740, 120, 90, 0, 0));
+
     MC = new Maincharacter("MCRightStop.png", 1450, 680, 32, 200);
     if (!MC) {
         Engine::LOG(Engine::ERROR) << "Failed to create Maincharacter object";
@@ -80,6 +86,25 @@ void GYMscene::Draw() const{
         al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x - 310, 700, 0, "This is heavy");
         al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x - 310, 740, 0, "as fuck.");
     }
+
+    if  (MC -> Position.x >= 200 && MC -> Position.x <= 350 && !get_coin){
+        al_draw_filled_triangle(MC -> Position.x + 200, 700, MC -> Position.x + 200, 740, MC -> Position.x + 170, 720, al_map_rgb(255, 255, 255));
+        al_draw_filled_rounded_rectangle(MC -> Position.x + 200, 680, MC -> Position.x + 500, 800, 10, 10, al_map_rgb(255, 255, 255));
+        al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x + 240, 700, 0, "Press I to");
+        al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x + 240, 740, 0, "Interact"); 
+    }
+
+    if  (MC -> Position.x >= 140 && MC -> Position.x <= 200 && get_coin && !coin_picked){
+        al_draw_filled_triangle(MC -> Position.x + 200, 700, MC -> Position.x + 200, 740, MC -> Position.x + 170, 720, al_map_rgb(255, 255, 255));
+        al_draw_filled_rounded_rectangle(MC -> Position.x + 200, 680, MC -> Position.x + 500, 800, 10, 10, al_map_rgb(255, 255, 255));
+        al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x + 240, 700, 0, "Press I to");
+        al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x + 240, 740, 0, "Pick up"); 
+    }
+
+    if (get_coin)
+    {
+        al_draw_scaled_bitmap(COIN, 0, 0, 618, 618, 270, 785, 40, 40, 0);
+    }
 }
 
 void GYMscene::OnKeyDown(int keyCode){
@@ -100,8 +125,22 @@ void GYMscene::OnKeyDown(int keyCode){
         case ALLEGRO_KEY_P:
             if(MC -> Position.x >= 980 && MC -> Position.x <= 1180) Shared::Gold = true;
             break;
+        case ALLEGRO_KEY_I:
+            if(MC -> Position.x >= 200 && MC -> Position.x <= 350) 
+                use_barbell++;
+            if (use_barbell >= 5)
+                get_coin = true;
+            if  (MC -> Position.x >= 140 && MC -> Position.x <= 200 && get_coin)
+            {
+                coin_picked = true;
+                Shared::coin = true;
+            }
+            break;
         case ALLEGRO_KEY_ESCAPE:
             Engine::GameEngine::GetInstance().ChangeScene("PauseScene");
+            break;
+        case ALLEGRO_KEY_M:
+            Engine::GameEngine::GetInstance().ChangeScene("Map");
             break;
         default:
             break;

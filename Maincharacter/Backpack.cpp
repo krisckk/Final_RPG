@@ -39,6 +39,12 @@ void Backpack::Initialize(){
         AddNewObject(new Engine::Image("UndergroundShelter/B1/HardwareRoom/FussilOil.png", 80, 650, 80, 80, 0, 0));
     if(Shared::LDLoil)
         AddNewObject(new Engine::Image("UndergroundShelter/B1/HardwareRoom/FussilOil.png", 80, 510, 80, 80, 0, 0));
+    if (Shared::coin && !Shared::Achievement_cola)
+        AddNewObject(new Engine::Image("UndergroundShelter/B3/GYMscene/coin.png", 300, 650, 80, 80, 0, 0));
+    if (Shared::Achievement_cola)
+        AddNewObject(new Engine::Image("UndergroundShelter/B3/GYMscene/cola.png", 300, 650, 80, 80, 0, 0));
+
+
 }
 
 void Backpack::Draw() const{
