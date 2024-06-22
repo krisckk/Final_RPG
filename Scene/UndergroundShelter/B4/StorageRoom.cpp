@@ -32,16 +32,16 @@ void StorageRoom::Initialize(){
     Engine::LOG(Engine::INFO) << "StorageRoom scene create";
     PoetFont = al_load_font("Resource/fonts/PoetsenOne.ttf", 30, 0);
     BIGFont = al_load_font("Resource/fonts/PoetsenOne.ttf", 150, 0);
+    yummy = al_load_bitmap("Resource/images/UndergroundShelter/B4/StorageRoom/yummy.png");
     AddNewObject(new Engine::Image("UndergroundShelter/LabGeneralBackground.png", 0, 0, w, h, 0, 0));
-    AddNewObject(new Engine::Image("UndergroundShelter/LabGeneralBackgroundPlatform.png", 0, h - 520, w, 60, 0, 0));
-    AddNewObject(new Engine::Image("UndergroundShelter/B4/Library/ladder.png", 490, h - 540, 160, 460, 0, 0));
     AddNewObject(new Engine::Image("2Ddooropened.png", 0, h - 460, 200, 360, 0.5, 0));
     AddNewObject(new Engine::Image("2Ddooropened.png", 1300, h - 460, 300, 360, 0, 0));
     AddNewObject(new Engine::Image("UndergroundShelter/B4/StorageRoom/shelf.png", 320, h - 300, 300, 200, 0.5, 0));
     AddNewObject(new Engine::Image("UndergroundShelter/B4/StorageRoom/shelf.png", 810, h - 300, 300, 200, 0.5, 0));
     AddNewObject(new Engine::Image("UndergroundShelter/B4/StorageRoom/shelf.png", 1130, h - 300, 300, 200, 0.5, 0));
-    AddNewObject(new Engine::Image("UndergroundShelter/B4/StorageRoom/shelf.png", 320, halfH - 270, 300, 200, 0.5, 0));
-    AddNewObject(new Engine::Image("UndergroundShelter/B4/StorageRoom/shelf.png", 810, halfH - 270, 300, 200, 0.5, 0));
+    AddNewObject(new Engine::Image("UndergroundShelter/B4/StorageRoom/shelf.png", 320, halfH , 300, 200, 0.5, 0));
+    AddNewObject(new Engine::Image("UndergroundShelter/B4/StorageRoom/shelf.png", 810, halfH, 300, 200, 0.5, 0));
+    AddNewObject(new Engine::Image("UndergroundShelter/B4/StorageRoom/shelf.png", 1130, halfH, 300, 200, 0.5, 0));
     AddNewObject(new Engine::Image("UndergroundShelter/B4/StorageRoom/god.png", 1200, halfH-350, 250, 190, 0, 0));
     for (int i = 0; i < 3; i++)
     {
@@ -73,6 +73,15 @@ void StorageRoom::Draw() const{
     int w = Engine::GameEngine::GetInstance().GetScreenSize().x;
     int h = Engine::GameEngine::GetInstance().GetScreenSize().y;
     //if (door_open) al_draw_scaled_bitmap(dooropened,0, 0, 162, 228, 1400, h - 460, 200, 360, 0);
+
+    if (!Shared::Achievement_myfavorite) al_draw_scaled_bitmap(yummy, 0, 0, 182, 185, 695, 440, 40, 40, 0);
+    
+    if (MC -> Position.x >= 500 && MC -> Position.x <= 600 && !Shared::Achievement_myfavorite && Shared::wooden_stick){
+        al_draw_filled_triangle(MC -> Position.x + 200, 700, MC -> Position.x + 200, 740, MC -> Position.x + 170, 720, al_map_rgb(255, 255, 255));
+        al_draw_filled_rounded_rectangle(MC -> Position.x + 200, 680, MC -> Position.x + 500, 800, 10, 10, al_map_rgb(255, 255, 255));
+        al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x + 250, 700, 0, "Press I to");
+        al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x + 250, 740, 0, "use stick");
+    }
 
     if (MC -> Position.x <= 40){
         al_draw_filled_triangle(MC -> Position.x + 200, 700, MC -> Position.x + 200, 740, MC -> Position.x + 170, 720, al_map_rgb(255, 255, 255));
@@ -163,6 +172,9 @@ void StorageRoom::OnKeyDown(int keyCode){
         case ALLEGRO_KEY_M:
             Engine::GameEngine::GetInstance().ChangeScene("Map");
             break;
+        case ALLEGRO_KEY_I:
+            if (MC -> Position.x >= 500 && MC -> Position.x <= 600 && Shared::wooden_stick)
+                Shared::Achievement_myfavorite = true;
         default:
             break;
     }

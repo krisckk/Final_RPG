@@ -19,6 +19,7 @@ public:
     static bool LDLoil;
     static bool IDcard;
     static bool coin;
+    static bool wooden_stick;
     static bool GoodRocket;
     static bool BadRocket1;
     static bool BadRocket2;
@@ -32,6 +33,7 @@ public:
     static bool HomeLetterOpen;
     static bool Achievement_cola;
     static bool Achievement_home;
+    static bool Achievement_myfavorite;
     // B4
     static bool LabScene;
     static bool LibraryScene;

@@ -101,8 +101,7 @@ void GYMscene::Draw() const{
         al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x + 240, 740, 0, "Pick up"); 
     }
 
-    if (get_coin)
-    {
+    if (get_coin && !Shared::coin){
         al_draw_scaled_bitmap(COIN, 0, 0, 618, 618, 270, 785, 40, 40, 0);
     }
 }

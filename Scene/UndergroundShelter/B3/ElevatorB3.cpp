@@ -30,6 +30,7 @@ void ElevatorB3::Initialize(){
     AddNewObject(new Engine::Image("UndergroundShelter/LabGeneralBackground.png", 0, 0, w, h, 0, 0));
     AddNewObject(new Engine::Image("2Ddooropened.png", 0, h - 460, 200, 360, 0.5, 0));
     AddNewObject(new Engine::Image("elevator.png", halfW + 30, halfH + 30, 330, 330, 0, 0));
+    AddNewObject(new Engine::Image("wooden_stick.png", 1300, 740, 300, 120, 0, 0));
 
     bgmInstance = AudioHelper::PlaySample("Weightless.ogg", true, AudioHelper::BGMVolume);
     MC = new Maincharacter("MCRightStop.png", halfW + 30, 680, 32, 200);
@@ -72,6 +73,8 @@ void ElevatorB3::OnKeyDown(int keyCode){
             if (MC -> Position.x <= 5) Engine::GameEngine::GetInstance().ChangeScene("RestRoom");
             break;
         case ALLEGRO_KEY_I:
+            if (MC -> Position.x >= 1300 && MC -> Position.x <= 1550) 
+                Shared::wooden_stick = true;
             break;
         case ALLEGRO_KEY_B:
             Engine::GameEngine::GetInstance().ChangeScene("Backpack");
@@ -124,6 +127,14 @@ void ElevatorB3::Draw() const{
         al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x + 230, 700, 0, "Press W to Go To B2");
         al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x + 230, 740, 0, "Press S to Go To B4");
     }
+
+    if (MC -> Position.x >= 1300 && MC -> Position.x <= 1550 && !Shared::wooden_stick){
+        al_draw_filled_triangle(MC -> Position.x - 55, 700, MC -> Position.x - 55, 740, MC -> Position.x - 10, 720, al_map_rgb(255, 255, 255));
+        al_draw_filled_rounded_rectangle(MC -> Position.x - 250, 680, MC -> Position.x - 50, 800, 10, 10, al_map_rgb(255, 255, 255));
+        al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x - 210, 700, 0, "Press I to");
+        al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x - 210, 740, 0, "Pick Up");
+    }
+    
 
 
 

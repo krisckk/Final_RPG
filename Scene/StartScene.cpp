@@ -63,9 +63,10 @@ void StartScene::ContinueOnClick(int stage){
         saveFile >> Shared::LDLoil;
         saveFile >> Shared::IDcard;
         saveFile >> Shared::coin;
+        saveFile >> Shared::wooden_stick;
         saveFile >> Shared::Achievement_cola;
         saveFile >> Shared::Achievement_home;
-
+        saveFile >> Shared::Achievement_myfavorite;
         saveFile.close();
         Engine::GameEngine::GetInstance().ChangeScene(sceneName);
     }
@@ -87,10 +88,11 @@ void StartScene::NewgameOnClick(int stage){
     Shared::LDLoil = false;
     Shared::IDcard = false;
     Shared::coin = false;
+    Shared::wooden_stick = false;
     Shared::correct = false;
     Shared::Achievement_cola = false;
     Shared::Achievement_home = false;
-
+    Shared::Achievement_myfavorite = false;
     
 
     Engine::GameEngine::GetInstance().ChangeScene("Lab");

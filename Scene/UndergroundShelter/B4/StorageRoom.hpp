@@ -23,6 +23,7 @@ class StorageRoom final : public  Engine::IScene {
     private:
         ALLEGRO_FONT* PoetFont;
         ALLEGRO_FONT* BIGFont;
+        ALLEGRO_BITMAP* yummy;
         static bool Red_potion;
         static bool Blue_potion;
         static bool Yellow_potion;

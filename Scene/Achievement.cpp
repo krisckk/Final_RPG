@@ -60,7 +60,15 @@ void Achievement::Draw() const{
         al_draw_text(PoetFont, al_map_rgb(255, 255, 255), halfW - 340, halfH + 95, ALLEGRO_ALIGN_CENTER, "You went home and read the letter,");
         al_draw_text(PoetFont, al_map_rgb(255, 255, 255), halfW - 340, halfH + 110, ALLEGRO_ALIGN_CENTER, "Now you know the whole story!");
     }
-    al_draw_scaled_bitmap(CHAMPION_HOLLOW, 0, 0, 200, 200, halfW + 240, halfH - 128, 200, 200, 0);
+
+    if (!Shared::Achievement_myfavorite)
+        al_draw_scaled_bitmap(CHAMPION_HOLLOW, 0, 0, 200, 200, halfW + 240, halfH - 128, 200, 200, 0);
+    else
+    {
+        al_draw_scaled_bitmap(CHAMPION, 0, 0, 200, 200, halfW + 240, halfH - 128, 200, 200, 0);
+        al_draw_text(PoetFont, al_map_rgb(255, 255, 255), halfW + 340, halfH + 95, ALLEGRO_ALIGN_CENTER, "You got the best food in the world!");
+        al_draw_text(PoetFont, al_map_rgb(255, 255, 255), halfW + 340, halfH + 110, ALLEGRO_ALIGN_CENTER, "You are foodie champion!");
+    }
 }
 void Achievement::BackOnClick(int stage) {
     Engine::GameEngine::GetInstance().ChangeScene("start");
