@@ -13,16 +13,19 @@
 #include "Maincharacter/Maincharacter.hpp"
 
 namespace Engine {
-	class Group;
-	class Image;
-	class Label;
-	class Sprite;
+ class Group;
+ class Image;
+ class Label;
+ class Sprite;
 }
 extern Maincharacter* MC;
 class Office final : public  Engine::IScene {
     private:
         ALLEGRO_FONT* PoetFont;
         ALLEGRO_FONT* BIGFont;
+        ALLEGRO_BITMAP* safety_box_closed;
+        ALLEGRO_BITMAP* safety_box_opened;
+        ALLEGRO_BITMAP* card;
     public:
         explicit Office() = default;
         void Draw() const override;

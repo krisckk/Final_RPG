@@ -72,7 +72,7 @@ void ElevatorB3::OnKeyDown(int keyCode){
         case ALLEGRO_KEY_E:
             if (MC -> Position.x <= 5) Engine::GameEngine::GetInstance().ChangeScene("RestRoom");
             break;
-        case ALLEGRO_KEY_I:
+        case ALLEGRO_KEY_P:
             if (MC -> Position.x >= 1300 && MC -> Position.x <= 1550) 
                 Shared::wooden_stick = true;
             break;
@@ -131,7 +131,7 @@ void ElevatorB3::Draw() const{
     if (MC -> Position.x >= 1300 && MC -> Position.x <= 1550 && !Shared::wooden_stick){
         al_draw_filled_triangle(MC -> Position.x - 55, 700, MC -> Position.x - 55, 740, MC -> Position.x - 10, 720, al_map_rgb(255, 255, 255));
         al_draw_filled_rounded_rectangle(MC -> Position.x - 250, 680, MC -> Position.x - 50, 800, 10, 10, al_map_rgb(255, 255, 255));
-        al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x - 210, 700, 0, "Press I to");
+        al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x - 210, 700, 0, "Press P to");
         al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x - 210, 740, 0, "Pick Up");
     }
     

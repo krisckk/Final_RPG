@@ -65,7 +65,7 @@ void Computer::Draw() const
     al_draw_text(PoetFont, al_map_rgb(0, 0, 0), halfW / 2 + 865, halfH / 2 + 170, 0, "Researcher's");
     al_draw_text(PoetFont, al_map_rgb(0, 0, 0), halfW / 2 + 890, halfH / 2 + 190, 0, "Diary");
     al_draw_text(PoetFont, al_map_rgb(0, 0, 0), halfW / 2 + 890, halfH / 2 + 280, 0, "Seeds");    
-    al_draw_text(PoetFont, al_map_rgb(0, 0, 0), halfW / 2 + 890, halfH / 2 + 370, 0, "Password");
+    al_draw_text(PoetFont, al_map_rgb(0, 0, 0), halfW / 2 + 883, halfH / 2 + 390, 0, "Password");
 
 
     if (Seeds)

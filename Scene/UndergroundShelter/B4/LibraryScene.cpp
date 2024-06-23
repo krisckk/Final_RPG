@@ -180,7 +180,7 @@ void LibraryScene::Draw() const{
     int h = Engine::GameEngine::GetInstance().GetScreenSize().y;
     //if (door_open) al_draw_scaled_bitmap(dooropened,0, 0, 162, 228, 1400, h - 460, 200, 360, 0);
 
-    if (MC -> Position.x >= 1350 && MC -> Position.x <= 1600 && !enter_password){
+    if (MC -> Position.x >= 1350 && MC -> Position.x <= 1600 && !enter_password && MC -> Position.y > 450){
         al_draw_filled_triangle(MC -> Position.x - 55, 700, MC -> Position.x - 55, 740, MC -> Position.x - 10, 720, al_map_rgb(255, 255, 255));
         al_draw_filled_rounded_rectangle(MC -> Position.x - 350, 680, MC -> Position.x - 50, 800, 10, 10, al_map_rgb(255, 255, 255));
         al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x - 320, 710, 0, "Press E to Enter");
@@ -189,14 +189,14 @@ void LibraryScene::Draw() const{
     if (MC -> Position.x >= 900 && MC -> Position.x <= 1050 && MC -> Position.y < 450 && !stickynotes_opened){
         al_draw_filled_triangle(MC -> Position.x - 55, MC -> Position.y , MC -> Position.x - 55, MC -> Position.y + 40, MC -> Position.x - 10, MC -> Position.y + 20, al_map_rgb(255, 255, 255));
         al_draw_filled_rounded_rectangle(MC -> Position.x - 350, MC -> Position.y - 20, MC -> Position.x - 50, MC -> Position.y + 100, 10, 10, al_map_rgb(255, 255, 255));
-        al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x - 320, MC -> Position.y + 10, 0, "Press I to Interact");
-        al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x - 320, MC -> Position.y + 50, 0, "Press C to close");
+        al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x - 320, MC -> Position.y, 0, "Press I to Interact");
+        al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x - 320, MC -> Position.y + 40, 0, "Press C to close");
     }
     if (MC -> Position.x >= 600 && MC -> Position.x <= 750 && MC -> Position.y > 450){
         al_draw_filled_triangle(MC -> Position.x - 55, MC -> Position.y , MC -> Position.x - 55, MC -> Position.y + 40, MC -> Position.x - 10, MC -> Position.y + 20, al_map_rgb(255, 255, 255));
         al_draw_filled_rounded_rectangle(MC -> Position.x - 350, MC -> Position.y - 20, MC -> Position.x - 50, MC -> Position.y + 100, 10, 10, al_map_rgb(255, 255, 255));
-        al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x - 320, MC -> Position.y + 10, 0, "Press I to Interact");
-        al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x - 320, MC -> Position.y + 50, 0, "Press C to close");
+        al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x - 320, MC -> Position.y, 0, "Press I to Interact");
+        al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x - 320, MC -> Position.y + 40, 0, "Press C to close");
     }
     if (stickynotes_opened){
         al_draw_filled_rounded_rectangle(400, 200, 1200, 700, 10, 10, al_map_rgb(255, 255, 102));

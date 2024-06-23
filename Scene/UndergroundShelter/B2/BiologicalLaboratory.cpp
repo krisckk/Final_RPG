@@ -26,6 +26,7 @@ void BiologicalLaboratory::Initialize() {
     Engine::LOG(Engine::INFO) << "BiologicalLaboratory scene create";
     PoetFont = al_load_font("Resource/fonts/PoetsenOne.ttf", 30, 0);
     BIGFont = al_load_font("Resource/fonts/PoetsenOne.ttf", 150, 0);
+    Key = al_load_bitmap("Resource/images/UndergroundShelter/B2/BiologicalLaboratory/Key.png");
     AddNewObject(new Engine::Image("UndergroundShelter/LabGeneralBackground.png", 0, 0, w, h, 0, 0));
     AddNewObject(new Engine::Image("UndergroundShelter/LabGeneralBackgroundPlatform.png", 0, h - 520, w, 60, 0, 0));
     AddNewObject(new Engine::Image("UndergroundShelter/B4/Library/ladder.png", 300, h - 540, 160, 460, 0, 0));
@@ -52,6 +53,7 @@ void BiologicalLaboratory::Terminate() {
     Engine::LOG(Engine::INFO) << "BiologicalLaboratory scene terminated";
     al_destroy_font(PoetFont);
     al_destroy_font(BIGFont);
+    al_destroy_bitmap(Key);
     IScene::Terminate();
 }
 void BiologicalLaboratory::Update(float deltaTime){
@@ -71,6 +73,14 @@ void BiologicalLaboratory::Draw() const {
         al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x - 310, 250, 0, "Press P to");
         al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x - 310, 290, 0, "Pick Up");
     }
+    if  (MC -> Position.x >= 80 && MC -> Position.x <= 140 && !Shared::key){
+        al_draw_filled_triangle(MC -> Position.x + 200, 700, MC -> Position.x + 200, 740, MC -> Position.x + 170, 720, al_map_rgb(255, 255, 255));
+        al_draw_filled_rounded_rectangle(MC -> Position.x + 200, 680, MC -> Position.x + 500, 800, 10, 10, al_map_rgb(255, 255, 255));
+        al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x + 240, 700, 0, "Press P to");
+        al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x + 240, 740, 0, "Pick up"); 
+    }
+
+    if (!Shared::key) al_draw_scaled_bitmap(Key, 0, 0, 1280, 1280, 150, 800, 60, 60, 0);
 }
 void BiologicalLaboratory::OnKeyDown(int keyCode){
     switch (keyCode)
@@ -92,8 +102,11 @@ void BiologicalLaboratory::OnKeyDown(int keyCode){
             }
             break;
         case ALLEGRO_KEY_P:
-            if(MC -> Position.y < 450 && MC -> Position.x >= 1380){
+            if (MC -> Position.y < 450 && MC -> Position.x >= 1380){
                 Shared::Aluminum = true;
+            }
+            if (MC -> Position.y > 450 && MC -> Position.x < 140 && MC -> Position.x > 80){
+                Shared::key = true;
             }
             break;
         case ALLEGRO_KEY_E:
@@ -106,6 +119,9 @@ void BiologicalLaboratory::OnKeyDown(int keyCode){
             break;
         case ALLEGRO_KEY_M:
             Engine::GameEngine::GetInstance().ChangeScene("Map");
+            break;
+        case ALLEGRO_KEY_B:
+            Engine::GameEngine::GetInstance().ChangeScene("Backpack");
             break;
         default:
             break;

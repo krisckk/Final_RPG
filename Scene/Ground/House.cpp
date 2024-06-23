@@ -75,6 +75,9 @@ void House::OnKeyDown(int keyCode){
         case ALLEGRO_KEY_M:
             Engine::GameEngine::GetInstance().ChangeScene("Map");
             break;
+        case ALLEGRO_KEY_ESCAPE:
+            Engine::GameEngine::GetInstance().ChangeScene("PauseScene");
+            break;
         default:
             break;
     }
@@ -112,4 +115,3 @@ void House::Draw() const{
 void House::Update(float deltaTime){
     IScene::Update(deltaTime);
 }
-

@@ -25,23 +25,20 @@ void Backpack::Initialize(){
     AddNewObject(new Engine::Image("water.png", 940, 510, w / 20, h / 12, 0, 0));
     if(Shared::redPotion)
         AddNewObject(new Engine::Image("UndergroundShelter/B4/StorageRoom/red_water.png", 300, 650, 80, 80, 0, 0));
-        //80 330
     if(Shared::bluePotion)
         AddNewObject(new Engine::Image("UndergroundShelter/B4/StorageRoom/blue_water.png", 300, 650, 80, 80, 0, 0));
-        //190 330
     if(Shared::yellowPotion)
         AddNewObject(new Engine::Image("UndergroundShelter/B4/StorageRoom/yellow_water.png", 300, 650, 80, 80, 0, 0));
-        //300 330
     if(Shared::Gold)
         AddNewObject(new Engine::Image("Gold.png", 190, 510, 80, 80, 0, 0));
     if(Shared::Aluminum)
         AddNewObject(new Engine::Image("Aluminum.png", 190, 650, 80, 80, 0, 0));
     if(Shared::Iron)
-        AddNewObject(new Engine::Image("Iron.png", 300, 510, 80, 80, 0, 0));
+        AddNewObject(new Engine::Image("Iron.png", 80, 650, 80, 80, 0, 0));
     if(Shared::HDLoil)
-        AddNewObject(new Engine::Image("UndergroundShelter/B1/HardwareRoom/FussilOil.png", 80, 650, 80, 80, 0, 0));
+        AddNewObject(new Engine::Image("UndergroundShelter/B1/HardwareRoom/HDFussilOil.png", 80, 510, 80, 80, 0, 0));
     if(Shared::LDLoil)
-        AddNewObject(new Engine::Image("UndergroundShelter/B1/HardwareRoom/FussilOil.png", 80, 510, 80, 80, 0, 0));
+        AddNewObject(new Engine::Image("UndergroundShelter/B1/HardwareRoom/LDFussilOil.png", 80, 510, 80, 80, 0, 0));
     if (Shared::coin && !Shared::Achievement_cola)
         AddNewObject(new Engine::Image("UndergroundShelter/B3/GYMscene/coin.png", 80, 330, 80, 80, 0, 0));
     if (Shared::Achievement_cola)
@@ -52,7 +49,10 @@ void Backpack::Initialize(){
         AddNewObject(new Engine::Image("UndergroundShelter/B4/StorageRoom/yummy.png", 190, 330, 80, 80, 0, 0));
     if (Shared::Achievement_home)
         AddNewObject(new Engine::Image("Ground/Home/letter.png", 300, 330, 80, 80, 0, 0));
-
+    if (Shared::key && !Shared::IDcard)
+        AddNewObject(new Engine::Image("UndergroundShelter/B2/BiologicalLaboratory/key.png", 300, 510, 80, 80, 0, 0));
+    if (Shared::IDcard)
+        AddNewObject(new Engine::Image("UndergroundShelter/B1/Office/IDcard.png", 305, 510, 70, 70, 0, 0));
 
 
 }
@@ -64,15 +64,16 @@ void Backpack::Draw() const{
     al_draw_rectangle(180, 320, 280, 420, al_map_rgb(255, 255, 255), 2);
     al_draw_rectangle(290, 320, 390, 420, al_map_rgb(255, 255, 255), 2);
     al_draw_rectangle(70, 500, 170, 600, al_map_rgb(255, 255, 255), 2);
-    al_draw_text(ObjectFont, al_map_rgb(255, 255, 255), 120, 605, ALLEGRO_ALIGN_CENTER, "75% Oil");
+    if (Shared::HDLoil) al_draw_text(ObjectFont, al_map_rgb(255, 255, 255), 120, 605, ALLEGRO_ALIGN_CENTER, "95%Oil");
+    else if (Shared::LDLoil) al_draw_text(ObjectFont, al_map_rgb(255, 255, 255), 120, 605, ALLEGRO_ALIGN_CENTER, "75%Oil");
+    //else al_draw_text(ObjectFont, al_map_rgb(255, 255, 255), 120, 605, ALLEGRO_ALIGN_CENTER, "Oil");
     al_draw_rectangle(70, 640, 170, 740, al_map_rgb(255, 255, 255), 2);
-    al_draw_text(ObjectFont, al_map_rgb(255, 255, 255), 120, 745, ALLEGRO_ALIGN_CENTER, "95% Oil");
+    if(Shared::Iron) al_draw_text(ObjectFont, al_map_rgb(255, 255, 255), 120, 745, ALLEGRO_ALIGN_CENTER, "Fe");
     al_draw_rectangle(180, 500, 280, 600, al_map_rgb(255, 255, 255), 2);
-    al_draw_text(ObjectFont, al_map_rgb(255, 255, 255), 230, 605, ALLEGRO_ALIGN_CENTER, "Au");
+    if(Shared::Gold) al_draw_text(ObjectFont, al_map_rgb(255, 255, 255), 230, 605, ALLEGRO_ALIGN_CENTER, "Au");
     al_draw_rectangle(180, 640, 280, 740, al_map_rgb(255, 255, 255), 2);
-    al_draw_text(ObjectFont, al_map_rgb(255, 255, 255), 230, 745, ALLEGRO_ALIGN_CENTER, "Al");
+    if(Shared::Aluminum) al_draw_text(ObjectFont, al_map_rgb(255, 255, 255), 230, 745, ALLEGRO_ALIGN_CENTER, "Al");
     al_draw_rectangle(290, 500, 390, 600, al_map_rgb(255, 255, 255), 2);
-    al_draw_text(ObjectFont, al_map_rgb(255, 255, 255), 340, 605, ALLEGRO_ALIGN_CENTER, "Fe");
     al_draw_rectangle(290, 640, 390, 740, al_map_rgb(255, 255, 255), 2);
     al_draw_text(pirulenFont, al_map_rgb(255, 255, 255), 750, 200, ALLEGRO_ALIGN_CENTER, "Character");
     al_draw_rounded_rectangle(1100, 330, 1400, 370, 10, 10, al_map_rgb(255, 255, 255), 2);

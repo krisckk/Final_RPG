@@ -28,6 +28,8 @@ public:
     static bool BadRocket5;
     static bool BadRocket6;
     static bool BadRocket7;
+    static bool box_opened;
+    static bool key;
     static std::string previosStage;
     static std::string currentStage;
     static bool HomeLetterOpen;

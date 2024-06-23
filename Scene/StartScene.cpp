@@ -64,6 +64,8 @@ void StartScene::ContinueOnClick(int stage){
         saveFile >> Shared::IDcard;
         saveFile >> Shared::coin;
         saveFile >> Shared::wooden_stick;
+        saveFile >> Shared::key;
+        saveFile >> Shared::box_opened;
         saveFile >> Shared::Achievement_cola;
         saveFile >> Shared::Achievement_home;
         saveFile >> Shared::Achievement_myfavorite;
@@ -89,6 +91,8 @@ void StartScene::NewgameOnClick(int stage){
     Shared::IDcard = false;
     Shared::coin = false;
     Shared::wooden_stick = false;
+    Shared::key = false;
+    Shared::box_opened = false;
     Shared::correct = false;
     Shared::Achievement_cola = false;
     Shared::Achievement_home = false;

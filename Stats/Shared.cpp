@@ -28,6 +28,8 @@ bool Shared::HomeLetterOpen;
 bool Shared::Achievement_cola;
 bool Shared::Achievement_home;
 bool Shared::Achievement_myfavorite;
+bool Shared::key;
+bool Shared::box_opened;
 // B4
 bool Shared::LabScene;
 bool Shared::LibraryScene;

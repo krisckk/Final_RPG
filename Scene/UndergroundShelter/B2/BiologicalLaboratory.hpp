@@ -24,6 +24,7 @@ class BiologicalLaboratory final : public  Engine::IScene {
     private:
         ALLEGRO_FONT* PoetFont;
         ALLEGRO_FONT* BIGFont;
+        ALLEGRO_BITMAP* Key;
     public:
         explicit BiologicalLaboratory() = default;
         void Draw() const override;

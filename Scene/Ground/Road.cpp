@@ -65,7 +65,7 @@ void Road::OnKeyDown(int keyCode){
             break;
         case ALLEGRO_KEY_D:
             MC->MoveRight(1.0f / 60.0f);
-            if(MC -> Position.x >= 1600) Engine::GameEngine::GetInstance().ChangeScene("House");
+            if(MC -> Position.x >= 1500) Engine::GameEngine::GetInstance().ChangeScene("House");
             break;
         case ALLEGRO_KEY_W:
             if (MC -> Position.x >= 850 && MC -> Position.x <= 1000)
@@ -83,6 +83,9 @@ void Road::OnKeyDown(int keyCode){
             break;
         case ALLEGRO_KEY_M:
             Engine::GameEngine::GetInstance().ChangeScene("Map");
+            break;
+        case ALLEGRO_KEY_ESCAPE:
+            Engine::GameEngine::GetInstance().ChangeScene("PauseScene");
             break;
         default:
             break;
