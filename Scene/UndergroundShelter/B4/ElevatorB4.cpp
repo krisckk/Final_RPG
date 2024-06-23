@@ -157,8 +157,8 @@ void ElevatorB4::Draw() const
     }
     if (change)
     {   al_draw_filled_rectangle(0, 0, w, h, al_map_rgb(0, 0, 0));
-        if(ShowDot1) al_draw_scaled_bitmap(B4Image1,0,0,1518,1408,100,100,w-300,h,0);
-        if(ShowDot2) al_draw_scaled_bitmap(B4Image2,0,0,1518,1408,100,100,w-300,h,0);
+        if(ShowDot1) al_draw_scaled_bitmap(B4Image1,0,0,1518,1408,100,99,w-300,h,0);
+        if(ShowDot2) al_draw_scaled_bitmap(B4Image2,0,0,1518,1408,102,100,w-300,h,0);
         if(ShowDot3) al_draw_scaled_bitmap(B4Image3,0,0,1518,1408,100,100,w-300,h,0);
         if(ShowDot4) al_draw_scaled_bitmap(B4Image4,0,0,1518,1408,100,100,w-300,h,0);
     }
