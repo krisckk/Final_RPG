@@ -22,46 +22,8 @@
 [INFO] Created<sample_instance>: Resource/audios/Time.ogg
 [INFO] Game initialized
 [INFO] Game start event loop
-[INFO] stopped audio (sample)
-[INFO] Loaded Resource<image>: Resource/images/Achievement/back_button.png scaled to 170x55
-[INFO] Loaded Resource<image>: Resource/images/Achievement/back_button.png
-[INFO] Changed to Achievement scene
-[INFO] Created<sample_instance>: Resource/audios/Time.ogg
-[INFO] Changed to start scene
-[INFO] stopped audio (sample)
-[INFO] Lab scene create
-[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/LabGeneralBackground.png scaled to 1600x900
-[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/B4/LabScene/tankwithPeople.png scaled to 200x360
-[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/B4/LabScene/tankwithoutPeople.png scaled to 200x360
-[INFO] Loaded Resource<image>: Resource/images/2Ddooropened.png scaled to 300x360
-[INFO] Loaded Resource<image>: Resource/images/MCRightStop.png
-[INFO] Changed to Lab scene
-[INFO] Map create
-[INFO] Loaded Resource<image>: Resource/images/Map/LabScene.png scaled to 200x100
-[INFO] Changed to Map scene
-[INFO] Lab scene create
-[INFO] Changed to Lab scene
-[INFO] Backpack scene create
-[INFO] Loaded Resource<image>: Resource/images/MCidleStop.png scaled to 320x300
-[INFO] Loaded Resource<image>: Resource/images/Li'sfavorite.png scaled to 160x90
-[INFO] Loaded Resource<image>: Resource/images/heart.png scaled to 94x75
-[INFO] Loaded Resource<image>: Resource/images/water.png scaled to 80x75
-[INFO] Changed to Backpack scene
-[INFO] Lab scene create
-[INFO] Changed to Lab scene
-[INFO] Library scene create
-[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/LabGeneralBackgroundPlatform.png scaled to 1600x60
-[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/B4/Library/ladder.png scaled to 160x460
-[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/B4/Library/bookshelf.png scaled to 400x300
-[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/B4/Library/bookshelf.png scaled to 300x300
-[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/B4/Library/stickynotes.png scaled to 50x50
-[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/B4/Library/WaterFountain.png scaled to 180x300
-[INFO] Loaded Resource<image>: Resource/images/2Ddooropened.png scaled to 200x360
-[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/B4/Library/Computer.png scaled to 100x100
-[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/B4/Library/ComputerDesk.png scaled to 200x100
-[INFO] Loaded Resource<image>: Resource/images/2Ddoorclosed.png scaled to 300x360
-[INFO] Changed to Library scene
 [INFO] Game Terminating...
+[INFO] stopped audio (sample)
 [INFO] Game terminated
 [INFO] Game end
 [INFO] Game Initializing...

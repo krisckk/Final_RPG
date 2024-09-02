@@ -2,6 +2,42 @@
 	"entries" : 
 	[
 		{
+			"name" : "2024_I2P2_FinalProject_MiniRPGgame_BINARY_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/Users/krischou/Final_RPG/build"
+		},
+		{
+			"name" : "2024_I2P2_FinalProject_MiniRPGgame_IS_TOP_LEVEL",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "ON"
+		},
+		{
+			"name" : "2024_I2P2_FinalProject_MiniRPGgame_SOURCE_DIR",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "Value Computed by CMake"
+				}
+			],
+			"type" : "STATIC",
+			"value" : "/Users/krischou/Final_RPG"
+		},
+		{
 			"name" : "2024_I2P2_TowerDefense_with_answer_BINARY_DIR",
 			"properties" : 
 			[
@@ -1767,7 +1803,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "2024_I2P2_TowerDefense_with_answer"
+			"value" : "2024_I2P2_FinalProject_MiniRPGgame"
 		},
 		{
 			"name" : "CMAKE_RANLIB",

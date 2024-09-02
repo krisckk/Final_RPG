@@ -27,7 +27,7 @@
 					[
 						0
 					],
-					"name" : "2024_I2P2_TowerDefense_with_answer",
+					"name" : "2024_I2P2_FinalProject_MiniRPGgame",
 					"targetIndexes" : 
 					[
 						0
@@ -39,7 +39,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "2024_I2P2_TowerDefense_with_answer::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-2024_I2P2_TowerDefense_with_answer-Debug-e8a0bbb59b192cb90948.json",
+					"jsonFile" : "target-2024_I2P2_TowerDefense_with_answer-Debug-a718ca6c2fb25e71c848.json",
 					"name" : "2024_I2P2_TowerDefense_with_answer",
 					"projectIndex" : 0
 				}

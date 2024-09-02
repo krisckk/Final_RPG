@@ -15,6 +15,15 @@
 ########################
 
 //Value Computed by CMake
+2024_I2P2_FinalProject_MiniRPGgame_BINARY_DIR:STATIC=/Users/krischou/Final_RPG/build
+
+//Value Computed by CMake
+2024_I2P2_FinalProject_MiniRPGgame_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+2024_I2P2_FinalProject_MiniRPGgame_SOURCE_DIR:STATIC=/Users/krischou/Final_RPG
+
+//Value Computed by CMake
 2024_I2P2_TowerDefense_with_answer_BINARY_DIR:STATIC=/Users/krischou/Final_RPG/build
 
 //Value Computed by CMake
@@ -151,7 +160,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=2024_I2P2_TowerDefense_with_answer
+CMAKE_PROJECT_NAME:STATIC=2024_I2P2_FinalProject_MiniRPGgame
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/ranlib
