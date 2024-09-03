@@ -8,8 +8,6 @@
 #include "Engine/Resources.hpp"
 #include "Engine/Sprite.hpp"
 #include "UI/Component/Label.hpp"
-#include "UI/Animation/DirtyEffect.hpp"
-#include "UI/Animation/Plane.hpp"
 #include "Maincharacter/Maincharacter.hpp"
 #include "Maincharacter/Backpack.hpp" 
 #include "Stats/Shared.hpp"
@@ -33,7 +31,8 @@ void ElevatorB3::Initialize(){
     AddNewObject(new Engine::Image("wooden_stick.png", 1300, 740, 300, 120, 0, 0));
 
     bgmInstance = AudioHelper::PlaySample("Weightless.ogg", true, AudioHelper::BGMVolume);
-    MC = new Maincharacter("MCRightStop.png", halfW + 30, 680, 32, 200);
+    if(Shared::previousStage == "ElevatorB4") MC = new Maincharacter("MCRightStop.png", halfW + 30, 680, 32, 200);
+    else if(Shared::previousStage == "RestRoom") MC = new Maincharacter("MCRightStop.png", 5, 680, 32, 200);
     if (!MC) {
         Engine::LOG(Engine::ERROR) << "Failed to create Maincharacter object";
         return;

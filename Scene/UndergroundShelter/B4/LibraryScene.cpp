@@ -22,8 +22,7 @@
 #include "Engine/Resources.hpp"
 #include "Engine/Sprite.hpp"
 #include "UI/Component/Label.hpp"
-#include "UI/Animation/DirtyEffect.hpp"
-#include "UI/Animation/Plane.hpp"
+
 #include "Stats/Shared.hpp"
 #include "Maincharacter/Maincharacter.hpp"
 #include "LibraryScene.hpp"
@@ -31,6 +30,8 @@
 #include "Maincharacter/Backpack.hpp" 
 bool stickynotes_opened = false;
 bool enter_password = false;
+bool ClimbUp = false;
+bool ClimbDown = false;
 //bool door_open = false;
 char password[5];
 //static bool correct;
@@ -58,7 +59,9 @@ void LibraryScene::Initialize(){
     AddNewObject(new Engine::Image("UndergroundShelter/B4/Library/ComputerDesk.png", 600, h - 200, 200, 100, 0, 0));
     AddNewObject(new Engine::Image("UndergroundShelter/B4/Library/bookshelf.png", 900, h - 400, 300, 300, 0 , 0));
     AddNewObject(new Engine::Image("2Ddoorclosed.png", 1300, h - 460, 300, 360, 0, 0));
-    MC = new Maincharacter("MCRightStop.png", 80, 680, 32, 200);
+    if(Shared::previousStage == "Lab")  MC = new Maincharacter("MCRightStop.png", 80, 680, 32, 200);
+    else if(Shared::previousStage == "StorageRoom") MC = new Maincharacter("MCRightStop.png", 1350, 680, 32, 200);
+    else if(Shared::previousStage == "Computer") MC = new Maincharacter("MCRightStop.png", 600, 680, 32, 200);
     if (!MC) {
         Engine::LOG(Engine::ERROR) << "Failed to create Maincharacter object";
         return;
@@ -78,22 +81,19 @@ void LibraryScene::Terminate() {
 void LibraryScene::OnKeyDown(int keyCode){
     switch (keyCode) {
         case ALLEGRO_KEY_A:
-            if (!stickynotes_opened && !enter_password) MC->MoveLeft(1.0f / 60.0f); // Assuming 60 FPS
+            if (!stickynotes_opened && !enter_password && !ClimbDown && !ClimbUp) MC->MoveLeft(1.0f / 60.0f); // Assuming 60 FPS
             break;
         case ALLEGRO_KEY_D:
-            if (!stickynotes_opened && !enter_password) MC->MoveRight(1.0f / 60.0f);
+            if (!stickynotes_opened && !enter_password && !ClimbDown && !ClimbUp) MC->MoveRight(1.0f / 60.0f);
             break;
         case ALLEGRO_KEY_W:
-            if(!stickynotes_opened && !enter_password && MC -> Position.x >= 280 && MC -> Position.x <= 400 && MC -> Position.y >= 250){
-                MC->ClimbUp(1.0f / 60.0f);
-            }
+            if(!stickynotes_opened && !enter_password && !ClimbDown && MC -> Position.x >= 280 && MC -> Position.x <= 400 && MC -> Position.y >= 280) ClimbUp = true;
             break;
         case ALLEGRO_KEY_S:
-            if(!stickynotes_opened && !enter_password && MC -> Position.x >= 280 && MC -> Position.x <= 400 && MC -> Position.y <= 570){
-                MC->ClimbDown(1.0f / 60.0f);
-            }
+            if(!stickynotes_opened && !enter_password && !ClimbUp && MC -> Position.x >= 280 && MC -> Position.x <= 400 && MC -> Position.y <= 570) ClimbDown = true;
             break;
         case ALLEGRO_KEY_E:
+            if(MC -> Position.x <= 150) Engine::GameEngine::GetInstance().ChangeScene("Lab");
             if (MC -> Position.x >= 1350 && MC -> Position.x <= 1600 && !(Shared::correct)){
                 //if(Shared::correct){
                 enter_password = !enter_password;
@@ -178,13 +178,17 @@ void LibraryScene::Draw() const{
     IScene::Draw();
     int w = Engine::GameEngine::GetInstance().GetScreenSize().x;
     int h = Engine::GameEngine::GetInstance().GetScreenSize().y;
-    //if (door_open) al_draw_scaled_bitmap(dooropened,0, 0, 162, 228, 1400, h - 460, 200, 360, 0);
 
+    if (MC -> Position.x <= 40){
+        al_draw_filled_triangle(MC -> Position.x + 200, 700, MC -> Position.x + 200, 740, MC -> Position.x + 170, 720, al_map_rgb(255, 255, 255));
+        al_draw_filled_rounded_rectangle(MC -> Position.x + 200, 680, MC -> Position.x + 500, 800, 10, 10, al_map_rgb(255, 255, 255));
+        al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x + 250, 700, 0, "Press E to");
+        al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x + 250, 740, 0, "Go Back");
+    }
     if (MC -> Position.x >= 1350 && MC -> Position.x <= 1600 && !enter_password && MC -> Position.y > 450){
         al_draw_filled_triangle(MC -> Position.x - 55, 700, MC -> Position.x - 55, 740, MC -> Position.x - 10, 720, al_map_rgb(255, 255, 255));
         al_draw_filled_rounded_rectangle(MC -> Position.x - 350, 680, MC -> Position.x - 50, 800, 10, 10, al_map_rgb(255, 255, 255));
         al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x - 320, 710, 0, "Press E to Enter");
-        //if (!door_open) al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x - 320, 750, 0, "Password");
     }
     if (MC -> Position.x >= 900 && MC -> Position.x <= 1050 && MC -> Position.y < 450 && !stickynotes_opened){
         al_draw_filled_triangle(MC -> Position.x - 55, MC -> Position.y , MC -> Position.x - 55, MC -> Position.y + 40, MC -> Position.x - 10, MC -> Position.y + 20, al_map_rgb(255, 255, 255));
@@ -216,7 +220,6 @@ void LibraryScene::Draw() const{
 void LibraryScene::Update(float deltaTime){
     IScene::Update(deltaTime);
     if (password[0] == '0' && password[1] == '3' && password[2] == '1' && password[3] == '0') {
-        //door_open = true;
         enter_password = false;
         password[0]='\0';
         password[1]='\0';
@@ -225,5 +228,19 @@ void LibraryScene::Update(float deltaTime){
         Shared::correct = true;
         Engine::LOG(Engine::INFO) << "The door is open";
         Engine::GameEngine::GetInstance().ChangeScene("StorageRoom");
+    }
+    if(ClimbUp) {
+        MC -> ClimbUp(1.0f / 60.0f);
+        if(MC -> Position.y <= 240){
+            MC -> Stop();
+            ClimbUp = false;
+        }
+    }
+    if(ClimbDown) {
+        MC -> ClimbDown(1.0f / 60.0f);
+        if(MC -> Position.y >= 640){
+            MC -> Stop();
+            ClimbDown = false;
+        }
     }
 }

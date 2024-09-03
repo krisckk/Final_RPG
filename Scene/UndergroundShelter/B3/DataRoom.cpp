@@ -11,8 +11,6 @@
 #include "Engine/Resources.hpp"
 #include "Engine/Sprite.hpp"
 #include "UI/Component/Label.hpp"
-#include "UI/Animation/DirtyEffect.hpp"
-#include "UI/Animation/Plane.hpp"
 #include "Maincharacter/Maincharacter.hpp"
 #include "Scene/UndergroundShelter/B4/LibraryScene.hpp"
 #include "Scene/UndergroundShelter/B4/LabScene.hpp"

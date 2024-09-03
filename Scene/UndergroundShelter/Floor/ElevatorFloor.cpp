@@ -8,8 +8,6 @@
 #include "Engine/Resources.hpp"
 #include "Engine/Sprite.hpp"
 #include "UI/Component/Label.hpp"
-#include "UI/Animation/DirtyEffect.hpp"
-#include "UI/Animation/Plane.hpp"
 #include "Maincharacter/Maincharacter.hpp"
 #include "Maincharacter/Backpack.hpp" 
 #include "Stats/Shared.hpp"

@@ -1,6 +1,7 @@
 #ifndef GAMEENGINE_HPP
 #define GAMEENGINE_HPP
 #include <allegro5/allegro.h>
+#include <allegro5/allegro_audio.h>
 #include <string>
 #include <unordered_map>
 
@@ -75,6 +76,9 @@ namespace Engine {
 		/// </summary>
 		/// <param name="name">The name of the scene you want to change to.</param>
 		void changeScene(const std::string& name);
+
+		std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE> currentBGMInstance;
+    	std::string currentBGMName;
 	public:
 		// Note: We'll ignore C++11's move constructor, move assignment operator in this project for simplicity.
 		/// <summary>
@@ -154,6 +158,15 @@ namespace Engine {
 		/// </summary>
 		/// <returns>The Singleton instance of GameEngine.</returns>
 		static GameEngine& GetInstance();
+		/// <summary>
+		/// Play the BGM in the background and make sure the BGM is the same as the previous one and if it's not then stop the previous one and lay the new one
+		/// <summary>
+		void PlayBGM(const std::string& bgmName);
+		/// <summary>
+		/// Stop the BGM
+		/// <summary>
+		void StopBGM();
+
 	};
 }
 #endif // GAMEENGINE_HPP

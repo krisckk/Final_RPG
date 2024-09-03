@@ -26,6 +26,7 @@ class ElevatorB4 final : public  Engine::IScene {
         ALLEGRO_FONT* FloorFont;
         ALLEGRO_FONT* ChangeFont;
         ALLEGRO_BITMAP* Passwordnote;
+        ALLEGRO_BITMAP* IronImage;
         ALLEGRO_BITMAP* B4Image1;
         ALLEGRO_BITMAP* B4Image2;
         ALLEGRO_BITMAP* B4Image3;

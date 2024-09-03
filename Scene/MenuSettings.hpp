@@ -7,7 +7,6 @@
 
 class MenuSettings final : public Engine::IScene {
     private:
-        std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE> bgmInstance;
         std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE> sfxInstance;
         std::shared_ptr<ALLEGRO_BITMAP> background;
     public:

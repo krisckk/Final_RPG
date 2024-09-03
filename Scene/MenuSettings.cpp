@@ -7,7 +7,6 @@
 #include "UI/Component/ImageButton.hpp"
 #include "UI/Component/Label.hpp"
 #include "UI/Component/Slider.hpp"
-#include "PlayScene.hpp"
 #include "MenuSettings.hpp"
 
 void MenuSettings::Initialize() {
@@ -36,18 +35,15 @@ void MenuSettings::Initialize() {
     btn = new Engine::ImageButton("Blankbackground.png", "Blankbackground.png", halfW - 65, 635, 130, 60);
     btn->SetOnClickCallback(std::bind(&MenuSettings::BackOnClick, this, 1));
     AddNewControlObject(btn);
-    bgmInstance = AudioHelper::PlaySample("Intestellar.ogg", true, AudioHelper::BGMVolume);
+    Engine::GameEngine::GetInstance().PlayBGM("Intestellar.ogg");
 }
 void MenuSettings::Terminate() {
-    AudioHelper::StopSample(bgmInstance);
-    bgmInstance = std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE>();
     IScene::Terminate();
 }
 void MenuSettings::BackOnClick(int stage) {
     Engine::GameEngine::GetInstance().ChangeScene("start");
 }
 void MenuSettings::BGMSlideOnValueChanged(float value) {
-    AudioHelper::ChangeSampleVolume(bgmInstance, value);
     AudioHelper::BGMVolume = value;
 }
 

@@ -56,7 +56,7 @@ bool Shared::Factory;
 bool Shared::Road;
 bool Shared::House;
 bool Shared::Home;
-std::string Shared::previosStage = "";
+std::string Shared::previousStage = "";
 std::string Shared::currentStage = "";
 void Shared::SetLives(int value) {
     lives = value;

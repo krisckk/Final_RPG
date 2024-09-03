@@ -30,7 +30,7 @@ public:
     static bool BadRocket7;
     static bool box_opened;
     static bool key;
-    static std::string previosStage;
+    static std::string previousStage;
     static std::string currentStage;
     static bool HomeLetterOpen;
     static bool Achievement_cola;

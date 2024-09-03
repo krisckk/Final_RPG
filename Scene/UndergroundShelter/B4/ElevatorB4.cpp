@@ -8,8 +8,6 @@
 #include "Engine/Resources.hpp"
 #include "Engine/Sprite.hpp"
 #include "UI/Component/Label.hpp"
-#include "UI/Animation/DirtyEffect.hpp"
-#include "UI/Animation/Plane.hpp"
 #include "Maincharacter/Maincharacter.hpp"
 #include "LibraryScene.hpp"
 #include "LabScene.hpp"
@@ -35,7 +33,6 @@ void ElevatorB4::Initialize()
     B4Image2 = al_load_bitmap("Resource/images/UndergroundShelter/B4/Elevator/B4-2.jpg");
     B4Image3 = al_load_bitmap("Resource/images/UndergroundShelter/B4/Elevator/B4-3.jpg");
     B4Image4 = al_load_bitmap("Resource/images/UndergroundShelter/B4/Elevator/B4-4.jpg");
-
     AddNewObject(new Engine::Image("UndergroundShelter/LabGeneralBackground.png", 0, 0, w, h, 0, 0));
     AddNewObject(new Engine::Image("2Ddooropened.png", 0, h - 460, 200, 360, 0.5, 0));
     AddNewObject(new Engine::Image("elevator.png", halfW + 30, halfH + 30, 330, 330, 0, 0));
@@ -60,6 +57,12 @@ void ElevatorB4::Terminate()
     al_destroy_font(ChangeFont);
     al_destroy_font(PoetFont);
     al_destroy_font(FloorFont);
+    al_destroy_bitmap(Passwordnote);
+    al_destroy_bitmap(B4Image1);
+    al_destroy_bitmap(B4Image2);
+    al_destroy_bitmap(B4Image3);
+    al_destroy_bitmap(B4Image4);
+    al_destroy_bitmap(B4Image5);
     DotTimer=0.0f;
     ShowDot1=false;
     ShowDot2=false;

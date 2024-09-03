@@ -6,8 +6,6 @@
 #include <vector>
 
 #include "Engine/AudioHelper.hpp"
-#include "UI/Animation/DirtyEffect.hpp"
-#include "UI/Animation/ExplosionEffect.hpp"
 #include "Engine/GameEngine.hpp"
 #include "Engine/Group.hpp"
 #include "Engine/IScene.hpp"
@@ -54,6 +52,7 @@ Maincharacter::Maincharacter(std::string img, float x, float y, float radius, fl
     currentAnimation = &idleAnimation;
     CollisionRadius = radius;
     bmp = std::shared_ptr<ALLEGRO_BITMAP>(al_load_bitmap(img.c_str()), al_destroy_bitmap);
+    al_draw_filled_rectangle(200, 800, 1400, 880, al_map_rgb(255, 255, 255));
 }
 
 void Maincharacter::Update(float deltaTime) {

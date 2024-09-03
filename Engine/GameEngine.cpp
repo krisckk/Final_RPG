@@ -13,6 +13,7 @@
 
 #include "Allegro5Exception.hpp"
 #include "GameEngine.hpp"
+#include "AudioHelper.hpp"
 #include "IScene.hpp"
 #include "LOG.hpp"
 #include "Point.hpp"
@@ -185,7 +186,7 @@ namespace Engine {
 		if (scenes.count(name) == 0)
 			throw std::invalid_argument("Cannot change to a unknown scene.");
 		// Terminate the old scene.
-		Shared::previosStage = activeScene ->GetName();
+		Shared::previousStage = activeScene ->GetName();
 		activeScene->Terminate();
 		activeScene = scenes[name];
 		Shared::currentStage = name;
@@ -268,5 +269,18 @@ namespace Engine {
 		// The classic way to lazy initialize a Singleton.
 		static GameEngine instance;
 		return instance;
+	}
+	void GameEngine::PlayBGM(const std::string& bgmName){
+		if (currentBGMInstance && currentBGMName == bgmName) return;
+		StopBGM();
+		currentBGMName = bgmName;
+		currentBGMInstance = AudioHelper::PlaySample(currentBGMName, true, AudioHelper::BGMVolume);
+	}
+	void GameEngine::StopBGM(){
+		if(currentBGMInstance){
+			AudioHelper::StopSample(currentBGMInstance);
+			currentBGMInstance = std::shared_ptr<ALLEGRO_SAMPLE_INSTANCE>();
+			currentBGMName = "";
+		}
 	}
 }

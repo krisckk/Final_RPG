@@ -11,8 +11,6 @@
 #include "Engine/Resources.hpp"
 #include "Engine/Sprite.hpp"
 #include "UI/Component/Label.hpp"
-#include "UI/Animation/DirtyEffect.hpp"
-#include "UI/Animation/Plane.hpp"
 #include "Maincharacter/Maincharacter.hpp"
 #include "LibraryScene.hpp"
 #include "LabScene.hpp"
@@ -52,7 +50,8 @@ void StorageRoom::Initialize(){
             AddNewObject(new Engine::Image("UndergroundShelter/B4/StorageRoom/yellow_water.png", 1060 + i * 70, h - 315 + j * 51, 60, 40, 0.5, 0));
         }
     }
-    MC = new Maincharacter("MCRightStop.png", 80, 680, 32, 200);
+    if(Shared::previousStage == "Library") MC = new Maincharacter("MCRightStop.png", 80, 680, 32, 200);
+    else if(Shared::previousStage == "ElevatorB4") MC = new Maincharacter("MCRightStop.png", 1300, 680, 32, 200);
     if (!MC) {
         Engine::LOG(Engine::ERROR) << "Failed to create Maincharacter object";
         return;

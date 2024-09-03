@@ -92,7 +92,7 @@ void Backpack::Terminate() {
 }
 
 void Backpack::OnKeyDown(int keyCode){
-    const std::string StageName = Shared::previosStage;
+    const std::string StageName = Shared::previousStage;
         switch (keyCode) {
             case ALLEGRO_KEY_C:
                 Engine::GameEngine::GetInstance().ChangeScene(StageName);
@@ -100,6 +100,4 @@ void Backpack::OnKeyDown(int keyCode){
             default:
                 break;
         }
-    
-    //if(keyCode == ALLEGRO_KEY_E) Engine::GameEngine::GetInstance().ChangeScene("Library");
 }

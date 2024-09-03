@@ -62,7 +62,7 @@ void Map::Terminate() {
 }
 
 void Map::OnKeyDown(int keyCode){
-    const std::string StageName = Shared::previosStage;
+    const std::string StageName = Shared::previousStage;
         switch (keyCode) {
             case ALLEGRO_KEY_C:
                 Engine::GameEngine::GetInstance().ChangeScene(StageName);

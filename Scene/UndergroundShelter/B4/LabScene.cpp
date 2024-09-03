@@ -8,8 +8,6 @@
 #include "Engine/Resources.hpp"
 #include "Engine/Sprite.hpp"
 #include "UI/Component/Label.hpp"
-#include "UI/Animation/DirtyEffect.hpp"
-#include "UI/Animation/Plane.hpp"
 #include "Stats/Shared.hpp"
 #include "Maincharacter/Maincharacter.hpp"
 #include "LabScene.hpp"
@@ -34,7 +32,8 @@ void LabScene::Initialize(){
     AddNewObject(new Engine::Image("UndergroundShelter/B4/LabScene/tankwithoutPeople.png", 850, h - 450, 200, 360, 0, 0));
     AddNewObject(new Engine::Image("UndergroundShelter/B4/LabScene/tankwithPeople.png", 1100, h - 450, 200, 360, 0, 0));
     AddNewObject(new Engine::Image("2Ddooropened.png", 1300, h - 460, 300, 360, 0, 0));
-    MC = new Maincharacter("MCRightStop.png", 80, 680, 32, 200);
+    if(Shared::previousStage == "start") MC = new Maincharacter("MCRightStop.png", 80, 680, 32, 200);
+    else if(Shared::previousStage == "Library") MC = new Maincharacter("MCLeftStop.png", 1320, 680, 32, 200);
     if (!MC) {
         Engine::LOG(Engine::ERROR) << "Failed to create Maincharacter object";
         return;
@@ -57,7 +56,7 @@ void LabScene::Draw() const{
         al_draw_text(PoetFont, al_map_rgb(255, 255, 255), 800, 250, ALLEGRO_ALIGN_CENTER, " one of which is broken with a sign saying 'seeds 001'.");
         al_draw_text(PoetFont, al_map_rgb(255, 255, 255), 800, 300, ALLEGRO_ALIGN_CENTER, "You stand up and try to explore a bit…");
     }
-    if (MC -> Position.x >= 1350 && MC -> Position.x <= 1600){
+    if (MC -> Position.x >= 1200 && MC -> Position.x <= 1600){
         al_draw_filled_triangle(MC -> Position.x - 55, 700, MC -> Position.x - 55, 740, MC -> Position.x - 10, 720, al_map_rgb(255, 255, 255));
         al_draw_filled_rounded_rectangle(MC -> Position.x - 350, 680, MC -> Position.x - 50, 800, 10, 10, al_map_rgb(255, 255, 255));
         al_draw_text(PoetFont, al_map_rgb(0, 0, 0), MC -> Position.x - 310, 710, 0, "Press E to Enter");
@@ -80,7 +79,7 @@ void LabScene::OnKeyDown(int keyCode){
                 MC->MoveRight(1.0f / 60.0f);
                 break;
             case ALLEGRO_KEY_E:
-                if (MC -> Position.x >= 1350 && MC -> Position.x <= 1600)   Engine::GameEngine::GetInstance().ChangeScene("Library");
+                if (MC -> Position.x >= 1200 && MC -> Position.x <= 1600)   Engine::GameEngine::GetInstance().ChangeScene("Library");
                 break;
             case ALLEGRO_KEY_B:
                 Engine::GameEngine::GetInstance().ChangeScene("Backpack");

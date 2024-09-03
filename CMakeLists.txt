@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.27)
-project(2024_I2P2_TowerDefense_with_answer)
+project(2024_I2P2_FinalProject_MiniRPGgame)
 
 set(CMAKE_CXX_STANDARD 14)
 
@@ -39,24 +39,16 @@ add_executable(2024_I2P2_TowerDefense_with_answer
         Engine/Resources.hpp
         Engine/Sprite.cpp
         Engine/Sprite.hpp
-        UI/Animation/DirtyEffect.cpp
-        UI/Animation/DirtyEffect.hpp
-        UI/Animation/ExplosionEffect.cpp
-        UI/Animation/ExplosionEffect.hpp
         UI/Component/Image.cpp
         UI/Component/Image.hpp
         UI/Component/ImageButton.cpp
         UI/Component/ImageButton.hpp
         UI/Component/Label.cpp
         UI/Component/Label.hpp
-        UI/Animation/Plane.cpp
-        UI/Animation/Plane.hpp
         UI/Component/Slider.cpp
         UI/Component/Slider.hpp
         Scene/StartScene.hpp
         Scene/StartScene.cpp
-        Scene/PlayScene.hpp
-        Scene/PlayScene.cpp
         Scene/Achievement.hpp
         Scene/Achievement.cpp
         Scene/MenuSettings.hpp

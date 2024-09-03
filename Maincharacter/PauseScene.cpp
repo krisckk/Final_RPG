@@ -50,7 +50,7 @@ void PauseScene::Terminate() {
 }
 
 void PauseScene::OnKeyDown(int keyCode){
-    const std::string StageName = Shared::previosStage;
+    const std::string StageName = Shared::previousStage;
         switch (keyCode) {
             case ALLEGRO_KEY_C:
                 Engine::GameEngine::GetInstance().ChangeScene(StageName);
@@ -64,7 +64,7 @@ void PauseScene::SaveOnClick(int stage){
     Engine::LOG(Engine::INFO) << "SaveOnClick";
     std::ofstream saveFile("../Maincharacter/SaveData.txt", std::ios::trunc);// , std::ios::app
     if (saveFile.is_open()) {
-        saveFile << Shared::previosStage << " "<< Shared::lives << " " << Shared::redPotion << " " << Shared::bluePotion << " " << Shared::yellowPotion
+        saveFile << Shared::previousStage << " "<< Shared::lives << " " << Shared::redPotion << " " << Shared::bluePotion << " " << Shared::yellowPotion
         << " " << Shared::Gold << " " << Shared::Aluminum << " " << Shared::Iron << " " << Shared::HDLoil << " " << Shared::LDLoil << " " << Shared::IDcard << " " 
         << Shared::coin << " " << Shared::wooden_stick << " " << Shared::Achievement_cola << " " << Shared::Achievement_home << " " << Shared::Achievement_myfavorite << " "
         << Shared::LabScene << " " << Shared::LibraryScene << " " << Shared::StorageRoom << " " << Shared::ElevatorB4 << " " 
@@ -79,6 +79,6 @@ void PauseScene::SaveOnClick(int stage){
     Engine::GameEngine::GetInstance().ChangeScene("start");
 }
 void PauseScene::ResumeOnClick(int stage){
-    const std::string StageName = Shared::previosStage;
+    const std::string StageName = Shared::previousStage;
     Engine::GameEngine::GetInstance().ChangeScene(StageName);
 }
