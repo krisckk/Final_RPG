@@ -1,6 +1,6 @@
-# 2024 I2P Final Project - RPG
+# 2024 I2P Final Project - RPG- The Seventh Day
 
-## Member : 周伯穎，李岱淩，陳柏蓉
+## Member : 周伯穎，丁采羚
 ![preview](Resource/images/previewstart.jpg)
 **Game type**
 This is a RPG game about a man trying to recover back his memory
