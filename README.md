@@ -13,12 +13,6 @@ Use `E` key to enter a door and enter password.
 Use `ESC` key to pause and save.
 Use `B` key to gain access to backpack.
 Use `P` key to pick up item.
-| **Project Tasks**           | **Score** | **Check** |
-| :-------------------------- | :-------: | :-------: |
-| Add `ScoreboardScene`       |    40%    |     -     |
-| Enemy Pathfinding           |    10%    |     -     |
-| 2 New Turrets/Enemies/Tools |    20%    |     -     |
-
 ---
 
 <style>

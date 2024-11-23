@@ -41,6 +41,15 @@
 [INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/B4/Library/ComputerDesk.png scaled to 200x100
 [INFO] Loaded Resource<image>: Resource/images/2Ddoorclosed.png scaled to 300x360
 [INFO] Changed to Library scene
+[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/B4/Computer/WindowsBackground.png scaled to 1600x900
+[INFO] Loaded Resource<audio>: Resource/audios/Weightless.ogg
+[INFO] Created<sample_instance>: Resource/audios/Weightless.ogg
+[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/B4/Computer/file.png scaled to 120x120
+[INFO] Loaded Resource<image>: Resource/images/UndergroundShelter/B4/Computer/file.png
+[INFO] Changed to Computer scene
+[INFO] stopped audio (sample)
+[INFO] Library scene create
+[INFO] Changed to Library scene
 [INFO] Key pressed: 0
 [INFO] Key pressed: 3
 [INFO] Key pressed: 1
@@ -55,9 +64,383 @@
 [INFO] Changed to StorageRoom scene
 [INFO] ElevatorB4 scene create
 [INFO] Loaded Resource<image>: Resource/images/elevator.png scaled to 330x330
-[INFO] Loaded Resource<audio>: Resource/audios/Weightless.ogg
+[INFO] Loaded Resource<image>: Resource/images/Iron.png scaled to 80x60
 [INFO] Created<sample_instance>: Resource/audios/Weightless.ogg
 [INFO] Changed to ElevatorB4 scene
+[INFO] stopped audio (sample)
+[INFO] Backpack scene create
+[INFO] Loaded Resource<image>: Resource/images/MCidleStop.png scaled to 320x300
+[INFO] Loaded Resource<image>: Resource/images/Li'sfavorite.png scaled to 160x90
+[INFO] Loaded Resource<image>: Resource/images/heart.png scaled to 94x75
+[INFO] Loaded Resource<image>: Resource/images/water.png scaled to 80x75
+[INFO] Loaded Resource<image>: Resource/images/Iron.png scaled to 80x80
+[INFO] Changed to Backpack scene
+[INFO] ElevatorB4 scene create
+[INFO] Created<sample_instance>: Resource/audios/Weightless.ogg
+[INFO] Changed to ElevatorB4 scene
+[INFO] stopped audio (sample)
+[INFO] Backpack scene create
+[INFO] Changed to Backpack scene
+[INFO] ElevatorB4 scene create
+[INFO] Created<sample_instance>: Resource/audios/Weightless.ogg
+[INFO] Changed to ElevatorB4 scene
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 1
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 2
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] 3
+[INFO] stopped audio (sample)
+[INFO] ElevatorB3 scene create
+[INFO] Loaded Resource<image>: Resource/images/wooden_stick.png scaled to 300x120
+[INFO] Created<sample_instance>: Resource/audios/Weightless.ogg
+[INFO] Changed to ElevatorB3 scene
 [INFO] Game Terminating...
 [INFO] stopped audio (sample)
 [INFO] Game terminated
@@ -67,5 +450,3 @@
 [INFO] There are total 3 supported mouse buttons
 [INFO] Allegro5 initialized
 [INFO] Game begin
-[INFO] Game initialized
-[INFO] Game start event loop
